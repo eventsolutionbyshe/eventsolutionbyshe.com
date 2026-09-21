@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "event_management";
+$host = "sql209.infinityfree.com";
+$username = "if0_42929623";
+$password = "CuStOdIo888";
+$database = "if0_42929623_event_management";
 
 $conn = new mysqli(
     $host,
