@@ -1,0 +1,1303 @@
+/* =====================================================
+   ADMIN HOST & HOST PACKAGE MANAGEMENT
+   Event Solutions by S.H.E.
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+.admin-hostpackages {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+
+.admin-hostpackages button,
+.admin-hostpackages input,
+.admin-hostpackages select,
+.admin-hostpackages textarea {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+.admin-hostpackages button,
+.admin-hostpackages a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.hostpackages-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.hostpackages-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hostpackages-title-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    font-size: 18px;
+}
+
+.hostpackages-page-label {
+    display: block;
+    margin-bottom: 3px;
+    color: #888;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+}
+
+.hostpackages-header h2 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #111;
+}
+
+.hostpackages-header p {
+    margin: 4px 0 0;
+    color: #888;
+    font-size: 12px;
+}
+
+.hostpackages-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-hostpackages-report,
+.btn-add-hostpackages {
+    height: 34px;
+    padding: 0 13px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.btn-hostpackages-report {
+    background: #f5f5f5;
+    color: #444;
+}
+
+.btn-add-hostpackages {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+}
+
+.btn-add-hostpackages.btn-add-package {
+    background: #333;
+    border-color: #333;
+}
+
+.btn-hostpackages-report:hover,
+.btn-add-hostpackages:hover {
+    opacity: .9;
+}
+
+.btn-hostpackages-report i,
+.btn-add-hostpackages i {
+    line-height: 1;
+}
+
+
+/* =====================================================
+   ALERT
+===================================================== */
+
+.hostpackages-alert {
+    margin-bottom: 15px;
+    padding: 11px 13px;
+    border: 1px solid #f0caca;
+    border-radius: 7px;
+    background: #fff5f5;
+    color: #a52b2b;
+}
+
+.hostpackages-alert > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* =====================================================
+   SUCCESS TOAST
+===================================================== */
+
+.hostpackages-toast {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    z-index: 99999;
+    width: 340px;
+    min-height: 70px;
+    padding: 12px 38px 12px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #d9eadc;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+    overflow: hidden;
+}
+
+.hostpackages-toast-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e9f7ed;
+    color: #198754;
+    font-size: 17px;
+}
+
+.hostpackages-toast-content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hostpackages-toast-content strong {
+    color: #222;
+    font-size: 12px;
+}
+
+.hostpackages-toast-content span {
+    color: #777;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.hostpackages-toast-close {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 25px;
+    height: 25px;
+    border: 0;
+    background: transparent;
+    color: #999;
+    cursor: pointer;
+}
+
+.hostpackages-toast-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #198754;
+    animation: hostPackageToastProgress 4s linear forwards;
+}
+
+@keyframes hostPackageToastProgress {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.hostpackages-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.hostpackages-stat-card {
+    min-height: 84px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.hostpackages-stat-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f1f1f1;
+    color: #222;
+    font-size: 16px;
+}
+
+.hostpackages-stat-content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.hostpackages-stat-content span {
+    color: #888;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.hostpackages-stat-content strong {
+    margin-top: 2px;
+    color: #111;
+    font-size: 20px;
+    line-height: 1.15;
+}
+
+.hostpackages-stat-content small {
+    margin-top: 2px;
+    color: #aaa;
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.hostpackages-panel {
+    margin-bottom: 18px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.hostpackages-panel-header {
+    min-height: 70px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.hostpackages-panel-label {
+    display: block;
+    margin-bottom: 3px;
+    color: #999;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .8px;
+}
+
+.hostpackages-panel-header h3 {
+    margin: 0;
+    color: #222;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.hostpackages-panel-header p {
+    margin: 3px 0 0;
+    color: #999;
+    font-size: 11px;
+}
+
+.hostpackages-total {
+    padding: 5px 9px;
+    border-radius: 5px;
+    background: #f5f5f5;
+    color: #555;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   FILTER BAR
+===================================================== */
+
+.hostpackages-filter-bar {
+    min-height: 52px;
+    padding: 9px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #eee;
+    background: #fafafa;
+}
+
+.hostpackages-search,
+.hostpackages-filter {
+    height: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hostpackages-search {
+    flex: 1;
+    min-width: 220px;
+}
+
+.hostpackages-filter {
+    width: 190px;
+}
+
+.hostpackages-search i,
+.hostpackages-filter i {
+    position: absolute;
+    left: 10px;
+    z-index: 1;
+    color: #999;
+    pointer-events: none;
+}
+
+.hostpackages-search input,
+.hostpackages-filter select {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background: #fff;
+    color: #333;
+}
+
+.hostpackages-search input {
+    padding: 0 10px 0 31px;
+}
+
+.hostpackages-filter select {
+    padding: 0 8px 0 30px;
+    cursor: pointer;
+}
+
+.hostpackages-search input:focus,
+.hostpackages-filter select:focus {
+    border-color: #999;
+}
+
+.btn-hostpackages-search,
+.btn-hostpackages-reset {
+    height: 32px;
+    padding: 0 11px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.btn-hostpackages-search {
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-hostpackages-reset {
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #555;
+}
+
+.btn-hostpackages-search:hover,
+.btn-hostpackages-reset:hover {
+    opacity: .88;
+}
+
+.hostpackages-filter-info {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #777;
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.hostpackages-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.hostpackages-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.hostpackages-table th {
+    height: 38px;
+    padding: 0 12px;
+    border-bottom: 1px solid #e6e6e6;
+    background: #f8f8f8;
+    color: #777;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .45px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.hostpackages-table td {
+    height: 54px;
+    padding: 7px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+.hostpackages-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.hostpackages-table tbody tr:hover {
+    background: #fcfcfc;
+}
+
+
+/* =====================================================
+   HOST INFORMATION
+===================================================== */
+
+.host-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 180px;
+}
+
+.host-avatar {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    overflow: hidden;
+    border-radius: 7px;
+    background: #f0f0f0;
+}
+
+.host-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.host-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.host-information {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.host-information strong {
+    max-width: 180px;
+    overflow: hidden;
+    color: #222;
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.host-information span {
+    color: #999;
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   HOST TYPE
+===================================================== */
+
+.host-type-badge {
+    min-height: 24px;
+    padding: 4px 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    background: #f8f8f8;
+    color: #555;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.host-type-badge i {
+    color: #777;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.host-contact {
+    max-width: 180px;
+}
+
+.host-contact span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+    color: #555;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.host-contact i {
+    flex: 0 0 auto;
+    width: 13px;
+    color: #888;
+    text-align: center;
+}
+
+.muted {
+    color: #aaa !important;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.host-description {
+    max-width: 230px;
+    overflow: hidden;
+    color: #666;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.host-actions,
+.package-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-edit-host,
+.btn-edit-host-package {
+    height: 30px;
+    padding: 0 9px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #fff;
+    color: #555;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.btn-edit-host:hover,
+.btn-edit-host-package:hover {
+    border-color: #aaa;
+    background: #f7f7f7;
+}
+
+
+/* =====================================================
+   PACKAGE TABLE
+===================================================== */
+
+.package-table {
+    min-width: 1000px;
+}
+
+.package-information {
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.package-information strong {
+    max-width: 190px;
+    overflow: hidden;
+    color: #222;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.package-information span {
+    color: #aaa;
+    font-size: 10px;
+}
+
+.package-host-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 160px;
+}
+
+.package-host-avatar {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #eee;
+}
+
+.package-host-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.package-host-avatar span {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.package-host-info > div:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.package-host-info strong {
+    max-width: 150px;
+    overflow: hidden;
+    color: #333;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.package-host-info small {
+    color: #999;
+    font-size: 9px;
+}
+
+.package-inclusions {
+    max-width: 270px;
+    overflow: hidden;
+    color: #666;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.package-price {
+    color: #222;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.package-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #777;
+    white-space: nowrap;
+}
+
+.package-date i {
+    color: #999;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.hostpackages-empty {
+    min-height: 230px;
+    padding: 35px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hostpackages-empty-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f3f3f3;
+    color: #777;
+    font-size: 20px;
+}
+
+.hostpackages-empty h3 {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.hostpackages-empty p {
+    margin: 5px 0 13px;
+    color: #999;
+    font-size: 11px;
+}
+
+.hostpackages-empty-button {
+    height: 32px;
+    padding: 0 11px;
+    border: 1px solid #111;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.hostpackage-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hostpackage-modal.active {
+    display: flex;
+}
+
+.hostpackage-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .52);
+}
+
+.hostpackage-modal-box {
+    position: relative;
+    z-index: 2;
+    width: min(760px, 100%);
+    max-height: 92vh;
+    overflow: hidden;
+    border-radius: 9px;
+    background: #fff;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, .22);
+}
+
+.host-modal-box {
+    width: min(850px, 100%);
+}
+
+.hostpackage-modal-header {
+    min-height: 66px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.hostpackage-modal-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hostpackage-modal-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+}
+
+.hostpackage-modal-label {
+    display: block;
+    color: #999;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .7px;
+}
+
+.hostpackage-modal-header h2 {
+    margin: 2px 0 0;
+    color: #222;
+    font-size: 16px;
+}
+
+.hostpackage-modal-close {
+    width: 31px;
+    height: 31px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #777;
+    cursor: pointer;
+}
+
+.hostpackage-modal-close:hover {
+    background: #f5f5f5;
+}
+
+.hostpackage-modal-body {
+    max-height: calc(92vh - 132px);
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.hostpackage-modal-footer {
+    min-height: 58px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+    border-top: 1px solid #eee;
+    background: #fafafa;
+}
+
+.btn-host-cancel,
+.btn-host-save {
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn-host-cancel {
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #666;
+}
+
+.btn-host-save {
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+}
+
+
+/* =====================================================
+   HOST IMAGE UPLOAD
+===================================================== */
+
+.host-image-upload {
+    width: 150px;
+    margin: 0 auto 18px;
+    text-align: center;
+}
+
+.host-image-preview-box {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f8f8f8;
+}
+
+.host-preview-image {
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: cover;
+}
+
+.host-preview-image.visible {
+    display: block;
+}
+
+.host-picture-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    color: #999;
+}
+
+.host-picture-placeholder i {
+    font-size: 27px;
+    color: #bbb;
+}
+
+.host-picture-placeholder span {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.host-picture-placeholder small {
+    color: #aaa;
+    font-size: 9px;
+}
+
+.host-file-label {
+    height: 31px;
+    margin-top: 8px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #fff;
+    color: #555;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   HOST FORM
+===================================================== */
+
+.host-form-grid,
+.package-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.host-form-full,
+.package-form-full {
+    grid-column: 1 / -1;
+}
+
+.host-form-group,
+.package-form-group {
+    min-width: 0;
+}
+
+.host-form-group label,
+.package-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.host-form-group label span,
+.package-form-group label span {
+    color: #c62828;
+}
+
+.host-input-wrapper,
+.host-textarea-wrapper,
+.package-input-wrapper,
+.package-textarea-wrapper {
+    position: relative;
+}
+
+.host-input-wrapper > i,
+.host-textarea-wrapper > i,
+.package-input-wrapper > i,
+.package-textarea-wrapper > i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+    color: #aaa;
+    pointer-events: none;
+}
+
+.host-input-wrapper input,
+.host-input-wrapper select,
+.package-input-wrapper input,
+.package-input-wrapper select {
+    width: 100%;
+    height: 34px;
+    padding: 0 10px 0 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background: #fff;
+    color: #333;
+}
+
+.host-textarea-wrapper textarea,
+.package-textarea-wrapper textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 9px 10px 9px 30px;
+    resize: vertical;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background: #fff;
+    color: #333;
+    line-height: 1.4;
+}
+
+.host-input-wrapper input:focus,
+.host-input-wrapper select:focus,
+.host-textarea-wrapper textarea:focus,
+.package-input-wrapper input:focus,
+.package-input-wrapper select:focus,
+.package-textarea-wrapper textarea:focus {
+    border-color: #999;
+}
+
+
+/* =====================================================
+   BODY MODAL STATE
+===================================================== */
+
+body.hostpackage-modal-open {
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print {
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    .hostpackages-panel,
+    .hostpackages-panel * {
+        visibility: visible !important;
+    }
+
+    .hostpackages-panel {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: 0;
+    }
+
+    .hostpackages-header,
+    .hostpackages-stat-grid,
+    .hostpackages-alert,
+    .hostpackages-toast,
+    .hostpackages-filter-bar,
+    .no-print {
+        display: none !important;
+    }
+
+    .hostpackages-table {
+        min-width: 100% !important;
+    }
+
+    .hostpackages-table th,
+    .hostpackages-table td {
+        font-size: 10px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .hostpackages-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hostpackages-header-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .hostpackages-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hostpackages-filter-bar {
+        flex-wrap: wrap;
+    }
+
+    .hostpackages-search {
+        width: 100%;
+        flex: none;
+    }
+
+    .hostpackages-filter {
+        flex: 1;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .hostpackages-header h2 {
+        font-size: 19px;
+    }
+
+    .hostpackages-header-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .btn-hostpackages-report,
+    .btn-add-hostpackages {
+        width: 100%;
+    }
+
+    .hostpackages-panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hostpackages-filter {
+        width: 100%;
+    }
+
+    .btn-hostpackages-search,
+    .btn-hostpackages-reset {
+        flex: 1;
+    }
+
+    .host-form-grid,
+    .package-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .host-form-full,
+    .package-form-full {
+        grid-column: auto;
+    }
+
+    .hostpackage-modal {
+        padding: 10px;
+    }
+
+    .hostpackage-modal-box {
+        max-height: 95vh;
+    }
+
+    .hostpackage-modal-body {
+        max-height: calc(95vh - 132px);
+    }
+
+    .hostpackage-modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .btn-host-cancel,
+    .btn-host-save {
+        width: 100%;
+    }
+
+    .hostpackages-toast {
+        left: 12px;
+        right: 12px;
+        top: 12px;
+        width: auto;
+    }
+}   

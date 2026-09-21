@@ -1,0 +1,3373 @@
+/* =========================================================
+   MY HOST PAGE
+   Event Solutions by S.H.E.
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+
+:root {
+
+    --myhost-gold: #b99445;
+
+    --myhost-gold-dark: #94712f;
+
+    --myhost-gold-light: #d8bd7a;
+
+    --myhost-peach: #efc2a2;
+
+    --myhost-peach-light: #fae8dc;
+
+    --myhost-cream: #faf9f7;
+
+    --myhost-cream-dark: #f3f1ed;
+
+    --myhost-white: #ffffff;
+
+    --myhost-black: #111111;
+
+    --myhost-dark: #222222;
+
+    --myhost-gray-900: #303030;
+
+    --myhost-gray-700: #666666;
+
+    --myhost-gray-500: #888888;
+
+    --myhost-gray-400: #aaaaaa;
+
+    --myhost-gray-300: #d5d5d5;
+
+    --myhost-gray-200: #e8e6e2;
+
+    --myhost-gray-100: #f2f1ef;
+
+    --myhost-border: rgba(17, 17, 17, 0.075);
+
+    --myhost-border-gold: rgba(185, 148, 69, 0.28);
+
+    --myhost-shadow-sm:
+        0 6px 22px rgba(0, 0, 0, 0.045);
+
+    --myhost-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.075);
+
+    --myhost-shadow-lg:
+        0 30px 80px rgba(0, 0, 0, 0.12);
+
+    --myhost-radius: 12px;
+}
+
+
+/* =========================================================
+   POPPINS FONT
+   DEFAULT PAGE FONT SIZE = 10PX
+========================================================= */
+
+.hosts-page {
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 10px;
+}
+
+
+/* Apply Poppins to normal page elements */
+
+.hosts-page input,
+.hosts-page select,
+.hosts-page textarea,
+.hosts-page button {
+
+    font-family:
+        'Poppins',
+        sans-serif;
+}
+
+
+/* =========================================================
+   MATERIAL SYMBOLS ICONS
+   Keep icons using their original icon font
+========================================================= */
+
+.hosts-page .material-symbols-outlined {
+
+    font-family:
+        'Material Symbols Outlined' !important;
+
+    font-weight: normal;
+
+    font-style: normal;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    letter-spacing: normal;
+
+    text-transform: none;
+
+    display: inline-block;
+
+    white-space: nowrap;
+
+    word-wrap: normal;
+
+    direction: ltr;
+
+    -webkit-font-feature-settings:
+        'liga';
+
+    -webkit-font-smoothing:
+        antialiased;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.hosts-page {
+
+    width: 100%;
+
+    background:
+        var(--myhost-cream);
+
+    color:
+        var(--myhost-dark);
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hosts-hero {
+
+    position: relative;
+
+    min-height: 410px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(24, 24, 24, 0.72),
+            rgba(24, 24, 24, 0.42)
+        ),
+        url("../images/img1.jpeg")
+        center / cover no-repeat;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   HERO IMAGE OVERLAY
+========================================================= */
+
+.hosts-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(0, 0, 0, 0.22) 100%
+        );
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   HERO GOLD / PEACH OVERLAY
+========================================================= */
+
+.hosts-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(185, 148, 69, 0.16),
+            rgba(243, 199, 168, 0.06)
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hosts-hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(
+            calc(100% - 48px),
+            900px
+        );
+
+    padding:
+        35px 20px;
+}
+
+
+/* =========================================================
+   HERO EYEBROW
+========================================================= */
+
+.page-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color:
+        var(--myhost-peach);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 12px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hosts-hero h1 {
+
+    margin: 0;
+
+    color:
+        var(--myhost-white);
+
+    font-size:
+        clamp(
+            36px,
+            5vw,
+            58px
+        );
+
+    line-height: 1.12;
+
+    font-weight: 600;
+
+    letter-spacing: -1.2px;
+
+    text-shadow:
+        0 4px 25px
+        rgba(0, 0, 0, 0.42);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hosts-hero p {
+
+    max-width: 650px;
+
+    margin: 22px auto 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.88
+        );
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.3px;
+
+    line-height: 1.7;
+
+    text-shadow:
+        0 2px 12px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   HERO BOTTOM ACCENT
+========================================================= */
+
+.hosts-hero-content::after {
+
+    content: "";
+
+    display: block;
+
+    width: 60px;
+
+    height: 2px;
+
+    margin:
+        24px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--myhost-gold-light),
+            var(--myhost-peach),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.hosts-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            calc(100% - 64px),
+            1240px
+        );
+
+    margin: -35px auto 0;
+
+    padding: 80px 0 110px;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.host-alert {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid transparent;
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+.host-alert .material-symbols-outlined {
+
+    font-size: 21px;
+}
+
+
+.host-alert-success {
+
+    background: #eef8f0;
+
+    color: #276738;
+
+    border-color: #cde7d2;
+}
+
+
+.host-alert-error {
+
+    background: #fff0ee;
+
+    color: #963d37;
+
+    border-color: #f1c8c3;
+}
+
+
+.host-alert-warning {
+
+    background: #fff8e8;
+
+    color: #806522;
+
+    border-color: #eadcae;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.host-filter-card {
+
+    position: relative;
+
+    margin-bottom: 30px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.98
+        );
+
+    border:
+        1px solid
+        rgba(
+            185,
+            148,
+            69,
+            0.15
+        );
+
+    border-radius:
+        var(--myhost-radius);
+
+    box-shadow:
+        var(--myhost-shadow-sm);
+
+    overflow: hidden;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+.host-filter-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--myhost-gold-dark),
+            var(--myhost-gold),
+            var(--myhost-gold-light),
+            var(--myhost-peach),
+            var(--myhost-gold)
+        );
+}
+
+
+/* =========================================================
+   FILTER HEADER
+========================================================= */
+
+.host-filter-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 32px 35px 25px;
+}
+
+
+.filter-eyebrow,
+.table-eyebrow {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--myhost-gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.host-filter-header h2,
+.host-table-header h2 {
+
+    margin: 0;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+}
+
+
+.host-filter-header p {
+
+    margin-top: 7px;
+
+    color:
+        var(--myhost-gray-500);
+
+    font-size: 10px;
+}
+
+
+.host-total-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    padding: 10px 15px;
+
+    border-radius: 30px;
+
+    background:
+        var(--myhost-cream-dark);
+
+    color:
+        var(--myhost-gold-dark);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.host-total-badge .material-symbols-outlined {
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   FILTER CONTENT
+========================================================= */
+
+.host-filter-content {
+
+    padding: 25px 35px 32px;
+
+    border-top:
+        1px solid
+        var(--myhost-border);
+}
+
+
+.host-filter-form {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(220px, 1.5fr)
+        minmax(160px, 1fr)
+        minmax(150px, 0.9fr)
+        minmax(150px, 0.9fr)
+        auto;
+
+    gap: 15px;
+
+    align-items: end;
+}
+
+
+.host-filter-group {
+
+    min-width: 0;
+}
+
+
+.host-filter-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--myhost-gray-700);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+
+.host-filter-group input,
+.host-filter-group select {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px;
+
+    border:
+        1px solid
+        var(--myhost-gray-200);
+
+    border-radius: 8px;
+
+    background:
+        var(--myhost-white);
+
+    color:
+        var(--myhost-dark);
+
+    outline: none;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 10px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.host-filter-group input:focus,
+.host-filter-group select:focus {
+
+    border-color:
+        var(--myhost-gold);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            185,
+            148,
+            69,
+            0.10
+        );
+}
+
+
+.host-search-wrapper {
+
+    position: relative;
+}
+
+
+.host-search-wrapper .material-symbols-outlined {
+
+    position: absolute;
+
+    left: 13px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--myhost-gray-400);
+
+    font-size: 19px;
+
+    pointer-events: none;
+}
+
+
+.host-search-wrapper input {
+
+    padding-left: 42px;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.host-filter-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.host-filter-button,
+.host-clear-button {
+
+    height: 46px;
+
+    border-radius: 8px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    white-space: nowrap;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.host-filter-button {
+
+    border: 1px solid
+        var(--myhost-gold);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--myhost-gold),
+            var(--myhost-gold-dark)
+        );
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 6px 16px
+        rgba(
+            185,
+            148,
+            69,
+            0.15
+        );
+}
+
+
+.host-filter-button:hover {
+
+    background:
+        var(--myhost-gold-dark);
+
+    border-color:
+        var(--myhost-gold-dark);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            185,
+            148,
+            69,
+            0.22
+        );
+}
+
+
+.host-filter-button .material-symbols-outlined {
+
+    font-size: 18px;
+}
+
+
+.host-clear-button {
+
+    border:
+        1px solid
+        var(--myhost-gray-200);
+
+    background:
+        var(--myhost-white);
+
+    color:
+        var(--myhost-gray-700);
+}
+
+
+.host-clear-button:hover {
+
+    border-color:
+        var(--myhost-gold);
+
+    color:
+        var(--myhost-gold-dark);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.host-table-card {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.98
+        );
+
+    border:
+        1px solid
+        rgba(
+            185,
+            148,
+            69,
+            0.15
+        );
+
+    border-radius:
+        var(--myhost-radius);
+
+    box-shadow:
+        var(--myhost-shadow-sm);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.host-table-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 30px 35px;
+
+    border-bottom:
+        1px solid
+        var(--myhost-border);
+}
+
+
+.host-event-count {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color:
+        var(--myhost-gray-500);
+
+    font-size: 10px;
+}
+
+
+.host-table-help {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        var(--myhost-gray-500);
+
+    font-size: 10px;
+
+    text-align: right;
+}
+
+
+.host-table-help .material-symbols-outlined {
+
+    color:
+        var(--myhost-gold);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.host-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+}
+
+
+.hosts-table {
+
+    width: 100%;
+
+    min-width: 1120px;
+
+    border-collapse: collapse;
+}
+
+
+.hosts-table th {
+
+    padding: 15px 18px;
+
+    background:
+        var(--myhost-cream);
+
+    color:
+        var(--myhost-gray-700);
+
+    border-bottom:
+        1px solid
+        var(--myhost-border);
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.hosts-table td {
+
+    padding: 18px;
+
+    border-bottom:
+        1px solid
+        var(--myhost-border);
+
+    color:
+        var(--myhost-gray-700);
+
+    vertical-align: middle;
+
+    font-size: 10px;
+}
+
+
+.hosts-table tbody tr {
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.hosts-table tbody tr:hover {
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.035
+        );
+}
+
+
+.hosts-table tbody tr:last-child td {
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   HOST CELL
+========================================================= */
+
+.host-name-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 190px;
+}
+
+
+.host-table-image {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background:
+        var(--myhost-cream-dark);
+
+    border:
+        1px solid
+        var(--myhost-border-gold);
+
+    box-shadow:
+        0 5px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.06
+        );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.host-table-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.45s ease;
+}
+
+
+.hosts-table tbody tr:hover
+.host-table-image {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            185,
+            148,
+            69,
+            0.16
+        );
+}
+
+
+.hosts-table tbody tr:hover
+.host-table-image img {
+
+    transform:
+        scale(1.07);
+}
+
+
+.host-table-image-empty {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        var(--myhost-gold);
+}
+
+
+.host-table-image-empty .material-symbols-outlined {
+
+    font-size: 22px;
+}
+
+
+.host-name {
+
+    display: block;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.host-type-small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        var(--myhost-gray-500);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.host-category-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border-radius: 30px;
+
+    background:
+        var(--myhost-peach-light);
+
+    color:
+        var(--myhost-gold-dark);
+
+    white-space: nowrap;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    border:
+        1px solid
+        rgba(
+            185,
+            148,
+            69,
+            0.10
+        );
+}
+
+
+/* =========================================================
+   EVENT
+========================================================= */
+
+.host-event-name {
+
+    display: block;
+
+    max-width: 180px;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DATE / TIME
+========================================================= */
+
+.host-date-value,
+.host-time-value {
+
+    white-space: nowrap;
+
+    color:
+        var(--myhost-gray-700);
+
+    font-size: 10px;
+}
+
+
+.host-time-value {
+
+    font-weight: 500;
+}
+
+
+.host-not-available {
+
+    color:
+        var(--myhost-gray-400);
+}
+
+
+/* =========================================================
+   PACKAGE
+========================================================= */
+
+.host-package-value {
+
+    display: block;
+
+    max-width: 150px;
+
+    color:
+        var(--myhost-gray-700);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.host-price-value {
+
+    white-space: nowrap;
+
+    color:
+        var(--myhost-gold-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.host-status-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 30px;
+
+    white-space: nowrap;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.host-status-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+}
+
+
+.host-status-pending {
+
+    background: #fff5df;
+
+    color: #8a6824;
+}
+
+
+.host-status-pending .host-status-dot {
+
+    background: #d49c24;
+}
+
+
+.host-status-confirmed {
+
+    background: #edf8f0;
+
+    color: #28713b;
+}
+
+
+.host-status-confirmed .host-status-dot {
+
+    background: #42a45a;
+}
+
+
+.host-status-completed {
+
+    background: #edf1f8;
+
+    color: #4b6287;
+}
+
+
+.host-status-completed .host-status-dot {
+
+    background: #6681ad;
+}
+
+
+.host-status-cancelled {
+
+    background: #fff0ee;
+
+    color: #963d37;
+}
+
+
+.host-status-cancelled .host-status-dot {
+
+    background: #c65b53;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.host-action-column {
+
+    width: 190px;
+}
+
+
+.host-row-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.host-action-button {
+
+    min-height: 35px;
+
+    padding: 0 10px;
+
+    border-radius: 7px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    border: 1px solid transparent;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.host-action-button .material-symbols-outlined {
+
+    font-size: 16px;
+}
+
+
+.host-view-button {
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.09
+        );
+
+    border-color:
+        rgba(
+            185,
+            148,
+            69,
+            0.18
+        );
+
+    color:
+        var(--myhost-gold-dark);
+}
+
+
+.host-view-button:hover {
+
+    background:
+        var(--myhost-gold);
+
+    border-color:
+        var(--myhost-gold);
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(
+            185,
+            148,
+            69,
+            0.20
+        );
+}
+
+
+.host-cancel-button {
+
+    background:
+        #fff1ef;
+
+    border-color:
+        #f0cbc7;
+
+    color:
+        #a2463f;
+}
+
+
+.host-cancel-button:hover {
+
+    background:
+        #b94b45;
+
+    border-color:
+        #b94b45;
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(
+            185,
+            75,
+            69,
+            0.18
+        );
+}
+
+
+.host-cancel-button.disabled,
+.host-cancel-button:disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.host-empty-state {
+
+    padding: 90px 30px;
+
+    text-align: center;
+}
+
+
+.host-empty-icon {
+
+    width: 72px;
+
+    height: 72px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--myhost-cream-dark);
+
+    color:
+        var(--myhost-gold);
+
+    border:
+        1px solid
+        rgba(
+            185,
+            148,
+            69,
+            0.12
+        );
+}
+
+
+.host-empty-icon .material-symbols-outlined {
+
+    font-size: 30px;
+}
+
+
+.host-empty-state h3 {
+
+    margin: 0;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 20px;
+}
+
+
+.host-empty-state p {
+
+    max-width: 450px;
+
+    margin: 10px auto 25px;
+
+    color:
+        var(--myhost-gray-500);
+
+    font-size: 10px;
+}
+
+
+.host-empty-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 0 20px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--myhost-gold),
+            var(--myhost-gold-dark)
+        );
+
+    color:
+        #ffffff;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.host-empty-button:hover {
+
+    background:
+        var(--myhost-gold-dark);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            185,
+            148,
+            69,
+            0.20
+        );
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.host-modal,
+.host-cancel-modal,
+.host-cancellation-loading {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+.host-modal.is-open,
+.host-cancel-modal.is-open,
+.host-cancellation-loading.is-open {
+
+    display: flex;
+}
+
+
+.host-modal-overlay,
+.host-cancel-modal-overlay,
+.host-cancellation-loading-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(
+            10,
+            10,
+            10,
+            0.72
+        );
+
+    backdrop-filter:
+        blur(5px);
+}
+
+
+.host-modal-dialog {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            980px,
+            100%
+        );
+
+    max-height:
+        calc(100vh - 50px);
+
+    overflow-y: auto;
+
+    background:
+        var(--myhost-white);
+
+    border-radius: 16px;
+
+    box-shadow:
+        var(--myhost-shadow-lg);
+
+    border:
+        1px solid
+        var(--myhost-border-gold);
+}
+
+
+.host-modal-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    border-bottom:
+        1px solid
+        var(--myhost-border);
+}
+
+
+.modal-eyebrow {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--myhost-gold);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+
+.host-modal-header h2 {
+
+    margin: 0;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 22px;
+}
+
+
+.host-modal-close {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: 1px solid
+        var(--myhost-gray-200);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--myhost-white);
+
+    color:
+        var(--myhost-gray-700);
+
+    cursor: pointer;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+.host-modal-close:hover {
+
+    background:
+        var(--myhost-gold);
+
+    border-color:
+        var(--myhost-gold);
+
+    color:
+        #ffffff;
+}
+
+
+.host-modal-body {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(270px, 0.75fr)
+        minmax(0, 1.25fr);
+
+    gap: 35px;
+
+    padding: 30px;
+}
+
+
+.host-modal-image-wrapper {
+
+    position: relative;
+
+    min-height: 360px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background:
+        var(--myhost-cream-dark);
+
+    border:
+        1px solid
+        var(--myhost-border);
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+
+.host-modal-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 360px;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.host-modal-image-wrapper:hover
+.host-modal-image {
+
+    transform:
+        scale(1.025);
+}
+
+
+.host-modal-image-empty {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color:
+        var(--myhost-gray-500);
+
+    font-size: 10px;
+}
+
+
+.host-modal-image-empty .material-symbols-outlined {
+
+    font-size: 45px;
+
+    color:
+        var(--myhost-gold);
+}
+
+
+.host-modal-content {
+
+    min-width: 0;
+}
+
+
+.host-modal-main {
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid
+        var(--myhost-border);
+}
+
+
+.host-modal-main h3 {
+
+    margin: 0 0 5px;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 29px;
+
+    font-weight: 600;
+}
+
+
+.modal-host-type {
+
+    color:
+        var(--myhost-gold-dark);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.host-modal-description {
+
+    padding: 18px 0;
+}
+
+
+.host-modal-description p {
+
+    margin: 7px 0 0;
+
+    color:
+        var(--myhost-gray-700);
+
+    font-size: 10px;
+
+    line-height: 1.75;
+}
+
+
+.modal-detail-label {
+
+    display: block;
+
+    color:
+        var(--myhost-gray-500);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+.host-detail-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+.host-detail-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 13px;
+
+    border-radius: 9px;
+
+    background:
+        var(--myhost-cream);
+
+    border:
+        1px solid
+        var(--myhost-border);
+}
+
+
+.host-detail-item > .material-symbols-outlined {
+
+    color:
+        var(--myhost-gold);
+
+    font-size: 20px;
+}
+
+
+.host-detail-item strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+.host-contact-section {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid
+        var(--myhost-border);
+}
+
+
+.host-contact-section > div:last-child {
+
+    grid-column:
+        1 / -1;
+}
+
+
+.host-contact-section p,
+.host-extra-section p {
+
+    margin: 6px 0 0;
+
+    color:
+        var(--myhost-gray-700);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    word-break: break-word;
+}
+
+
+.host-extra-section {
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 9px;
+
+    background:
+        var(--myhost-cream);
+
+    border:
+        1px solid
+        var(--myhost-border);
+}
+
+
+/* =========================================================
+   CANCEL MODAL
+========================================================= */
+
+.host-cancel-modal-dialog {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            520px,
+            100%
+        );
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    background:
+        var(--myhost-white);
+
+    border:
+        1px solid
+        var(--myhost-border-gold);
+
+    box-shadow:
+        var(--myhost-shadow-lg);
+
+    text-align: center;
+}
+
+
+.host-cancel-modal-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        #fff1ef;
+
+    color:
+        #b94b45;
+}
+
+
+.host-cancel-modal-icon .material-symbols-outlined {
+
+    font-size: 30px;
+}
+
+
+.host-cancel-modal-content h2 {
+
+    margin: 0;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 24px;
+}
+
+
+.host-cancel-modal-content > p {
+
+    margin: 13px 0 0;
+
+    color:
+        var(--myhost-gray-700);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+.host-cancel-modal-content strong {
+
+    color:
+        var(--myhost-dark);
+}
+
+
+.host-cancel-modal-notice {
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    background:
+        var(--myhost-cream);
+
+    color:
+        var(--myhost-gray-500) !important;
+
+    font-size: 10px !important;
+}
+
+
+.host-cancel-modal-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.host-cancel-modal-button {
+
+    min-height: 43px;
+
+    padding: 0 17px;
+
+    border-radius: 8px;
+
+    border: 1px solid transparent;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.host-cancel-modal-back {
+
+    background:
+        var(--myhost-white);
+
+    border-color:
+        var(--myhost-gray-200);
+
+    color:
+        var(--myhost-gray-700);
+}
+
+
+.host-cancel-modal-back:hover {
+
+    border-color:
+        var(--myhost-gold);
+
+    color:
+        var(--myhost-gold-dark);
+}
+
+
+.host-cancel-modal-confirm {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    background:
+        #b94b45;
+
+    border-color:
+        #b94b45;
+
+    color:
+        #ffffff;
+}
+
+
+.host-cancel-modal-confirm:hover {
+
+    background:
+        #963d37;
+
+    border-color:
+        #963d37;
+}
+
+
+.host-cancel-modal-confirm .material-symbols-outlined {
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.host-cancellation-loading-dialog {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            500px,
+            100%
+        );
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    background:
+        var(--myhost-white);
+
+    border:
+        1px solid
+        var(--myhost-border-gold);
+
+    box-shadow:
+        var(--myhost-shadow-lg);
+
+    text-align: center;
+}
+
+
+.host-cancellation-loading-icon {
+
+    position: relative;
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        var(--myhost-gold);
+}
+
+
+.host-cancellation-loading-icon >
+.material-symbols-outlined {
+
+    font-size: 32px;
+}
+
+
+.host-loading-spinner {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(
+            185,
+            148,
+            69,
+            0.15
+        );
+
+    border-top-color:
+        var(--myhost-gold);
+
+    animation:
+        hostSpinner 0.9s linear infinite;
+}
+
+
+@keyframes hostSpinner {
+
+    to {
+
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+.host-cancellation-loading-content h2 {
+
+    margin: 0;
+
+    color:
+        var(--myhost-dark);
+
+    font-size: 22px;
+}
+
+
+.host-cancellation-loading-content p {
+
+    margin: 12px auto 0;
+
+    max-width: 390px;
+
+    color:
+        var(--myhost-gray-500);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BODY LOCK
+========================================================= */
+
+body.host-modal-open {
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.dark-mode .hosts-page {
+
+    background:
+        #171717;
+
+    color:
+        #eeeeee;
+}
+
+
+/* =========================================================
+   DARK MODE HERO
+   IMAGE IS NOT REMOVED
+========================================================= */
+
+html.dark-mode .hosts-hero {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5, 5, 5, 0.84),
+            rgba(15, 15, 15, 0.64)
+        ),
+        url("../images/img1.jpeg")
+        center / cover no-repeat;
+}
+
+
+html.dark-mode .hosts-hero::before {
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(0, 0, 0, 0.48) 100%
+        );
+}
+
+
+html.dark-mode .hosts-hero::after {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(
+                185,
+                148,
+                69,
+                0.12
+            ),
+            rgba(
+                239,
+                194,
+                162,
+                0.04
+            )
+        );
+}
+
+
+/* =========================================================
+   DARK MODE CARDS
+========================================================= */
+
+html.dark-mode .host-filter-card,
+html.dark-mode .host-table-card,
+html.dark-mode .host-modal-dialog,
+html.dark-mode .host-cancel-modal-dialog,
+html.dark-mode .host-cancellation-loading-dialog {
+
+    background:
+        #222222;
+
+    border-color:
+        rgba(
+            216,
+            189,
+            122,
+            0.20
+        );
+
+    box-shadow:
+        0 18px 50px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+}
+
+
+html.dark-mode .host-filter-header h2,
+html.dark-mode .host-table-header h2,
+html.dark-mode .host-modal-header h2,
+html.dark-mode .host-modal-main h3,
+html.dark-mode .host-cancel-modal-content h2,
+html.dark-mode .host-cancellation-loading-content h2,
+html.dark-mode .host-empty-state h3,
+html.dark-mode .host-name,
+html.dark-mode .host-event-name,
+html.dark-mode .host-detail-item strong {
+
+    color:
+        #f5f1e8;
+}
+
+
+html.dark-mode .host-filter-header p,
+html.dark-mode .host-event-count,
+html.dark-mode .host-table-help,
+html.dark-mode .host-modal-description p,
+html.dark-mode .host-contact-section p,
+html.dark-mode .host-extra-section p,
+html.dark-mode .host-cancel-modal-content > p,
+html.dark-mode .host-cancellation-loading-content p,
+html.dark-mode .host-empty-state p {
+
+    color:
+        #aaa49a;
+}
+
+
+html.dark-mode .host-filter-content,
+html.dark-mode .host-table-header,
+html.dark-mode .hosts-table td,
+html.dark-mode .host-modal-header {
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+}
+
+
+html.dark-mode .host-filter-group label {
+
+    color:
+        #c6c1b8;
+}
+
+
+html.dark-mode .host-filter-group input,
+html.dark-mode .host-filter-group select {
+
+    background:
+        #181818;
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    color:
+        #f1eee8;
+}
+
+
+html.dark-mode .host-filter-group input::placeholder {
+
+    color:
+        #77736d;
+}
+
+
+html.dark-mode .host-filter-group input:focus,
+html.dark-mode .host-filter-group select:focus {
+
+    border-color:
+        var(--myhost-gold-light);
+
+    background:
+        #1d1d1d;
+}
+
+
+html.dark-mode .host-clear-button {
+
+    background:
+        #292929;
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    color:
+        #d0cbc2;
+}
+
+
+html.dark-mode .host-total-badge,
+html.dark-mode .host-table-image,
+html.dark-mode .host-empty-icon {
+
+    background:
+        #2b2b2b;
+}
+
+
+html.dark-mode .hosts-table th {
+
+    background:
+        #1c1c1c;
+
+    color:
+        #aaa49a;
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+}
+
+
+html.dark-mode .hosts-table td {
+
+    color:
+        #bdb8ae;
+
+    background:
+        #222222;
+}
+
+
+html.dark-mode .hosts-table tbody tr:hover {
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.06
+        );
+}
+
+
+html.dark-mode .hosts-table tbody tr:hover td {
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.045
+        );
+}
+
+
+html.dark-mode .host-type-small,
+html.dark-mode .host-package-value,
+html.dark-mode .host-date-value,
+html.dark-mode .host-time-value {
+
+    color:
+        #a9a49b;
+}
+
+
+html.dark-mode .host-category-badge {
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.13
+        );
+
+    color:
+        var(--myhost-gold-light);
+
+    border-color:
+        rgba(
+            216,
+            189,
+            122,
+            0.18
+        );
+}
+
+
+html.dark-mode .host-price-value {
+
+    color:
+        var(--myhost-gold-light);
+}
+
+
+html.dark-mode .host-view-button {
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.14
+        );
+
+    border-color:
+        rgba(
+            216,
+            189,
+            122,
+            0.25
+        );
+
+    color:
+        var(--myhost-gold-light);
+}
+
+
+html.dark-mode .host-cancel-button {
+
+    background:
+        rgba(
+            185,
+            75,
+            69,
+            0.12
+        );
+
+    border-color:
+        rgba(
+            185,
+            75,
+            69,
+            0.28
+        );
+
+    color:
+        #e7a39d;
+}
+
+
+html.dark-mode .host-detail-item,
+html.dark-mode .host-extra-section {
+
+    background:
+        #1b1b1b;
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+}
+
+
+html.dark-mode .host-modal-close {
+
+    background:
+        #292929;
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    color:
+        #c8c3ba;
+}
+
+
+html.dark-mode .host-modal-close:hover {
+
+    background:
+        var(--myhost-gold);
+
+    border-color:
+        var(--myhost-gold);
+
+    color:
+        #ffffff;
+}
+
+
+html.dark-mode .host-modal-image-wrapper {
+
+    background:
+        #1a1a1a;
+
+    border-color:
+        rgba(
+            216,
+            189,
+            122,
+            0.16
+        );
+}
+
+
+html.dark-mode .host-cancel-modal-notice {
+
+    background:
+        #1b1b1b;
+}
+
+
+html.dark-mode .host-alert-success {
+
+    background:
+        rgba(
+            52,
+            130,
+            71,
+            0.14
+        );
+
+    border-color:
+        rgba(
+            78,
+            160,
+            95,
+            0.25
+        );
+
+    color:
+        #a7d8af;
+}
+
+
+html.dark-mode .host-alert-error {
+
+    background:
+        rgba(
+            185,
+            75,
+            69,
+            0.14
+        );
+
+    border-color:
+        rgba(
+            185,
+            75,
+            69,
+            0.28
+        );
+
+    color:
+        #e7a39d;
+}
+
+
+html.dark-mode .host-alert-warning {
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.13
+        );
+
+    border-color:
+        rgba(
+            216,
+            189,
+            122,
+            0.22
+        );
+
+    color:
+        #e5ce91;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .host-filter-form {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+
+    .host-search-group {
+
+        grid-column:
+            1 / -1;
+    }
+
+
+    .host-filter-actions {
+
+        grid-column:
+            1 / -1;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .hosts-container {
+
+        width:
+            min(
+                calc(100% - 48px),
+                1240px
+            );
+
+        padding:
+            65px 0 90px;
+    }
+
+
+    .host-filter-header,
+    .host-table-header {
+
+        align-items:
+            flex-start;
+    }
+
+
+    .host-modal-body {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .host-modal-image-wrapper {
+
+        min-height: 300px;
+    }
+
+
+    .host-modal-image {
+
+        min-height: 300px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .hosts-hero {
+
+        min-height: 310px;
+
+        background-position:
+            center center;
+    }
+
+
+    html.dark-mode .hosts-hero {
+
+        background-position:
+            center center;
+    }
+
+
+    .hosts-container {
+
+        width:
+            calc(100% - 34px);
+
+        padding:
+            50px 0 70px;
+
+        margin-top: -25px;
+    }
+
+
+    .host-filter-header {
+
+        flex-direction: column;
+
+        padding:
+            27px 23px 22px;
+    }
+
+
+    .host-filter-content {
+
+        padding:
+            22px 23px 25px;
+    }
+
+
+    .host-filter-form {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .host-search-group,
+    .host-filter-actions {
+
+        grid-column:
+            auto;
+    }
+
+
+    .host-filter-actions {
+
+        width: 100%;
+    }
+
+
+    .host-filter-button,
+    .host-clear-button {
+
+        flex: 1;
+    }
+
+
+    .host-table-header {
+
+        flex-direction: column;
+
+        padding:
+            25px 23px;
+    }
+
+
+    .host-table-help {
+
+        text-align: left;
+    }
+
+
+    .host-modal {
+
+        padding: 15px;
+    }
+
+
+    .host-modal-dialog {
+
+        max-height:
+            calc(100vh - 30px);
+    }
+
+
+    .host-modal-body {
+
+        padding:
+            22px;
+
+        gap:
+            22px;
+    }
+
+
+    .host-detail-grid,
+    .host-contact-section {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .host-contact-section > div:last-child {
+
+        grid-column:
+            auto;
+    }
+
+
+    .host-cancel-modal {
+
+        padding:
+            15px;
+    }
+
+
+    .host-cancel-modal-dialog {
+
+        padding:
+            28px 22px;
+    }
+
+
+    .host-cancel-modal-actions {
+
+        flex-direction:
+            column-reverse;
+    }
+
+
+    .host-cancel-modal-button {
+
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .hosts-hero {
+
+        min-height: 290px;
+    }
+
+
+    .hosts-hero h1 {
+
+        font-size:
+            34px;
+    }
+
+
+    .hosts-hero p {
+
+        font-size:
+            10px;
+    }
+
+
+    .hosts-hero-content {
+
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .page-eyebrow {
+
+        font-size:
+            8px;
+
+        letter-spacing:
+            2.5px;
+    }
+
+
+    .host-filter-header h2,
+    .host-table-header h2 {
+
+        font-size:
+            19px;
+    }
+
+
+    .host-modal-main h3 {
+
+        font-size:
+            24px;
+    }
+}
+
+
+/* =========================================================
+   HERO IMAGE ANIMATION
+========================================================= */
+
+@keyframes hostHeroImage {
+
+    from {
+
+        transform:
+            scale(1);
+    }
+
+    to {
+
+        transform:
+            scale(1.04);
+    }
+}
+
+
+/* =========================================================
+   HERO CONTENT ANIMATION
+========================================================= */
+
+.hosts-hero-content {
+
+    animation:
+        hostHeroContent 0.8s ease both;
+}
+
+
+@keyframes hostHeroContent {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .host-action-button,
+    .host-filter-button,
+    .host-clear-button,
+    .host-modal-close,
+    .host-cancel-modal-button,
+    .host-table-image,
+    .host-table-image img,
+    .host-modal-image,
+    .hosts-hero-content {
+
+        transition:
+            none;
+
+        animation:
+            none;
+    }
+
+
+    .host-loading-spinner {
+
+        animation:
+            none;
+    }
+}

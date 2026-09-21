@@ -1,0 +1,1201 @@
+/* =====================================================
+   ADMIN HEADER
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #b8954a;
+    --primary-dark: #96742e;
+    --primary-light: #f7f1e4;
+
+    --background: #f6f6f4;
+    --card: #ffffff;
+
+    --text: #252525;
+    --text-secondary: #777777;
+    --text-light: #a1a1a1;
+
+    --border: #e8e8e5;
+
+    --danger: #c84c4c;
+
+    --sidebar-width: 245px;
+    --sidebar-collapsed-width: 72px;
+    --header-height: 72px;
+
+    --radius-small: 10px;
+    --radius-medium: 15px;
+    --radius-large: 20px;
+
+    --shadow:
+        0 5px 25px rgba(0, 0, 0, 0.045);
+
+    --transition: 0.25s ease;
+}
+
+
+/* =====================================================
+   DARK THEME
+===================================================== */
+
+body.dark-theme {
+    --background: #121212;
+    --card: #1d1d1d;
+
+    --text: #f4f4f4;
+    --text-secondary: #aaaaaa;
+    --text-light: #777777;
+
+    --border: #303030;
+
+    --primary-light: #29251c;
+
+    --shadow:
+        0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    background: var(--card);
+
+    border-right: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1100;
+
+    transition:
+        width var(--transition),
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+}
+
+
+/* =====================================================
+   SIDEBAR LOGO
+===================================================== */
+
+.sidebar-logo {
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+    color: var(--text);
+}
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.15;
+
+    min-width: 0;
+}
+
+.logo-text strong {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+.logo-text span {
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: var(--primary);
+
+    letter-spacing: 1.5px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   SIDEBAR NAV
+===================================================== */
+
+.sidebar-nav {
+    flex: 1;
+
+    padding: 20px 14px;
+
+    overflow-y: auto;
+}
+
+.nav-label {
+    margin: 0 10px 9px;
+
+    color: var(--text-light);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+}
+
+.nav-item {
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 12px;
+
+    margin-bottom: 4px;
+
+    border-radius: 10px;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+.nav-item i {
+    width: 18px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    flex-shrink: 0;
+}
+
+.nav-item:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.nav-item.active {
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-weight: 600;
+}
+
+.nav-divider {
+    height: 1px;
+
+    margin: 16px 10px;
+
+    background: var(--border);
+}
+
+
+/* =====================================================
+   SIDEBAR FOOTER
+===================================================== */
+
+.sidebar-footer {
+    padding: 14px;
+
+    border-top: 1px solid var(--border);
+}
+
+.sidebar-help {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    border-radius: 11px;
+
+    background: var(--primary-light);
+}
+
+.help-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+.sidebar-help div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.sidebar-help strong {
+    font-size: 10px;
+
+    color: var(--text);
+}
+
+.sidebar-help span {
+    margin-top: 2px;
+
+    font-size: 8px;
+
+    color: var(--text-secondary);
+
+    white-space: nowrap;
+}
+
+.back-home {
+    min-height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 12px;
+
+    border-radius: 10px;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+.back-home:hover {
+    background: var(--primary-light);
+
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+.main-wrapper {
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-width);
+
+    transition:
+        margin-left var(--transition);
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.top-header {
+    position: sticky;
+
+    top: 0;
+
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 26px;
+
+    background: var(--card);
+
+    border-bottom: 1px solid var(--border);
+
+    z-index: 1000;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   HEADER ICON BUTTON
+===================================================== */
+
+.header-icon-btn {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--card);
+
+    color: var(--text-secondary);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.header-icon-btn:hover {
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-color: rgba(184, 149, 74, 0.35);
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--card);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-color: rgba(184, 149, 74, 0.35);
+}
+
+
+/* =====================================================
+   HEADER TITLE
+===================================================== */
+
+.header-title {
+    margin-left: 14px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title span {
+    font-size: 9px;
+
+    color: var(--text-light);
+
+    font-weight: 500;
+
+    letter-spacing: 0.7px;
+}
+
+.header-title h1 {
+    margin: 2px 0 0;
+
+    font-size: 18px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+
+/* =====================================================
+   PROFILE WRAPPER
+===================================================== */
+
+.profile-wrapper {
+    position: relative;
+}
+
+
+/* =====================================================
+   PROFILE BUTTON
+===================================================== */
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 4px 6px 4px 4px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition);
+}
+
+.profile-btn:hover {
+    background: var(--primary-light);
+}
+
+
+/* =====================================================
+   PROFILE AVATAR
+===================================================== */
+
+.profile-avatar {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    border: 2px solid rgba(184, 149, 74, 0.55);
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   PROFILE IMAGE
+
+   IMPORTANT:
+   Your PHP <img> does not have a special class.
+   Therefore this selector uses .profile-avatar img.
+===================================================== */
+
+.profile-avatar img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 50%;
+
+    margin: 0;
+
+    padding: 0;
+
+    max-width: none;
+
+    max-height: none;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   PROFILE FALLBACK
+===================================================== */
+
+.profile-avatar-fallback {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   PROFILE INFORMATION
+===================================================== */
+
+.profile-info {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+.profile-info strong {
+    max-width: 150px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+.profile-info span {
+    margin-top: 2px;
+
+    font-size: 8px;
+
+    color: var(--text-secondary);
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   PROFILE ARROW
+===================================================== */
+
+.profile-arrow {
+    margin-left: 3px;
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+    transition:
+        transform var(--transition);
+}
+
+.profile-wrapper.open .profile-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =====================================================
+   PROFILE DROPDOWN
+===================================================== */
+
+.profile-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 0;
+
+    width: 270px;
+
+    padding: 8px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: var(--card);
+
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-6px)
+        scale(0.98);
+
+    transform-origin: top right;
+
+    transition:
+        opacity var(--transition),
+        visibility var(--transition),
+        transform var(--transition);
+
+    z-index: 1500;
+}
+
+.profile-wrapper.open .profile-dropdown {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =====================================================
+   DROPDOWN USER
+===================================================== */
+
+.dropdown-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 12px;
+}
+
+.dropdown-user > div:last-child {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.dropdown-user strong {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 11px;
+
+    color: var(--text);
+}
+
+.dropdown-user span {
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 8px;
+
+    color: var(--text-secondary);
+}
+
+
+/* =====================================================
+   DROPDOWN AVATAR
+===================================================== */
+
+.dropdown-avatar {
+    position: relative;
+
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    border: 2px solid rgba(184, 149, 74, 0.55);
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   DROPDOWN PROFILE IMAGE
+
+   IMPORTANT:
+   Your PHP <img> does not have a special class.
+   Therefore this selector uses .dropdown-avatar img.
+===================================================== */
+
+.dropdown-avatar img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 50%;
+
+    margin: 0;
+
+    padding: 0;
+
+    max-width: none;
+
+    max-height: none;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   DROPDOWN FALLBACK
+===================================================== */
+
+.dropdown-avatar-fallback {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   DROPDOWN DIVIDER
+===================================================== */
+
+.dropdown-divider {
+    height: 1px;
+
+    margin: 6px 4px;
+
+    background: var(--border);
+}
+
+
+/* =====================================================
+   DROPDOWN LINKS
+===================================================== */
+
+.profile-dropdown > a,
+.profile-dropdown > button {
+    width: 100%;
+
+    min-height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 11px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+.profile-dropdown > a i,
+.profile-dropdown > button i {
+    width: 17px;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+.profile-dropdown > a:hover,
+.profile-dropdown > button:hover {
+    background: var(--primary-light);
+
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.profile-dropdown .logout-link {
+    color: var(--danger);
+}
+
+.profile-dropdown .logout-link:hover {
+    background: rgba(200, 76, 76, 0.08);
+
+    color: var(--danger);
+}
+
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
+.admin-page-content {
+    min-height: calc(100vh - var(--header-height));
+
+    padding: 25px;
+
+    background: var(--background);
+
+    transition:
+        background var(--transition);
+}
+
+
+/* =====================================================
+   SIDEBAR COLLAPSED
+===================================================== */
+
+body.sidebar-collapsed .sidebar {
+    width: var(--sidebar-collapsed-width);
+}
+
+body.sidebar-collapsed .main-wrapper {
+    margin-left: var(--sidebar-collapsed-width);
+}
+
+body.sidebar-collapsed .logo-text,
+body.sidebar-collapsed .nav-label,
+body.sidebar-collapsed .nav-item span,
+body.sidebar-collapsed .sidebar-help > div:last-child,
+body.sidebar-collapsed .back-home span {
+    display: none;
+}
+
+body.sidebar-collapsed .sidebar-logo {
+    justify-content: center;
+
+    padding: 0;
+}
+
+body.sidebar-collapsed .logo-link {
+    justify-content: center;
+}
+
+body.sidebar-collapsed .nav-item {
+    justify-content: center;
+
+    padding: 0;
+}
+
+body.sidebar-collapsed .nav-item i {
+    width: auto;
+}
+
+body.sidebar-collapsed .sidebar-help {
+    justify-content: center;
+
+    padding: 8px;
+}
+
+body.sidebar-collapsed .back-home {
+    justify-content: center;
+
+    padding: 0;
+}
+
+
+/* =====================================================
+   SIDEBAR OVERLAY
+===================================================== */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 1050;
+
+    transition:
+        opacity var(--transition),
+        visibility var(--transition);
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =====================================================
+   DARK THEME PROFILE
+===================================================== */
+
+body.dark-theme .profile-avatar,
+body.dark-theme .dropdown-avatar {
+    border-color: rgba(184, 149, 74, 0.65);
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .profile-avatar-fallback,
+body.dark-theme .dropdown-avatar-fallback {
+    color: #d0ac62;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .main-wrapper {
+        margin-left: 0;
+    }
+
+    body.sidebar-collapsed .main-wrapper {
+        margin-left: 0;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar-toggle-btn {
+        display: none;
+    }
+
+    .profile-info {
+        display: none;
+    }
+
+    .profile-arrow {
+        display: none;
+    }
+
+    .admin-page-content {
+        padding: 18px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .top-header {
+        padding: 0 15px;
+    }
+
+    .header-actions {
+        gap: 7px;
+    }
+
+    .header-title h1 {
+        font-size: 16px;
+    }
+
+    .header-title span {
+        font-size: 8px;
+    }
+
+    .profile-dropdown {
+        right: -5px;
+
+        width: 250px;
+    }
+
+    .profile-avatar {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+    }
+
+    .admin-page-content {
+        padding: 15px;
+    }
+}

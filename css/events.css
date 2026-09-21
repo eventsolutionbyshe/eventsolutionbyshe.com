@@ -1,0 +1,2754 @@
+/* =========================================================
+   EVENTS PAGE
+   EVENT SOLUTIONS BY S.H.E.
+========================================================= */
+
+:root {
+    --gold: #b99445;
+
+    --gold-dark: #9d7a32;
+
+    --gold-light: #d8bd7a;
+
+    --peach: #f3c7a8;
+
+    --peach-light: #f9e4d5;
+
+    --cream: #fcfaf7;
+
+    --cream-dark: #f5efe6;
+
+    --white: #ffffff;
+
+    --black: #181818;
+
+    --dark: #242424;
+
+    --text: #333333;
+
+    --muted: #777777;
+
+    --border: rgba(185, 148, 69, 0.18);
+
+    --shadow-sm: 0 8px 24px rgba(24, 24, 24, 0.06);
+
+    --shadow-md: 0 16px 40px rgba(24, 24, 24, 0.1);
+
+    --shadow-lg: 0 24px 55px rgba(24, 24, 24, 0.14);
+}
+
+/* =========================================================
+   DARK MODE VARIABLES
+========================================================= */
+
+html.dark-mode {
+    --gold: #d8bd7a;
+
+    --gold-dark: #c5a45d;
+
+    --gold-light: #ead39b;
+
+    --peach: #d9a985;
+
+    --peach-light: #3a2c25;
+
+    --cream: #171717;
+
+    --cream-dark: #222222;
+
+    --white: #202020;
+
+    --black: #f7f4ef;
+
+    --dark: #f7f4ef;
+
+    --text: #e8e4de;
+
+    --muted: #a8a198;
+
+    --border: rgba(216, 189, 122, 0.18);
+
+    --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.28);
+
+    --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.38);
+
+    --shadow-lg: 0 24px 55px rgba(0, 0, 0, 0.5);
+
+    color-scheme: dark;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    background: linear-gradient(180deg, #fcfaf7 0%, #f8f3ec 100%);
+
+    color: var(--text);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.events-hero {
+    position: relative;
+
+    min-height: 410px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg, rgba(24, 24, 24, 0.72), rgba(24, 24, 24, 0.42)),
+        url("../images/img2.jpeg") center / cover no-repeat;
+
+    overflow: hidden;
+}
+
+.events-hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+
+    pointer-events: none;
+}
+
+.events-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(135deg, rgba(185, 148, 69, 0.16), rgba(243, 199, 168, 0.06));
+
+    pointer-events: none;
+}
+
+.events-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    text-align: center;
+
+    color: var(--white);
+}
+
+.events-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color: var(--peach);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+.events-hero h1 {
+    margin: 0;
+    font-size: clamp(45px, 7vw, 78px);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.events-hero h1 span {
+    display: inline-block;
+
+    margin-left: 7px;
+
+    font-family: "Monsieur La Doulaise", cursive;
+
+    color: var(--peach);
+
+    font-weight: 400;
+}
+
+.events-hero p {
+    margin: 22px 0 0;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 13px;
+
+    font-weight: 300;
+
+    letter-spacing: 0.3px;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.events-page {
+    width: 100%;
+    padding: 75px 20px 85px;
+}
+
+.events-section {
+    width: min(1150px, 100%);
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.events-heading {
+    max-width: 720px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 11px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.events-heading h2 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: clamp(31px, 5vw, 45px);
+
+    font-weight: 600;
+
+    letter-spacing: -0.8px;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+.events-heading p {
+    max-width: 600px;
+
+    margin: 14px auto 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    font-family: "Poppins", sans-serif;
+}
+
+/* =========================================================
+   SEARCH + FILTER
+========================================================= */
+
+.events-controls {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+    padding: 16px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(185, 148, 69, 0.16);
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow-sm);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.events-controls:focus-within {
+    border-color: rgba(185, 148, 69, 0.32);
+
+    box-shadow: 0 12px 35px rgba(24, 24, 24, 0.08);
+}
+
+.event-search {
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.event-search svg {
+    position: absolute;
+
+    top: 50%;
+
+    left: 16px;
+
+    width: 18px;
+
+    height: 18px;
+
+    transform: translateY(-50%);
+
+    fill: none;
+
+    stroke: var(--gold);
+
+    stroke-width: 1.8;
+
+    pointer-events: none;
+}
+
+.event-search input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 16px 0 47px;
+
+    border: 1px solid #e2ddd5;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: #fcfaf7;
+
+    color: var(--black);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.event-search input:focus {
+    border-color: var(--gold);
+
+    background: var(--white);
+
+    box-shadow: 0 0 0 4px rgba(185, 148, 69, 0.08);
+}
+
+.event-search input::placeholder {
+    color: #aaa;
+}
+
+/* =========================================================
+   EVENT FILTER
+========================================================= */
+
+.event-filter {
+    width: 220px;
+
+    flex: 0 0 220px;
+}
+
+.event-filter label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--black);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+.event-filter select {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 14px;
+
+    border: 1px solid #e2ddd5;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: #fcfaf7;
+
+    color: var(--black);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.event-filter select:focus {
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(185, 148, 69, 0.08);
+}
+
+/* =========================================================
+   GUEST NOTICE
+========================================================= */
+
+.guest-notice {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    padding: 14px 17px;
+
+    background: linear-gradient(135deg, #fffaf4, #fdf5ed);
+
+    border: 1px solid rgba(185, 148, 69, 0.22);
+
+    border-radius: 5px;
+
+    box-shadow: 0 5px 18px rgba(24, 24, 24, 0.035);
+}
+
+.guest-notice-icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--peach-light);
+}
+
+.guest-notice-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: var(--gold-dark);
+    stroke-width: 1.7;
+}
+
+.guest-notice-content {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.guest-notice-content strong {
+    color: var(--black);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.guest-notice-content span {
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.guest-login-button {
+    flex: 0 0 auto;
+
+    padding: 10px 19px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.guest-login-button:hover {
+    background: var(--gold);
+
+    color: var(--black);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(24, 24, 24, 0.12);
+}
+
+/* =========================================================
+   RESULT COUNT
+========================================================= */
+
+.package-result-info {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 28px;
+
+    margin: 2px 0 12px 2px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   PACKAGE GRID
+   2 CARDS PER ROW
+========================================================= */
+
+.packages-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+
+    width: 100%;
+
+    align-items: stretch;
+}
+
+/* =========================================================
+   HIDDEN CARD - USED BY PAGINATION
+========================================================= */
+
+.package-card.is-hidden {
+    display: none !important;
+}
+
+/* =========================================================
+   PACKAGE CARD
+========================================================= */
+
+.package-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        220px;
+
+    width: 100%;
+
+    height: 540px;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #fffefa 0%, #f7eee1 100%);
+
+    border: 1px solid rgba(185, 148, 69, 0.25);
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(185, 148, 69, 0.42);
+
+    box-shadow: var(--shadow-lg);
+}
+
+/* =========================================================
+   ALWAYS IMAGE ON RIGHT
+========================================================= */
+
+.package-card:nth-child(odd),
+.package-card:nth-child(even) {
+    grid-template-columns:
+        minmax(0, 1fr)
+        220px;
+}
+
+.package-card:nth-child(odd) .package-content,
+.package-card:nth-child(even) .package-content {
+    order: 1;
+}
+
+.package-card:nth-child(odd) .package-image,
+.package-card:nth-child(even) .package-image {
+    order: 2;
+}
+
+/* =========================================================
+   CARD TOP DECORATION
+========================================================= */
+
+.package-card::before {
+    content: "•  •  •  •";
+    position: absolute;
+    top: 11px;
+    left: 18px;
+    z-index: 20;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* =========================================================
+   CARD BOTTOM DECORATION
+========================================================= */
+
+.package-card::after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    width: 60px;
+    height: 40px;
+    z-index: 20;
+    background: radial-gradient(circle, rgba(185, 148, 69, 0.28) 1.3px, transparent 2.3px);
+
+    background-size: 8px 8px;
+    pointer-events: none;
+}
+
+/* =========================================================
+   PACKAGE CONTENT
+========================================================= */
+
+.package-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    padding: 43px 26px 27px;
+
+    background: linear-gradient(135deg, rgba(255, 254, 250, 0.98), rgba(250, 244, 235, 0.98));
+}
+
+/* =========================================================
+   PACKAGE BRAND
+========================================================= */
+
+.package-brand {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--gold-dark);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   PACKAGE TITLE
+========================================================= */
+
+.package-content h3 {
+    position: relative;
+
+    z-index: 5;
+
+    margin: 0;
+
+    max-width: 300px;
+
+    color: var(--black);
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 37px;
+
+    line-height: 1.03;
+
+    font-weight: 400;
+
+    letter-spacing: -0.5px;
+
+    text-transform: uppercase;
+
+    overflow-wrap: break-word;
+}
+
+.package-content h3::after {
+    content: "";
+
+    display: block;
+
+    width: 43px;
+
+    height: 2px;
+
+    margin-top: 11px;
+
+    background: var(--gold);
+}
+
+/* =========================================================
+   EVENT TYPE
+========================================================= */
+
+.package-type {
+    width: fit-content;
+
+    max-width: 100%;
+
+    margin-top: 11px;
+
+    padding: 6px 9px;
+
+    background: var(--peach-light);
+
+    color: var(--gold-dark);
+
+    border: 1px solid rgba(185, 148, 69, 0.2);
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    line-height: 1.25;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.package-divider {
+    width: 36px;
+
+    height: 2px;
+
+    margin: 12px 0 11px;
+
+    background: var(--gold);
+}
+
+/* =========================================================
+   INCLUSIONS
+   IMPORTANT BUTTON FIX
+========================================================= */
+
+.package-inclusions {
+    position: relative;
+    z-index: 12;
+    width: 100%;
+
+    max-width: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    padding-bottom: 58px;
+
+    overflow: hidden;
+}
+
+.package-inclusions h4 {
+    flex: 0 0 auto;
+
+    margin: 0 0 8px;
+
+    color: var(--black);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   INCLUSION LIST
+========================================================= */
+
+.package-inclusions ul {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    margin: 0;
+
+    padding: 0 7px 4px 0;
+
+    list-style: none;
+
+    scroll-behavior: smooth;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.package-inclusions ul::-webkit-scrollbar {
+    width: 4px;
+}
+
+.package-inclusions ul::-webkit-scrollbar-track {
+    background: rgba(185, 148, 69, 0.07);
+
+    border-radius: 5px;
+}
+
+.package-inclusions ul::-webkit-scrollbar-thumb {
+    background: rgba(185, 148, 69, 0.38);
+
+    border-radius: 5px;
+}
+
+.package-inclusions ul::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+.package-inclusions ul {
+    scrollbar-width: thin;
+
+    scrollbar-color: rgba(185, 148, 69, 0.4) rgba(185, 148, 69, 0.07);
+}
+
+/* =========================================================
+   INCLUSION ITEMS
+========================================================= */
+
+.package-inclusions li {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 7px;
+
+    flex: 0 0 auto;
+
+    padding: 6px 0;
+
+    border-bottom: 1px solid rgba(185, 148, 69, 0.12);
+
+    color: #444;
+
+    font-size: 8.5px;
+
+    line-height: 1.55;
+}
+
+.package-inclusions li:last-child {
+    border-bottom: none;
+}
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
+.check-icon {
+    flex: 0 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 13px;
+
+    height: 13px;
+
+    margin-top: 1px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+}
+
+.check-icon svg {
+    width: 7px;
+
+    height: 7px;
+
+    fill: none;
+
+    stroke: var(--gold-dark);
+
+    stroke-width: 2.2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+/* =========================================================
+   LOCKED CONTENT
+========================================================= */
+
+.package-locked {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex: 0 0 auto;
+
+    margin-top: 8px;
+
+    color: var(--gold-dark);
+
+    font-size: 8.5px;
+
+    font-weight: 600;
+}
+
+.lock-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 16px;
+
+    height: 16px;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    background: var(--peach-light);
+}
+
+.lock-icon svg {
+    width: 8px;
+
+    height: 8px;
+
+    fill: none;
+
+    stroke: var(--gold-dark);
+
+    stroke-width: 1.8;
+}
+
+.login-required-text {
+    flex: 0 0 auto;
+
+    max-width: 250px;
+
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   LOGIN BUTTON
+   ALWAYS VISIBLE
+========================================================= */
+
+.package-login-button {
+    position: absolute;
+
+    z-index: 100;
+
+    bottom: 0;
+
+    left: 50%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    width: max-content;
+
+    min-width: 145px;
+
+    height: 38px;
+
+    padding: 0 14px;
+
+    transform: translateX(-50%);
+
+    background: var(--black);
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.package-login-button svg {
+    width: 11px;
+
+    height: 11px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+}
+
+.package-login-button:hover {
+    background: var(--gold);
+
+    color: var(--black);
+
+    transform: translateX(-50%) translateY(-2px);
+
+    box-shadow: 0 7px 16px rgba(24, 24, 24, 0.16);
+}
+
+/* =========================================================
+   BOOK BUTTON
+   ALWAYS VISIBLE
+========================================================= */
+
+.package-button {
+    position: absolute;
+
+    z-index: 100;
+
+    bottom: 0;
+
+    left: 50%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    width: 115px;
+
+    min-width: 115px;
+
+    height: 38px;
+
+    padding: 0 12px;
+
+    transform: translateX(-50%);
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.package-button svg {
+    width: 11px;
+
+    height: 11px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+}
+
+.package-button:hover {
+    background: var(--black);
+
+    color: var(--white);
+
+    transform: translateX(-50%) translateY(-2px);
+
+    box-shadow: 0 7px 16px rgba(24, 24, 24, 0.16);
+}
+
+/* =========================================================
+   BOTTOM DECORATION
+========================================================= */
+
+.package-bottom-decoration {
+    position: absolute;
+
+    bottom: 10px;
+
+    left: 18px;
+
+    z-index: 25;
+
+    display: flex;
+
+    gap: 5px;
+
+    pointer-events: none;
+}
+
+.package-bottom-decoration span {
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    opacity: 0.6;
+}
+
+/* =========================================================
+   RIGHT IMAGE
+========================================================= */
+
+.package-image {
+    position: relative;
+
+    order: 2;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 540px;
+
+    overflow: hidden;
+
+    background: #e8e1d8;
+
+    z-index: 5;
+}
+
+.package-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.package-card:hover .package-image img {
+    transform: scale(1.055);
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+   NEVER BLOCKS BUTTON
+========================================================= */
+
+.package-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background: linear-gradient(
+        90deg,
+        rgba(24, 24, 24, 0.2),
+        rgba(24, 24, 24, 0.02) 65%,
+        transparent
+    );
+
+    pointer-events: none !important;
+}
+
+/* =========================================================
+   IMAGE DECORATION
+========================================================= */
+
+.image-decoration {
+    position: absolute;
+
+    top: 14px;
+
+    right: 11px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    z-index: 8;
+
+    pointer-events: none;
+}
+
+.image-decoration span {
+    display: block;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--peach);
+
+    opacity: 0.85;
+}
+
+/* =========================================================
+   NO PACKAGES
+========================================================= */
+
+.no-packages {
+    grid-column: 1 / -1;
+
+    width: min(520px, 100%);
+
+    margin: 0 auto;
+
+    padding: 65px 20px;
+
+    text-align: center;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.no-packages-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 50px;
+
+    height: 50px;
+
+    margin: 0 auto 14px;
+
+    border-radius: 50%;
+
+    background: var(--peach-light);
+}
+
+.no-packages-icon svg {
+    width: 23px;
+
+    height: 23px;
+
+    fill: none;
+
+    stroke: var(--gold-dark);
+
+    stroke-width: 1.6;
+}
+
+.no-packages h3 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 18px;
+}
+
+.no-packages p {
+    margin: 7px 0 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   NO SEARCH RESULTS
+========================================================= */
+
+.no-search-results {
+    display: none;
+
+    width: min(520px, 100%);
+
+    margin: 25px auto 0;
+
+    padding: 65px 20px;
+
+    text-align: center;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.no-results-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 50px;
+
+    height: 50px;
+
+    margin: 0 auto 14px;
+
+    border-radius: 50%;
+
+    background: var(--peach-light);
+}
+
+.no-results-icon svg {
+    width: 22px;
+
+    height: 22px;
+
+    fill: none;
+
+    stroke: var(--gold-dark);
+
+    stroke-width: 1.6;
+}
+
+.no-search-results h3 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 18px;
+}
+
+.no-search-results p {
+    margin: 7px 0 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.events-pagination {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin: 32px 0 5px;
+
+    min-height: 42px;
+}
+
+.pagination-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    padding: 0;
+
+    border: 1px solid rgba(185, 148, 69, 0.2);
+
+    border-radius: 5px;
+
+    background: var(--white);
+
+    color: var(--black);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    border-color: var(--gold);
+
+    background: var(--peach-light);
+
+    box-shadow: 0 5px 14px rgba(24, 24, 24, 0.07);
+}
+
+.pagination-button.active {
+    border-color: var(--gold);
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    box-shadow: 0 6px 16px rgba(185, 148, 69, 0.22);
+}
+
+.pagination-button.arrow {
+    width: 40px;
+
+    font-size: 14px;
+}
+
+.pagination-button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+.pagination-ellipsis {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 25px;
+
+    height: 38px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.events-cta {
+    position: relative;
+
+    padding: 80px 20px;
+
+    background: linear-gradient(135deg, #181818, #292929);
+
+    overflow: hidden;
+}
+
+.events-cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+
+    height: 400px;
+
+    top: -230px;
+
+    right: -140px;
+
+    border: 1px solid rgba(185, 148, 69, 0.2);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.events-cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(650px, 100%);
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: var(--white);
+}
+
+.events-cta-content > span {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: var(--peach);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.events-cta h2 {
+    margin: 0;
+
+    font-size: clamp(30px, 5vw, 45px);
+
+    font-weight: 500;
+}
+
+.events-cta h2 strong {
+    display: block;
+
+    color: var(--gold);
+
+    font-weight: 500;
+}
+
+.events-cta p {
+    max-width: 520px;
+
+    margin: 15px auto 25px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 23px;
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.cta-button svg {
+    width: 15px;
+
+    height: 15px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+}
+
+.cta-button:hover {
+    background: var(--peach);
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+    .events-section {
+        width: min(950px, 100%);
+    }
+
+    .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .package-card,
+    .package-card:nth-child(even),
+    .package-card:nth-child(odd) {
+        grid-template-columns:
+            minmax(0, 1fr)
+            175px;
+
+        height: 510px;
+    }
+
+    .package-image,
+    .package-card:nth-child(even) .package-image,
+    .package-card:nth-child(odd) .package-image {
+        min-height: 510px;
+    }
+
+    .package-content,
+    .package-card:nth-child(even) .package-content,
+    .package-card:nth-child(odd) .package-content {
+        padding: 40px 18px 24px;
+    }
+
+    .package-content h3 {
+        max-width: 250px;
+
+        font-size: 33px;
+    }
+
+    .package-inclusions {
+        max-width: 230px;
+    }
+
+    .package-button {
+        width: 105px;
+
+        min-width: 105px;
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+    .events-page {
+        padding: 60px 15px 70px;
+    }
+
+    .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .package-card,
+    .package-card:nth-child(even),
+    .package-card:nth-child(odd) {
+        grid-template-columns:
+            minmax(0, 1fr)
+            135px;
+
+        height: 480px;
+    }
+
+    .package-image,
+    .package-card:nth-child(even) .package-image,
+    .package-card:nth-child(odd) .package-image {
+        min-height: 480px;
+    }
+
+    .package-content,
+    .package-card:nth-child(even) .package-content,
+    .package-card:nth-child(odd) .package-content {
+        padding: 36px 11px 22px 14px;
+    }
+
+    .package-content h3 {
+        max-width: 180px;
+
+        font-size: 29px;
+    }
+
+    .package-brand {
+        font-size: 7px;
+    }
+
+    .package-type {
+        font-size: 6.5px;
+
+        padding: 4px 6px;
+    }
+
+    .package-inclusions {
+        max-width: 180px;
+
+        padding-bottom: 52px;
+    }
+
+    .package-inclusions h4 {
+        font-size: 8.5px;
+    }
+
+    .package-inclusions li {
+        font-size: 7px;
+
+        padding: 4.5px 0;
+    }
+
+    .check-icon {
+        width: 10px;
+
+        height: 10px;
+    }
+
+    .package-locked,
+    .login-required-text {
+        font-size: 7px;
+    }
+
+    .package-login-button,
+    .package-button {
+        height: 34px;
+
+        font-size: 6.7px;
+    }
+
+    .package-login-button {
+        min-width: 120px;
+    }
+
+    .package-button {
+        width: 82px;
+
+        min-width: 82px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .events-hero {
+        min-height: 330px;
+    }
+
+    .events-hero h1 {
+        font-size: 45px;
+    }
+
+    .events-hero h1 span {
+        display: block;
+
+        margin: 5px 0 0;
+    }
+
+    .events-page {
+        padding: 50px 15px 60px;
+    }
+
+    .events-controls {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 15px;
+    }
+
+    .event-filter {
+        width: 100%;
+
+        flex: none;
+    }
+
+    .guest-notice {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+    .guest-notice-content {
+        flex: 1 1 calc(100% - 55px);
+    }
+
+    .guest-login-button {
+        width: 100%;
+
+        margin-top: 3px;
+
+        text-align: center;
+    }
+
+    /* =====================================================
+       ONE COLUMN
+    ===================================================== */
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .package-card,
+    .package-card:nth-child(even),
+    .package-card:nth-child(odd) {
+        grid-template-columns:
+            minmax(0, 1fr)
+            150px;
+
+        height: 460px;
+    }
+
+    .package-image,
+    .package-card:nth-child(even) .package-image,
+    .package-card:nth-child(odd) .package-image {
+        min-height: 460px;
+    }
+
+    .package-content,
+    .package-card:nth-child(even) .package-content,
+    .package-card:nth-child(odd) .package-content {
+        padding: 35px 10px 19px 14px;
+    }
+
+    .package-content h3 {
+        max-width: 180px;
+
+        font-size: 26px;
+    }
+
+    .package-brand {
+        font-size: 6.5px;
+    }
+
+    .package-type {
+        font-size: 6.2px;
+
+        padding: 4px 5px;
+    }
+
+    .package-inclusions {
+        max-width: 290px;
+        padding-bottom: 50px;
+    }
+
+    .package-inclusions h4 {
+        font-size: 10px;
+    }
+
+    .package-inclusions li {
+        font-size: 9px;
+
+        padding: 4.5px 0;
+    }
+
+    .check-icon {
+        width: 9px;
+        height: 9px;
+    }
+
+    .package-login-button,
+    .package-button {
+        height: 32px;
+        font-size: 9px;
+        padding: 0 6px;
+    }
+
+    .package-login-button {
+        min-width: 105px;
+    }
+
+    .package-button {
+        width: 100px;
+        min-width: 72px;
+    }
+
+    .events-pagination {
+        margin-top: 25px;
+        gap: 5px;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 400px) {
+    .package-card,
+    .package-card:nth-child(even),
+    .package-card:nth-child(odd) {
+        grid-template-columns:
+            minmax(0, 1fr)
+            105px;
+
+        height: 500px;
+    }
+
+    .package-image,
+    .package-card:nth-child(even) .package-image,
+    .package-card:nth-child(odd) .package-image {
+        min-height: 500px;
+    }
+
+    .package-content,
+    .package-card:nth-child(even) .package-content,
+    .package-card:nth-child(odd) .package-content {
+        padding: 39px 8px 23px 13px;
+    }
+
+    .package-content h3 {
+        max-width: 150px;
+
+        font-size: 27px;
+    }
+
+    .package-brand {
+        font-size: 7px;
+    }
+
+    .package-type {
+        font-size: 6.5px;
+
+        padding: 4px 5px;
+    }
+
+    .package-inclusions {
+        max-width: 145px;
+
+        padding-bottom: 52px;
+    }
+
+    .package-inclusions h4 {
+        font-size: 8.5px;
+    }
+
+    .package-inclusions li {
+        font-size: 7px;
+
+        padding: 5px 0;
+    }
+
+    .package-card::before {
+        top: 10px;
+
+        left: 13px;
+
+        font-size: 9px;
+    }
+
+    .package-button {
+        width: 77px;
+
+        min-width: 77px;
+
+        height: 33px;
+
+        padding: 0 9px;
+
+        font-size: 7px;
+    }
+
+    .package-login-button {
+        min-width: 105px;
+
+        height: 33px;
+
+        font-size: 6.5px;
+    }
+
+    /* =====================================================
+       SMALLER PAGINATION
+    ===================================================== */
+
+    .pagination-button {
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 9px;
+    }
+
+    .pagination-button.arrow {
+        width: 35px;
+    }
+
+    .pagination-ellipsis {
+        width: 18px;
+
+        font-size: 10px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.package-button:focus-visible,
+.package-login-button:focus-visible,
+.pagination-button:focus-visible,
+.guest-login-button:focus-visible,
+.cta-button:focus-visible {
+    outline: 2px solid var(--gold);
+
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* =========================================================
+   DARK MODE OVERRIDES
+   EVENT PAGE
+   Does not change layout or responsive behavior.
+========================================================= */
+
+/* ---------------------------------------------------------
+   GLOBAL
+--------------------------------------------------------- */
+
+html.dark-mode body {
+    background: linear-gradient(180deg, #171717 0%, #1d1b19 100%);
+
+    color: #e8e4de;
+}
+
+/* ---------------------------------------------------------
+   HERO
+--------------------------------------------------------- */
+
+html.dark-mode .events-hero {
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.82), rgba(24, 24, 24, 0.58)),
+        url("../images/img2.jpeg") center / cover no-repeat;
+}
+
+html.dark-mode .events-hero::before {
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.42) 100%);
+}
+
+html.dark-mode .events-hero-overlay {
+    background: linear-gradient(135deg, rgba(216, 189, 122, 0.14), rgba(217, 169, 133, 0.08));
+}
+
+html.dark-mode .events-hero-content {
+    color: #f7f4ef;
+}
+
+html.dark-mode .events-eyebrow {
+    color: var(--peach);
+}
+
+html.dark-mode .events-hero h1 {
+    color: #f7f4ef;
+}
+
+html.dark-mode .events-hero h1 span {
+    color: var(--gold-light);
+}
+
+html.dark-mode .events-hero p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* ---------------------------------------------------------
+   MAIN / HEADING
+--------------------------------------------------------- */
+
+html.dark-mode .events-page {
+    background: transparent;
+}
+
+html.dark-mode .events-heading h2 {
+    color: #f7f4ef;
+}
+
+html.dark-mode .events-heading p {
+    color: var(--muted);
+}
+
+html.dark-mode .section-label {
+    color: var(--gold);
+}
+
+/* ---------------------------------------------------------
+   SEARCH + FILTER
+--------------------------------------------------------- */
+
+html.dark-mode .events-controls {
+    background: rgba(32, 32, 32, 0.94);
+
+    border-color: rgba(216, 189, 122, 0.18);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+html.dark-mode .events-controls:focus-within {
+    border-color: rgba(216, 189, 122, 0.35);
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+html.dark-mode .event-search input {
+    background: #292725;
+
+    color: #f7f4ef;
+
+    border-color: #403c37;
+}
+
+html.dark-mode .event-search input:focus {
+    background: #302e2b;
+
+    border-color: var(--gold);
+
+    box-shadow: 0 0 0 4px rgba(216, 189, 122, 0.1);
+}
+
+html.dark-mode .event-search input::placeholder {
+    color: #88827a;
+}
+
+html.dark-mode .event-filter label {
+    color: #f7f4ef;
+}
+
+html.dark-mode .event-filter select {
+    background: #292725;
+
+    color: #f7f4ef;
+
+    border-color: #403c37;
+}
+
+html.dark-mode .event-filter select:focus {
+    background: #302e2b;
+
+    border-color: var(--gold);
+
+    box-shadow: 0 0 0 4px rgba(216, 189, 122, 0.1);
+}
+
+/* ---------------------------------------------------------
+   GUEST NOTICE
+--------------------------------------------------------- */
+
+html.dark-mode .guest-notice {
+    background: linear-gradient(135deg, #2a2420, #302721);
+
+    border-color: rgba(216, 189, 122, 0.22);
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+}
+
+html.dark-mode .guest-notice-icon {
+    background: #3a2c25;
+}
+
+html.dark-mode .guest-notice-content strong {
+    color: #f7f4ef;
+}
+
+html.dark-mode .guest-notice-content span {
+    color: #a8a198;
+}
+
+html.dark-mode .guest-login-button {
+    background: #f7f4ef;
+
+    color: #181818;
+}
+
+html.dark-mode .guest-login-button:hover {
+    background: var(--gold);
+
+    color: #181818;
+}
+
+/* ---------------------------------------------------------
+   RESULT COUNT
+--------------------------------------------------------- */
+
+html.dark-mode .package-result-info {
+    color: #a8a198;
+}
+
+/* ---------------------------------------------------------
+   PACKAGE CARD
+--------------------------------------------------------- */
+
+html.dark-mode .package-card {
+    background: linear-gradient(135deg, #242220 0%, #1d1b19 100%);
+
+    border-color: rgba(216, 189, 122, 0.24);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+html.dark-mode .package-card:hover {
+    border-color: rgba(216, 189, 122, 0.45);
+
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.5);
+}
+
+html.dark-mode .package-card::after {
+    background: radial-gradient(circle, rgba(216, 189, 122, 0.28) 1.3px, transparent 2.3px);
+}
+
+/* ---------------------------------------------------------
+   PACKAGE CONTENT
+--------------------------------------------------------- */
+
+html.dark-mode .package-content {
+    background: linear-gradient(135deg, rgba(38, 36, 33, 0.98), rgba(29, 27, 25, 0.98));
+}
+
+html.dark-mode .package-brand {
+    color: var(--gold-light);
+}
+
+html.dark-mode .package-content h3 {
+    color: #f7f4ef;
+}
+
+html.dark-mode .package-type {
+    background: #3a2c25;
+
+    color: var(--gold-light);
+
+    border-color: rgba(216, 189, 122, 0.2);
+}
+
+html.dark-mode .package-divider {
+    background: var(--gold);
+}
+
+html.dark-mode .package-inclusions h4 {
+    color: #f7f4ef;
+}
+
+/* ---------------------------------------------------------
+   INCLUSIONS
+--------------------------------------------------------- */
+
+html.dark-mode .package-inclusions li {
+    color: #c9c4bc;
+
+    border-bottom-color: rgba(216, 189, 122, 0.12);
+}
+
+html.dark-mode .package-inclusions ul::-webkit-scrollbar-track {
+    background: rgba(216, 189, 122, 0.08);
+}
+
+html.dark-mode .package-inclusions ul::-webkit-scrollbar-thumb {
+    background: rgba(216, 189, 122, 0.38);
+}
+
+html.dark-mode .package-inclusions ul::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+html.dark-mode .package-inclusions ul {
+    scrollbar-color: rgba(216, 189, 122, 0.4) rgba(216, 189, 122, 0.08);
+}
+
+/* ---------------------------------------------------------
+   CHECK ICON
+--------------------------------------------------------- */
+
+html.dark-mode .check-icon {
+    border-color: var(--gold);
+}
+
+html.dark-mode .check-icon svg {
+    stroke: var(--gold-light);
+}
+
+/* ---------------------------------------------------------
+   LOCKED CONTENT
+--------------------------------------------------------- */
+
+html.dark-mode .package-locked {
+    color: var(--gold-light);
+}
+
+html.dark-mode .login-required-text {
+    color: #a8a198;
+}
+
+html.dark-mode .lock-icon {
+    background: #3a2c25;
+}
+
+html.dark-mode .lock-icon svg {
+    stroke: var(--gold-light);
+}
+
+/* ---------------------------------------------------------
+   LOGIN BUTTON
+--------------------------------------------------------- */
+
+html.dark-mode .package-login-button {
+    background: #f7f4ef;
+
+    color: #181818;
+}
+
+html.dark-mode .package-login-button:hover {
+    background: var(--gold);
+
+    color: #181818;
+}
+
+/* ---------------------------------------------------------
+   BOOK BUTTON
+--------------------------------------------------------- */
+
+html.dark-mode .package-button {
+    background: var(--gold);
+
+    color: #181818;
+}
+
+html.dark-mode .package-button:hover {
+    background: #f7f4ef;
+
+    color: #181818;
+}
+
+/* ---------------------------------------------------------
+   IMAGE
+--------------------------------------------------------- */
+
+html.dark-mode .package-image {
+    background: #292725;
+}
+
+html.dark-mode .package-image-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.08) 65%, transparent);
+}
+
+/* ---------------------------------------------------------
+   IMAGE DECORATION
+--------------------------------------------------------- */
+
+html.dark-mode .image-decoration span {
+    background: var(--peach);
+}
+
+/* ---------------------------------------------------------
+   NO PACKAGES
+--------------------------------------------------------- */
+
+html.dark-mode .no-packages {
+    background: #202020;
+
+    border-color: rgba(216, 189, 122, 0.18);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+html.dark-mode .no-packages h3 {
+    color: #f7f4ef;
+}
+
+html.dark-mode .no-packages p {
+    color: #a8a198;
+}
+
+html.dark-mode .no-packages-icon {
+    background: #3a2c25;
+}
+
+/* ---------------------------------------------------------
+   NO SEARCH RESULTS
+--------------------------------------------------------- */
+
+html.dark-mode .no-search-results {
+    background: #202020;
+
+    border-color: rgba(216, 189, 122, 0.18);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+html.dark-mode .no-search-results h3 {
+    color: #f7f4ef;
+}
+
+html.dark-mode .no-search-results p {
+    color: #a8a198;
+}
+
+html.dark-mode .no-results-icon {
+    background: #3a2c25;
+}
+
+/* ---------------------------------------------------------
+   PAGINATION
+--------------------------------------------------------- */
+
+html.dark-mode .pagination-button {
+    background: #202020;
+
+    color: #f7f4ef;
+
+    border-color: rgba(216, 189, 122, 0.2);
+}
+
+html.dark-mode .pagination-button:hover:not(:disabled) {
+    background: #3a2c25;
+
+    color: #f7f4ef;
+
+    border-color: var(--gold);
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+}
+
+html.dark-mode .pagination-button.active {
+    background: var(--gold);
+
+    color: #181818;
+
+    border-color: var(--gold);
+
+    box-shadow: 0 6px 16px rgba(216, 189, 122, 0.22);
+}
+
+html.dark-mode .pagination-ellipsis {
+    color: #a8a198;
+}
+
+/* ---------------------------------------------------------
+   CTA
+--------------------------------------------------------- */
+
+html.dark-mode .events-cta {
+    background: linear-gradient(135deg, #10100f, #1d1a16);
+}
+
+html.dark-mode .events-cta::before {
+    border-color: rgba(216, 189, 122, 0.2);
+}
+
+html.dark-mode .events-cta-content {
+    color: #f7f4ef;
+}
+
+html.dark-mode .events-cta-content > span {
+    color: var(--peach);
+}
+
+html.dark-mode .events-cta h2 {
+    color: #f7f4ef;
+}
+
+html.dark-mode .events-cta h2 strong {
+    color: var(--gold-light);
+}
+
+html.dark-mode .events-cta p {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+html.dark-mode .cta-button {
+    background: var(--gold);
+
+    color: #181818;
+}
+
+html.dark-mode .cta-button:hover {
+    background: var(--peach);
+
+    color: #181818;
+}
+
+/* =========================================================
+           PAGINATION
+        ========================================================= */
+
+.events-pagination {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 30px auto 10px;
+
+    width: 100%;
+}
+
+.events-pagination button {
+    min-width: 42px;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border, rgba(185, 148, 69, 0.16));
+
+    border-radius: 5px;
+
+    background: var(--white, #ffffff);
+
+    color: var(--text, #333333);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.events-pagination button:hover:not(:disabled) {
+    background: var(--gold, #b99445);
+
+    border-color: var(--gold, #b99445);
+
+    color: var(--white, #ffffff);
+
+    transform: translateY(-1px);
+}
+
+.events-pagination button.active {
+    background: var(--gold, #b99445);
+
+    border-color: var(--gold, #b99445);
+
+    color: var(--white, #ffffff);
+}
+
+.events-pagination button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+/* =========================================================
+           DARK MODE PAGINATION
+        ========================================================= */
+
+html.dark-mode .events-pagination button {
+    background: var(--white, #242424);
+    border-color: rgba(216, 189, 122, 0.18);
+    color: var(--dark, #0e0d0d);
+}
+
+html.dark-mode .events-pagination button:hover:not(:disabled),
+html.dark-mode .events-pagination button.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #181818;
+}
+
+/* =========================================================
+           MOBILE PAGINATION
+        ========================================================= */
+
+@media (max-width: 500px) {
+    .events-pagination {
+        gap: 6px;
+
+        margin-top: 24px;
+    }
+
+    .events-pagination button {
+        min-width: 38px;
+
+        height: 38px;
+
+        padding: 0 10px;
+
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .events-pagination {
+        gap: 5px;
+    }
+
+    .events-pagination button {
+        min-width: 35px;
+
+        height: 35px;
+
+        padding: 0 8px;
+
+        font-size: 11px;
+    }
+}

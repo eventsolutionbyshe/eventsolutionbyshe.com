@@ -1,0 +1,2252 @@
+/* =========================================================
+   EVENT SOLUTIONS BY S.H.E.
+   VIEW VENUE PAGE
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --gold: #b99445;
+    --gold-dark: #9d7a32;
+    --gold-light: #d5b66a;
+
+    --peach: #f3c7a8;
+    --peach-light: #f9e4d5;
+
+    --cream: #fcfaf7;
+    --cream-dark: #f5efe8;
+
+    --white: #ffffff;
+
+    --black: #111111;
+    --dark: #181818;
+    --dark-soft: #242424;
+
+    --text: #333333;
+    --text-light: #777777;
+
+    --border: rgba(185, 148, 69, 0.18);
+
+}
+
+
+/* =========================================================
+   DARK MODE VARIABLES
+========================================================= */
+
+html.dark-mode {
+
+    --gold: #d8bd7a;
+
+    --gold-dark: #c5a45d;
+
+    --gold-light: #ead39b;
+
+    --peach: #d9a985;
+
+    --peach-light: #3a2c25;
+
+    --cream: #171717;
+
+    --cream-dark: #222222;
+
+    --white: #ffffff;
+
+    --black: #f7f4ef;
+
+    --dark: #f7f4ef;
+
+    --text: #e8e4de;
+
+    --muted: #a8a198;
+
+    --border: rgba(216, 189, 122, 0.18);
+
+    --shadow-sm:
+        0 8px 24px rgba(0, 0, 0, 0.28);
+
+    --shadow-md:
+        0 16px 40px rgba(0, 0, 0, 0.38);
+
+    --shadow-lg:
+        0 24px 55px rgba(0, 0, 0, 0.50);
+
+    color-scheme: dark;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    background:
+        var(--cream);
+
+    color:
+        var(--text);
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+::selection {
+
+    background:
+        var(--gold);
+
+    color:
+        var(--white);
+
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.view-venue-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   VENUE HERO
+========================================================= */
+
+.venue-hero {
+
+     position: relative;
+
+    min-height: 410px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(24, 24, 24, 0.72),
+            rgba(24, 24, 24, 0.42)
+        ),
+        url("../images/img2.jpeg")
+        center / cover no-repeat;
+
+    overflow: hidden;
+
+}
+
+
+/* Decorative background */
+
+.venue-hero::before {
+
+     content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(0, 0, 0, 0.20) 100%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.venue-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    bottom: -300px;
+    left: -130px;
+
+    border:
+        1px solid
+        rgba(243, 199, 168, 0.1);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+/* Hero overlay */
+
+.venue-hero-overlay {
+
+     position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(185, 148, 69, 0.16),
+            rgba(243, 199, 168, 0.06)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* Hero content */
+
+.venue-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(900px, 90%);
+
+    text-align: center;
+
+    color: var(--white);
+
+}
+
+
+.venue-label {
+
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color: var(--peach);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+}
+
+
+.venue-hero h1 {
+
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--white);
+    font-size: clamp( 42px, 6vw, 76px );
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -1px;
+    text-wrap: balance;
+
+}
+
+
+.venue-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 24px auto 0;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 300;
+
+}
+
+
+.venue-location span {
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   VENUE DETAILS
+========================================================= */
+
+.venue-details {
+
+    position: relative;
+
+    padding:
+        105px 30px
+        110px;
+
+    background:
+        var(--cream);
+
+}
+
+
+/* Decorative line */
+
+.venue-details::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 1px;
+    height: 70px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--gold)
+        );
+
+    opacity: 0.45;
+
+}
+
+
+.venue-details-container {
+
+    width: min(
+        1180px,
+        100%
+    );
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, 0.92fr);
+
+    gap: 75px;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   VENUE IMAGE
+========================================================= */
+
+.venue-image-wrapper {
+
+    position: relative;
+
+    min-width: 0;
+
+    padding:
+        0 20px
+        20px
+        0;
+
+}
+
+
+/* Gold decorative frame */
+
+.venue-image-wrapper::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -18px;
+    left: -18px;
+
+    width: 95px;
+    height: 95px;
+
+    border-top:
+        2px solid
+        var(--gold);
+
+    border-left:
+        2px solid
+        var(--gold);
+
+    pointer-events: none;
+
+}
+
+
+.venue-image-wrapper::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 95px;
+    height: 95px;
+
+    border-right:
+        2px solid
+        var(--gold);
+
+    border-bottom:
+        2px solid
+        var(--gold);
+
+    pointer-events: none;
+
+}
+
+
+.venue-image {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+
+    height: 520px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background:
+        var(--cream-dark);
+
+    box-shadow:
+        0 22px 55px
+        rgba(
+            24,
+            24,
+            24,
+            0.12
+        );
+
+}
+
+
+/* =========================================================
+   IMAGE PLACEHOLDER
+========================================================= */
+
+.venue-image-placeholder {
+
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee7df,
+            #f8f3ee
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    color:
+        var(--text-light);
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 22px 55px
+        rgba(
+            24,
+            24,
+            24,
+            0.08
+        );
+
+}
+
+
+/* =========================================================
+   VENUE INFORMATION
+========================================================= */
+
+.venue-information {
+
+    min-width: 0;
+
+    padding:
+        10px 0;
+
+}
+
+
+.section-label {
+
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding-bottom: 9px;
+
+    color:
+        var(--gold-dark);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.4px;
+
+    text-transform: uppercase;
+
+}
+
+
+.section-label::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 28px;
+    height: 1px;
+
+    background:
+        var(--gold);
+
+}
+
+
+.venue-information h2 {
+
+    margin:
+        0 0 24px;
+
+    color:
+        var(--black);
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            58px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+/* =========================================================
+   LOCATION INFORMATION
+========================================================= */
+
+.venue-info-location {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+
+    padding:
+        15px 18px;
+
+    border-left:
+        2px solid
+        var(--gold);
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.055
+        );
+
+    color:
+        #5d5d5d;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+.location-icon {
+
+    flex: 0 0 auto;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.venue-description {
+
+    margin-top: 10px;
+
+}
+
+
+.venue-description h3 {
+
+    margin:
+        0 0 13px;
+
+    color:
+        var(--black);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+
+}
+
+
+.venue-description p {
+
+    margin: 0;
+
+    color:
+        #707070;
+
+    font-size: 12px;
+
+    font-weight: 300;
+
+    line-height: 2;
+
+}
+
+
+/* =========================================================
+   VENUE ACTIONS
+========================================================= */
+
+.venue-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 38px;
+
+}
+
+
+.back-button,
+.contact-button {
+
+    min-height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        0 22px;
+
+    border:
+        1px solid
+        transparent;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.back-button {
+
+    border-color:
+        rgba(
+            185,
+            148,
+            69,
+            0.35
+        );
+
+    background:
+        transparent;
+
+    color:
+        var(--gold-dark);
+
+}
+
+
+.back-button:hover {
+
+    background:
+        rgba(
+            185,
+            148,
+            69,
+            0.07
+        );
+
+    border-color:
+        var(--gold);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.contact-button {
+
+    background:
+        var(--black);
+
+    color:
+        var(--white);
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            17,
+            17,
+            17,
+            0.12
+        );
+
+}
+
+
+.contact-button:hover {
+
+    background:
+        var(--gold);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(
+            185,
+            148,
+            69,
+            0.22
+        );
+
+}
+
+
+.contact-button svg {
+
+    width: 15px;
+    height: 15px;
+
+    fill: none;
+
+    stroke:
+        currentColor;
+
+    stroke-width: 1.6;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+}
+
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.venue-cta {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        95px 30px
+        100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171717 0%,
+            #202020 55%,
+            #292929 100%
+        );
+
+    color:
+        var(--white);
+
+    text-align: center;
+
+}
+
+
+/* Large decorative circle */
+
+.venue-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -370px;
+    left: -140px;
+
+    border:
+        1px solid
+        rgba(
+            185,
+            148,
+            69,
+            0.12
+        );
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 50px
+        rgba(
+            185,
+            148,
+            69,
+            0.025
+        ),
+
+        0 0 0 100px
+        rgba(
+            185,
+            148,
+            69,
+            0.015
+        );
+
+    pointer-events: none;
+
+}
+
+
+.venue-cta::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    right: -130px;
+    bottom: -250px;
+
+    border:
+        1px solid
+        rgba(
+            243,
+            199,
+            168,
+            0.08
+        );
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+.venue-cta-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        720px,
+        100%
+    );
+
+    margin: 0 auto;
+
+}
+
+
+.venue-cta-label {
+
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color:
+        var(--gold-light);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+}
+
+
+.venue-cta h2 {
+
+    margin: 0;
+
+    color:
+        var(--white);
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            58px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+}
+
+
+.venue-cta h2 strong {
+
+    display: block;
+
+    color:
+        var(--peach);
+
+    font-family:
+        "Monsieur La Doulaise",
+        cursive;
+
+    font-size:
+        1.15em;
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+}
+
+
+.venue-cta p {
+
+    max-width: 580px;
+
+    margin:
+        25px auto
+        32px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    font-size: 11px;
+
+    font-weight: 300;
+
+    line-height: 1.9;
+
+}
+
+
+.venue-cta-button {
+
+    min-height: 48px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding:
+        0 27px;
+
+    background:
+        var(--gold);
+
+    color:
+        var(--white);
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.4px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.22
+        );
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.venue-cta-button:hover {
+
+    background:
+        var(--gold-dark);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 16px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+
+}
+
+
+.venue-cta-button svg {
+
+    width: 15px;
+    height: 15px;
+
+    fill: none;
+
+    stroke:
+        currentColor;
+
+    stroke-width: 1.6;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+}
+
+
+/* =========================================================
+   MODERN FOOTER
+   EVENT SOLUTIONS BY S.H.E.
+========================================================= */
+
+.site-footer {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111 0%,
+            #181818 48%,
+            #202020 100%
+        );
+
+    color:
+        var(--white);
+
+}
+
+
+/* Decorative circle */
+
+.site-footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: -390px;
+    right: -120px;
+
+    border:
+        1px solid
+        rgba(
+            185,
+            148,
+            69,
+            0.12
+        );
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 45px
+        rgba(
+            185,
+            148,
+            69,
+            0.025
+        ),
+
+        0 0 0 90px
+        rgba(
+            185,
+            148,
+            69,
+            0.018
+        );
+
+    pointer-events: none;
+
+}
+
+
+.site-footer::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    bottom: -220px;
+    left: -100px;
+
+    border:
+        1px solid
+        rgba(
+            243,
+            199,
+            168,
+            0.08
+        );
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   FOOTER CONTAINER
+========================================================= */
+
+.footer-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        1200px,
+        calc(100% - 50px)
+    );
+
+    margin: 0 auto;
+
+    padding:
+        68px 0
+        58px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1.25fr)
+        minmax(430px, 1fr);
+
+    gap: 90px;
+
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.footer-logo {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    padding-bottom: 18px;
+
+    text-decoration: none;
+
+}
+
+
+.footer-logo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 42px;
+    height: 2px;
+
+    background:
+        var(--gold);
+
+    transition:
+        width 0.35s ease;
+
+}
+
+
+.footer-logo:hover::after {
+
+    width: 75px;
+
+}
+
+
+.footer-brand img {
+
+    display: block;
+
+    width: 155px;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+.footer-brand p {
+
+    max-width: 350px;
+
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.56
+        );
+
+    font-size: 11px;
+
+    line-height: 1.9;
+
+    font-weight: 300;
+
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-links {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(100px, 1fr)
+        );
+
+    gap: 42px;
+
+}
+
+
+.footer-links > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    min-width: 0;
+
+}
+
+
+.footer-links h4 {
+
+    position: relative;
+
+    margin:
+        3px 0
+        20px;
+
+    padding-bottom: 9px;
+
+    color:
+        var(--white);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+
+}
+
+
+.footer-links h4::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 24px;
+    height: 1px;
+
+    background:
+        var(--gold);
+
+}
+
+
+/* Footer links */
+
+.footer-links a {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    margin-bottom: 11px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.52
+        );
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.footer-links a::before {
+
+    content: "";
+
+    width: 0;
+    height: 1px;
+
+    margin-right: 0;
+
+    background:
+        var(--gold);
+
+    transition:
+        width 0.25s ease,
+        margin-right 0.25s ease;
+
+}
+
+
+.footer-links a:hover {
+
+    color:
+        var(--white);
+
+    transform:
+        translateX(2px);
+
+}
+
+
+.footer-links a:hover::before {
+
+    width: 9px;
+
+    margin-right: 6px;
+
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 58px;
+
+    padding:
+        16px 25px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.16
+        );
+
+    text-align: center;
+
+}
+
+
+.footer-bottom p {
+
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.38
+        );
+
+    font-size: 9px;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.2px;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+
+    .venue-details {
+
+        padding:
+            85px 25px
+            90px;
+
+    }
+
+
+    .venue-details-container {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 0.9fr);
+
+        gap: 50px;
+
+    }
+
+
+    .venue-image {
+
+        height: 470px;
+
+    }
+
+
+    .venue-image-placeholder {
+
+        height: 470px;
+
+    }
+
+
+    .footer-container {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .footer-brand {
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+
+    .footer-brand p {
+
+        max-width: 450px;
+
+    }
+
+
+    .footer-links {
+
+        width: 100%;
+
+        max-width: 650px;
+
+        margin: 0 auto;
+
+    }
+
+
+    .footer-links > div {
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+
+    .footer-links h4::after {
+
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+
+    }
+
+
+    .footer-links a {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+    .venue-hero {
+
+        min-height: 360px;
+
+        padding:
+            95px 20px
+            75px;
+
+    }
+
+
+    .venue-label {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .venue-hero h1 {
+
+        font-size:
+            clamp(
+                36px,
+                10vw,
+                52px
+            );
+
+    }
+
+
+    .venue-location {
+
+        font-size: 10px;
+
+    }
+
+
+    .venue-details {
+
+        padding:
+            75px 20px
+            80px;
+
+    }
+
+
+    .venue-details-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+    }
+
+
+    .venue-image-wrapper {
+
+        padding:
+            0 12px
+            12px;
+
+    }
+
+
+    .venue-image-wrapper::before {
+
+        top: -12px;
+        left: -12px;
+
+        width: 70px;
+        height: 70px;
+
+    }
+
+
+    .venue-image-wrapper::after {
+
+        right: -1px;
+        bottom: -1px;
+
+        width: 70px;
+        height: 70px;
+
+    }
+
+
+    .venue-image {
+
+        height:
+            min(
+                430px,
+                70vw
+            );
+
+        min-height: 330px;
+
+    }
+
+
+    .venue-image-placeholder {
+
+        height:
+            min(
+                430px,
+                70vw
+            );
+
+        min-height: 330px;
+
+    }
+
+
+    .venue-information {
+
+        padding: 0;
+
+    }
+
+
+    .venue-information h2 {
+
+        font-size:
+            clamp(
+                36px,
+                10vw,
+                50px
+            );
+
+    }
+
+
+    .venue-info-location {
+
+        margin-bottom: 28px;
+
+        font-size: 10px;
+
+    }
+
+
+    .venue-description p {
+
+        font-size: 10.5px;
+
+        line-height: 1.9;
+
+    }
+
+
+    .venue-actions {
+
+        margin-top: 30px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .back-button,
+    .contact-button {
+
+        width: 100%;
+
+    }
+
+
+    /* CTA */
+
+    .venue-cta {
+
+        padding:
+            75px 20px
+            80px;
+
+    }
+
+
+    .venue-cta-label {
+
+        font-size: 7.5px;
+
+        letter-spacing: 2.2px;
+
+    }
+
+
+    .venue-cta h2 {
+
+        font-size:
+            clamp(
+                34px,
+                10vw,
+                48px
+            );
+
+    }
+
+
+    .venue-cta p {
+
+        font-size: 10px;
+
+        line-height: 1.85;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+
+        width:
+            min(
+                calc(100% - 30px),
+                1200px
+            );
+
+        padding:
+            48px 0
+            38px;
+
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+
+    }
+
+
+    .footer-brand img {
+
+        width: 135px;
+
+    }
+
+
+    .footer-brand p {
+
+        max-width: 300px;
+
+        font-size: 10px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .footer-logo {
+
+        margin-bottom: 18px;
+
+        padding-bottom: 15px;
+
+    }
+
+
+    .footer-links {
+
+        grid-template-columns:
+            repeat(
+                3,
+                1fr
+            );
+
+        gap: 15px;
+
+        width: 100%;
+
+    }
+
+
+    .footer-links h4 {
+
+        font-size: 9px;
+
+        letter-spacing: 1.2px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .footer-links a {
+
+        margin-bottom: 9px;
+
+        font-size: 8.5px;
+
+    }
+
+
+    .footer-links a::before {
+
+        display: none;
+
+    }
+
+
+    .footer-links a:hover {
+
+        transform:
+            translateY(-1px);
+
+    }
+
+
+    .footer-bottom {
+
+        min-height: 52px;
+
+        padding:
+            13px 15px;
+
+    }
+
+
+    .footer-bottom p {
+
+        max-width: 330px;
+
+        margin: 0 auto;
+
+        font-size: 8px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+
+    .venue-hero {
+
+        min-height: 330px;
+
+        padding:
+            85px 15px
+            65px;
+
+    }
+
+
+    .venue-hero h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .venue-location {
+
+        font-size: 9px;
+
+    }
+
+
+    .venue-details {
+
+        padding:
+            65px 15px
+            70px;
+
+    }
+
+
+    .venue-image-wrapper {
+
+        padding:
+            0 9px
+            9px;
+
+    }
+
+
+    .venue-image-wrapper::before {
+
+        top: -9px;
+        left: -9px;
+
+        width: 55px;
+        height: 55px;
+
+    }
+
+
+    .venue-image-wrapper::after {
+
+        width: 55px;
+        height: 55px;
+
+    }
+
+
+    .venue-image {
+
+        min-height: 290px;
+
+    }
+
+
+    .venue-image-placeholder {
+
+        min-height: 290px;
+
+    }
+
+
+    .section-label {
+
+        font-size: 8px;
+
+        letter-spacing: 1.8px;
+
+    }
+
+
+    .venue-information h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .venue-description p {
+
+        font-size: 10px;
+
+    }
+
+
+    .venue-cta {
+
+        padding:
+            65px 15px
+            70px;
+
+    }
+
+
+    .venue-cta h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .venue-cta p {
+
+        font-size: 9.5px;
+
+    }
+
+
+    .footer-container {
+
+        width:
+            calc(100% - 24px);
+
+        padding:
+            40px 0
+            30px;
+
+        gap: 32px;
+
+    }
+
+
+    .footer-brand img {
+
+        width: 120px;
+
+    }
+
+
+    .footer-brand p {
+
+        max-width: 270px;
+
+        font-size: 9px;
+
+    }
+
+
+    .footer-links {
+
+        gap: 8px;
+
+    }
+
+
+    .footer-links h4 {
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .footer-links a {
+
+        font-size: 7.5px;
+
+    }
+
+
+    .footer-bottom p {
+
+        font-size: 7.5px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        transition: none !important;
+
+        animation: none !important;
+
+    }
+
+}

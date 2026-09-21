@@ -1,0 +1,599 @@
+/* =========================================================
+   FOOTER
+   Event Solutions by S.H.E.
+========================================================= */
+
+:root {
+    --footer-black: #151515;
+    --footer-dark: #1d1d1d;
+    --footer-dark-soft: #242424;
+
+    --footer-gold: #b99445;
+    --footer-gold-light: #d4b66d;
+    --footer-gold-dark: #92702f;
+
+    --footer-peach: #f3c7a8;
+    --footer-cream: #fcfaf7;
+
+    --footer-text: #d9d9d9;
+    --footer-muted: #a9a9a9;
+
+    --footer-border: rgba(185, 148, 69, 0.25);
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.site-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(185, 148, 69, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(243, 199, 168, 0.06),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #141414 0%,
+            #1b1b1b 45%,
+            #111111 100%
+        );
+
+    color: var(--footer-text);
+
+    overflow: hidden;
+
+    border-top: 1px solid var(--footer-border);
+
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+========================================================= */
+
+.footer-decoration {
+
+    position: absolute;
+
+    border: 1px solid rgba(185, 148, 69, 0.12);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+.footer-decoration-one {
+
+    width: 380px;
+    height: 380px;
+
+    top: -240px;
+    left: -150px;
+
+}
+
+
+.footer-decoration-two {
+
+    width: 320px;
+    height: 320px;
+
+    right: -130px;
+    bottom: -220px;
+
+}
+
+
+/* =========================================================
+   FOOTER CONTAINER
+========================================================= */
+
+.footer-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, 92%);
+
+    margin: 0 auto;
+
+    padding: 75px 0 65px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1.1fr)
+        minmax(420px, 1fr);
+
+    gap: 90px;
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.footer-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    margin-bottom: 22px;
+
+}
+
+
+.footer-logo img {
+
+    display: block;
+
+    width: auto;
+
+    max-width: 190px;
+
+    max-height: 75px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
+}
+
+
+.footer-logo:hover img {
+
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
+}
+
+
+.footer-description {
+    max-width: 350px;
+    margin: 0;
+    color: var(--footer-muted);
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+/* =========================================================
+   GOLD ACCENT
+========================================================= */
+
+.footer-accent-line {
+
+    width: 55px;
+
+    height: 2px;
+
+    margin: 24px 0 16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--footer-gold),
+            var(--footer-peach)
+        );
+
+}
+
+
+.footer-tagline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    color: var(--footer-cream);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+.footer-tagline span {
+
+    transition:
+        color 0.25s ease;
+
+}
+
+
+.footer-tagline span:hover {
+
+    color: var(--footer-gold-light);
+
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-links {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(100px, 1fr));
+
+    gap: 50px;
+
+}
+
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.footer-column h4 {
+
+    position: relative;
+
+    margin: 5px 0 22px;
+
+    color: var(--footer-cream);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+.footer-column h4::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 1px;
+    margin-top: 9px;
+    background: var(--footer-gold);
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+.footer-column a {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 13px;
+    color: var(--footer-muted);
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.footer-column a::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -3px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--footer-gold);
+
+    transition:
+        width 0.25s ease;
+
+}
+
+
+.footer-column a:hover {
+
+    color: var(--footer-cream);
+
+    transform: translateX(4px);
+
+}
+
+
+.footer-column a:hover::before {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.20);
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+.footer-bottom-inner {
+    width: min(1180px, 92%);
+    min-height: 70px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+
+.footer-bottom p {
+    margin: 0;
+    color: #858585;
+    font-size: 11px;
+    line-height: 1.7;
+
+}
+
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+
+}
+
+
+.footer-bottom-links a {
+    color: #999999;
+    font-size: 11px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+}
+
+
+.footer-bottom-links a:hover {
+    color: var(--footer-gold-light);
+}
+
+
+.footer-bottom-links span {
+    color: var(--footer-gold);
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+        padding: 65px 0 55px;
+
+    }
+
+
+    .footer-brand {
+
+        max-width: 520px;
+
+    }
+
+
+    .footer-description {
+
+        max-width: 500px;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .footer-container {
+
+        width: min(92%, 500px);
+
+        padding: 55px 0 45px;
+
+        gap: 45px;
+
+    }
+
+
+    .footer-links {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 40px 30px;
+
+    }
+
+
+    .footer-bottom-inner {
+
+        width: min(92%, 500px);
+        min-height: auto;
+        padding: 22px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        
+
+    }
+
+    
+
+    .footer-bottom-links {
+
+        flex-wrap: wrap;
+
+        white-space: normal;
+
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .footer-container {
+
+        width: 88%;
+
+        padding: 45px 0 40px;
+
+    }
+
+
+    .footer-logo img {
+
+        max-width: 165px;
+
+        max-height: 65px;
+
+    }
+
+
+    .footer-description {
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .footer-links {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px 20px;
+
+    }
+
+
+    .footer-column h4 {
+
+        font-size: 11px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .footer-column a {
+
+        font-size: 12px;
+
+        margin-bottom: 11px;
+
+    }
+
+
+    .footer-tagline {
+
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .footer-bottom-inner {
+
+        width: 88%;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer-logo img,
+    .footer-column a,
+    .footer-column a::before,
+    .footer-tagline span,
+    .footer-bottom-links a {
+
+        transition: none;
+
+    }
+
+}

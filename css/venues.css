@@ -1,0 +1,1775 @@
+/* =========================================================
+VENUES PAGE
+EVENT SOLUTIONS BY S.H.E.
+LIGHT / DARK THEME
+========================================================= */
+
+/* =========================================================
+THEME VARIABLES
+DEFAULT = LIGHT MODE
+========================================================= */
+
+:root {
+    --gold: #b99445;
+
+    --gold-dark: #9d7a32;
+
+    --gold-light: #c8a95f;
+
+    --peach: #e5b99d;
+
+    --peach-light: #f8e4d7;
+
+    --cream: #fcfaf7;
+
+    --cream-dark: #f3eee6;
+
+    --white: #ffffff;
+
+    --black: #181818;
+
+    --dark: #242424;
+
+    --dark-soft: #f7f4ef;
+
+    --dark-card: #ffffff;
+
+    --dark-card-light: #faf8f4;
+
+    --text: #333333;
+
+    --muted: #777777;
+
+    --border: rgba(185, 148, 69, 0.18);
+
+    --page-bg: linear-gradient(180deg, #fcfaf7 0%, #f7f3ed 50%, #f3eee6 100%);
+
+    --hero-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.48));
+
+    --card-bg: #ffffff;
+
+    --card-content-bg: linear-gradient(145deg, #ffffff 0%, #faf8f4 100%);
+
+    --input-bg: #ffffff;
+
+    --input-border: #ddd6cc;
+
+    --input-focus-bg: #ffffff;
+
+    --shadow-sm: 0 8px 24px rgba(24, 24, 24, 0.06);
+
+    --shadow-md: 0 16px 40px rgba(24, 24, 24, 0.09);
+
+    --shadow-lg: 0 24px 55px rgba(24, 24, 24, 0.14);
+}
+
+/* =========================================================
+DARK MODE
+Activated by:
+
+   <html class="dark-mode">
+========================================================= */
+
+html.dark-mode {
+    --gold: #c9a45c;
+
+    --gold-dark: #a9843e;
+
+    --gold-light: #e0c887;
+
+    --peach: #e5b99d;
+
+    --peach-light: #3a2d29;
+
+    --cream: #f3eee6;
+
+    --cream-dark: #26231f;
+
+    --white: #ffffff;
+
+    --black: #0b0b0b;
+
+    --dark: #111111;
+
+    --dark-soft: #171717;
+
+    --dark-card: #1c1c1c;
+
+    --dark-card-light: #222222;
+
+    --text: #e8e4dc;
+
+    --muted: #9a978f;
+
+    --border: rgba(201, 164, 92, 0.18);
+
+    --page-bg: linear-gradient(180deg, #0b0b0b 0%, #111111 45%, #151515 100%);
+
+    --hero-overlay: linear-gradient(135deg, rgba(5, 5, 5, 0.88), rgba(15, 15, 15, 0.58));
+
+    --card-bg: #1c1c1c;
+
+    --card-content-bg: linear-gradient(145deg, #202020 0%, #181818 100%);
+
+    --input-bg: #151515;
+
+    --input-border: #343434;
+
+    --input-focus-bg: #1b1b1b;
+
+    --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.28);
+
+    --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.38);
+
+    --shadow-lg: 0 24px 55px rgba(0, 0, 0, 0.48);
+}
+
+/* =========================================================
+GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--text);
+
+    background: var(--page-bg);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.venues-hero {
+    position: relative;
+
+    min-height: 410px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg, rgba(24, 24, 24, 0.72), rgba(24, 24, 24, 0.42)),
+        url("../images/img2.jpeg") center / cover no-repeat;
+
+    overflow: hidden;
+}
+
+.venues-hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: radial-gradient(
+        circle at center,
+
+        transparent 0%,
+
+        rgba(0, 0, 0, 0.28) 100%
+    );
+
+    pointer-events: none;
+}
+
+html.dark-mode .venues-hero::before {
+    background: radial-gradient(
+        circle at center,
+
+        transparent 0%,
+
+        rgba(0, 0, 0, 0.62) 100%
+    );
+}
+
+.venues-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(135deg, rgba(185, 148, 69, 0.12), rgba(229, 185, 157, 0.04));
+
+    pointer-events: none;
+}
+
+.venues-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    text-align: center;
+
+    color: var(--black);
+}
+
+html.dark-mode .venues-hero-content {
+    color: var(--white);
+}
+
+.venues-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color: var(--peach);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+html.dark-mode .venues-eyebrow {
+    color: var(--peach);
+}
+
+.venues-hero h1 {
+    margin: 0;
+
+    font-size: clamp(45px, 7vw, 78px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+    color: var(--white);
+}
+
+html.dark-mode .venues-hero h1 {
+    color: var(--white);
+}
+
+.venues-hero h1 span {
+    display: inline-block;
+
+    margin-left: 7px;
+
+    font-family: "Monsieur La Doulaise", cursive;
+
+    color: var(--peach);
+
+    font-weight: 400;
+}
+
+html.dark-mode .venues-hero h1 span {
+    color: var(--gold-light);
+}
+
+.venues-hero p {
+    max-width: 620px;
+
+    margin: 22px auto 0;
+
+    color: var(--white);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    font-weight: 300;
+}
+
+html.dark-mode .venues-hero p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* =========================================================
+MAIN
+========================================================= */
+
+.venues-page {
+    width: 100%;
+
+    padding: 75px 20px 85px;
+
+    background: var(--page-bg);
+
+    transition: background 0.3s ease;
+}
+
+.venues-section {
+    width: min(1150px, 100%);
+
+    margin: 0 auto;
+}
+
+/* =========================================================
+HEADING
+========================================================= */
+
+.venues-heading {
+    max-width: 720px;
+
+    margin: 0 auto 38px;
+
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 11px;
+
+    color: var(--gold-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+html.dark-mode .section-label {
+    color: var(--gold-light);
+}
+
+.venues-heading h2 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: clamp(31px, 5vw, 45px);
+
+    font-weight: 600;
+
+    letter-spacing: -0.8px;
+}
+
+html.dark-mode .venues-heading h2 {
+    color: var(--white);
+}
+
+.venues-heading p {
+    max-width: 600px;
+
+    margin: 14px auto 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+/* =========================================================
+SEARCH + FILTER
+========================================================= */
+
+.venues-controls {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+
+    padding: 16px;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow-sm);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.venue-search {
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.venue-search svg {
+    position: absolute;
+
+    top: 50%;
+
+    left: 16px;
+
+    width: 18px;
+
+    height: 18px;
+
+    transform: translateY(-50%);
+
+    fill: none;
+
+    stroke: var(--gold);
+
+    stroke-width: 1.8;
+
+    pointer-events: none;
+}
+
+.venue-search input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 16px 0 47px;
+
+    border: 1px solid var(--input-border);
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: var(--input-bg);
+
+    color: var(--text);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.venue-search input:focus {
+    border-color: var(--gold);
+
+    background: var(--input-focus-bg);
+
+    box-shadow: 0 0 0 4px rgba(185, 148, 69, 0.1);
+}
+
+.venue-search input::placeholder {
+    color: var(--muted);
+}
+
+/* =========================================================
+FILTER
+========================================================= */
+
+.venue-filter {
+    width: 220px;
+
+    flex: 0 0 220px;
+}
+
+.venue-filter label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.venue-filter select {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--input-border);
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: var(--input-bg);
+
+    color: var(--text);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.venue-filter select:focus {
+    border-color: var(--gold);
+
+    background: var(--input-focus-bg);
+
+    box-shadow: 0 0 0 4px rgba(185, 148, 69, 0.1);
+}
+
+.venue-filter select option {
+    background: var(--card-bg);
+
+    color: var(--text);
+}
+
+/* =========================================================
+RESULT COUNT
+========================================================= */
+
+.venue-result-info {
+    min-height: 28px;
+
+    margin: 3px 0 13px 3px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+}
+
+/* =========================================================
+VENUE GRID
+========================================================= */
+
+.venues-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    width: 100%;
+}
+
+/* =========================================================
+VENUE CARD
+========================================================= */
+
+.venue-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        44%
+        minmax(0, 1fr);
+
+    min-height: 310px;
+
+    overflow: hidden;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        background 0.3s ease;
+}
+
+.venue-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(185, 148, 69, 0.45);
+
+    box-shadow: var(--shadow-lg);
+}
+
+/* =========================================================
+VENUE IMAGE
+========================================================= */
+
+.venue-image {
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 310px;
+
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #eee8df, #ddd5ca);
+}
+
+html.dark-mode .venue-image {
+    background: linear-gradient(135deg, #242424, #151515);
+}
+
+.venue-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    opacity: 0.94;
+
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+        opacity 0.4s ease;
+}
+
+.venue-card:hover .venue-image img {
+    transform: scale(1.06);
+
+    opacity: 1;
+}
+
+/* =========================================================
+IMAGE PLACEHOLDER
+========================================================= */
+
+.venue-image-placeholder {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: linear-gradient(135deg, #eee8df, #ddd5ca);
+}
+
+html.dark-mode .venue-image-placeholder {
+    background: linear-gradient(135deg, #252525, #151515);
+}
+
+.venue-image-placeholder svg {
+    width: 45px;
+
+    height: 45px;
+
+    fill: none;
+
+    stroke: rgba(185, 148, 69, 0.55);
+
+    stroke-width: 1.3;
+}
+
+/* =========================================================
+IMAGE OVERLAY
+========================================================= */
+
+.venue-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.12),
+        transparent 45%,
+
+        rgba(0, 0, 0, 0.25)
+    );
+
+    pointer-events: none;
+}
+
+html.dark-mode .venue-image-overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.3),
+        transparent 45%,
+
+        rgba(0, 0, 0, 0.42)
+    );
+}
+
+/* =========================================================
+STATUS
+========================================================= */
+
+.venue-status {
+    position: absolute;
+
+    top: 14px;
+
+    left: 14px;
+
+    z-index: 5;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    backdrop-filter: blur(10px);
+}
+
+.venue-status.available {
+    background: rgba(255, 255, 255, 0.88);
+
+    color: #5d7138;
+}
+
+html.dark-mode .venue-status.available {
+    background: rgba(30, 30, 30, 0.88);
+
+    color: #c8d18c;
+}
+
+.venue-status.unavailable {
+    background: rgba(255, 255, 255, 0.88);
+
+    color: #555555;
+}
+
+html.dark-mode .venue-status.unavailable {
+    background: rgba(10, 10, 10, 0.82);
+
+    color: #e7e7e7;
+}
+
+.status-dot {
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    box-shadow: 0 0 8px currentColor;
+}
+
+/* =========================================================
+VENUE CONTENT
+========================================================= */
+
+.venue-content {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 28px 25px 22px;
+
+    background: var(--card-content-bg);
+
+    transition: background 0.3s ease;
+}
+
+.venue-brand {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--gold-dark);
+
+    font-size: 7.5px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.4;
+}
+
+html.dark-mode .venue-brand {
+    color: var(--gold-light);
+}
+
+/* =========================================================
+VENUE TITLE
+========================================================= */
+
+.venue-content h3 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 28px;
+
+    line-height: 1.08;
+
+    font-weight: 400;
+
+    letter-spacing: -0.2px;
+}
+
+html.dark-mode .venue-content h3 {
+    color: var(--white);
+}
+
+/* =========================================================
+VENUE META
+========================================================= */
+
+.venue-meta {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+.venue-meta span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 0;
+
+    color: var(--muted);
+
+    font-size: 8.5px;
+
+    line-height: 1.4;
+}
+
+.venue-meta svg {
+    flex: 0 0 auto;
+
+    width: 13px;
+
+    height: 13px;
+
+    fill: none;
+
+    stroke: var(--gold);
+
+    stroke-width: 1.5;
+}
+
+/* =========================================================
+DIVIDER
+========================================================= */
+
+.venue-divider {
+    width: 40px;
+
+    height: 2px;
+
+    margin: 15px 0 12px;
+
+    background: linear-gradient(90deg, var(--gold), var(--peach));
+}
+
+/* =========================================================
+DESCRIPTION
+========================================================= */
+
+.venue-description {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+CARD BOTTOM
+========================================================= */
+
+.venue-card-bottom {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: flex-start;
+
+    flex: 1;
+
+    padding-top: 15px;
+}
+
+/* =========================================================
+VIEW BUTTON
+========================================================= */
+
+.venue-button {
+    position: relative;
+
+    z-index: 20;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    background: var(--gold);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.venue-button svg {
+    width: 12px;
+
+    height: 12px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+}
+
+.venue-button:hover {
+    background: var(--gold-dark);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(185, 148, 69, 0.22);
+}
+
+html.dark-mode .venue-button:hover {
+    background: var(--peach);
+
+    color: #111111;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+LOGIN REQUIRED BUTTON
+========================================================= */
+
+.venue-button.login-required {
+    cursor: pointer;
+}
+
+.venue-button.login-required:hover {
+    background: var(--gold-light);
+
+    color: #ffffff;
+}
+
+/* =========================================================
+HIDDEN CARDS
+========================================================= */
+
+.venue-card.is-hidden {
+    display: none;
+}
+
+/* =========================================================
+NO RESULTS
+========================================================= */
+
+.no-venue-results {
+    display: none;
+
+    width: min(520px, 100%);
+
+    margin: 25px auto 0;
+
+    padding: 65px 20px;
+
+    text-align: center;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.no-results-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 50px;
+
+    height: 50px;
+
+    margin: 0 auto 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--cream-dark);
+}
+
+.no-results-icon svg {
+    width: 22px;
+
+    height: 22px;
+
+    fill: none;
+
+    stroke: var(--gold);
+
+    stroke-width: 1.6;
+}
+
+.no-venue-results h3 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 18px;
+}
+
+html.dark-mode .no-venue-results h3 {
+    color: var(--white);
+}
+
+.no-venue-results p {
+    margin: 7px 0 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+/* =========================================================
+NO DATABASE VENUES
+========================================================= */
+
+.no-venues {
+    width: min(520px, 100%);
+
+    margin: 0 auto;
+
+    padding: 65px 20px;
+
+    text-align: center;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.no-venues-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 50px;
+
+    height: 50px;
+
+    margin: 0 auto 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--cream-dark);
+}
+
+.no-venues-icon svg {
+    width: 23px;
+
+    height: 23px;
+
+    fill: none;
+
+    stroke: var(--gold);
+
+    stroke-width: 1.5;
+}
+
+.no-venues h3 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 18px;
+}
+
+html.dark-mode .no-venues h3 {
+    color: var(--white);
+}
+
+.no-venues p {
+    max-width: 400px;
+
+    margin: 8px auto 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+PAGINATION
+========================================================= */
+
+.venues-pagination {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin: 32px 0 5px;
+
+    min-height: 42px;
+}
+
+.pagination-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    padding: 0;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    background: var(--card-bg);
+
+    color: var(--text);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    border-color: var(--gold);
+
+    background: var(--cream-dark);
+
+    color: var(--gold-dark);
+
+    box-shadow: 0 5px 14px rgba(24, 24, 24, 0.1);
+}
+
+html.dark-mode .pagination-button:hover:not(:disabled) {
+    background: #28241f;
+
+    color: var(--gold-light);
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+}
+
+.pagination-button.active {
+    border-color: var(--gold);
+
+    background: var(--gold);
+
+    color: #ffffff;
+
+    box-shadow: 0 6px 16px rgba(185, 148, 69, 0.22);
+}
+
+.pagination-button.arrow {
+    width: 40px;
+
+    font-size: 14px;
+}
+
+.pagination-button:disabled {
+    opacity: 0.3;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+.pagination-ellipsis {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 25px;
+
+    height: 38px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+/* =========================================================
+CTA
+========================================================= */
+
+.venues-cta {
+    position: relative;
+
+    padding: 80px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #f5eee5 0%,
+
+        #fffaf5 50%,
+
+        #f3e7da 100%
+    );
+
+    overflow: hidden;
+
+    border-top: 1px solid var(--border);
+}
+
+html.dark-mode .venues-cta {
+    background: linear-gradient(
+        135deg,
+        #0a0a0a 0%,
+
+        #171717 50%,
+
+        #202020 100%
+    );
+}
+
+.venues-cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+
+    height: 400px;
+
+    top: -230px;
+
+    right: -140px;
+
+    border: 1px solid rgba(185, 148, 69, 0.2);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 45px rgba(185, 148, 69, 0.025),
+        0 0 0 90px rgba(185, 148, 69, 0.018);
+
+    pointer-events: none;
+}
+
+.venues-cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(650px, 100%);
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: var(--black);
+}
+
+html.dark-mode .venues-cta-content {
+    color: var(--white);
+}
+
+.venues-cta-content > span {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: var(--gold-dark);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+html.dark-mode .venues-cta-content > span {
+    color: var(--peach);
+}
+
+.venues-cta h2 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: clamp(30px, 5vw, 45px);
+
+    font-weight: 500;
+}
+
+html.dark-mode .venues-cta h2 {
+    color: var(--white);
+}
+
+.venues-cta h2 strong {
+    display: block;
+
+    color: var(--gold-dark);
+
+    font-weight: 500;
+}
+
+html.dark-mode .venues-cta h2 strong {
+    color: var(--gold-light);
+}
+
+.venues-cta p {
+    max-width: 520px;
+
+    margin: 15px auto 25px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 23px;
+
+    background: var(--gold);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cta-button svg {
+    width: 15px;
+
+    height: 15px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+}
+
+.cta-button:hover {
+    background: var(--gold-dark);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 24px rgba(185, 148, 69, 0.2);
+}
+
+html.dark-mode .cta-button:hover {
+    background: var(--peach);
+
+    color: #111111;
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .venues-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .venue-card {
+        grid-template-columns:
+            42%
+            minmax(0, 1fr);
+
+        min-height: 300px;
+    }
+
+    .venue-image {
+        min-height: 300px;
+    }
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .venues-hero {
+        min-height: 330px;
+    }
+
+    .venues-hero h1 {
+        font-size: 45px;
+    }
+
+    .venues-hero h1 span {
+        display: block;
+
+        margin: 6px 0 0;
+    }
+
+    .venues-page {
+        padding: 50px 15px 60px;
+    }
+
+    .venues-controls {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 15px;
+    }
+
+    .venue-filter {
+        width: 100%;
+
+        flex: none;
+    }
+
+    .venues-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .venue-card {
+        grid-template-columns:
+            38%
+            minmax(0, 1fr);
+
+        min-height: 290px;
+
+        border-radius: 5px;
+    }
+
+    .venue-image {
+        min-height: 290px;
+    }
+
+    .venue-content {
+        padding: 24px 17px 18px;
+    }
+
+    .venue-brand {
+        font-size: 6.5px;
+
+        letter-spacing: 1.2px;
+    }
+
+    .venue-content h3 {
+        font-size: 24px;
+    }
+
+    .venue-meta {
+        margin-top: 11px;
+
+        gap: 6px;
+    }
+
+    .venue-meta span {
+        font-size: 7.5px;
+    }
+
+    .venue-description {
+        font-size: 8px;
+
+        line-height: 1.6;
+    }
+
+    .venue-button {
+        padding: 9px 12px;
+
+        font-size: 7px;
+    }
+
+    .venue-status {
+        top: 10px;
+
+        left: 10px;
+
+        padding: 6px 8px;
+
+        font-size: 7px;
+    }
+
+    .venues-pagination {
+        margin-top: 25px;
+    }
+}
+
+/* =========================================================
+SMALL PHONE
+========================================================= */
+
+@media (max-width: 400px) {
+    .venue-card {
+        grid-template-columns:
+            36%
+            minmax(0, 1fr);
+
+        min-height: 285px;
+    }
+
+    .venue-image {
+        min-height: 285px;
+    }
+
+    .venue-content {
+        padding: 22px 13px 16px;
+    }
+
+    .venue-content h3 {
+        font-size: 21px;
+    }
+
+    .venue-meta span {
+        font-size: 7px;
+    }
+
+    .venue-description {
+        font-size: 7.5px;
+    }
+
+    .venue-button {
+        font-size: 6.5px;
+
+        padding: 8px 10px;
+    }
+
+    .pagination-button {
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 9px;
+    }
+
+    .pagination-button.arrow {
+        width: 35px;
+    }
+}
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   HEADER PROFILE DROPDOWN - VENUE DARK MODE FIX
+========================================================= */
+
+html.dark-mode .user-dropdown {
+    background: #202020 !important;
+    border-color: rgba(216, 189, 122, 0.18) !important;
+    color: #f1eee8 !important;
+}
+
+html.dark-mode .user-dropdown .dropdown-user-info {
+    background: #202020 !important;
+}
+
+html.dark-mode .user-dropdown .dropdown-user-info strong {
+    color: #f7f4ef !important;
+}
+
+html.dark-mode .user-dropdown .dropdown-user-info small {
+    color: #aaa59e !important;
+}
+
+html.dark-mode .user-dropdown .dropdown-divider {
+    background: rgba(216, 189, 122, 0.18) !important;
+}
+
+html.dark-mode .user-dropdown .dropdown-link {
+    color: #f1eee8 !important;
+    background: transparent !important;
+}
+
+html.dark-mode .user-dropdown .dropdown-link:hover {
+    color: #ead39b !important;
+    background: #2a2a2a !important;
+}
+
+html.dark-mode .user-dropdown .dropdown-link-icon {
+    color: #aaa59e !important;
+}
+
+html.dark-mode .user-dropdown .dropdown-link:hover .dropdown-link-icon {
+    color: #d8bd7a !important;
+}
+
+html.dark-mode .user-dropdown .admin-link {
+    color: #ead39b !important;
+}
+
+html.dark-mode .user-dropdown .admin-link .dropdown-link-icon {
+    color: #d8bd7a !important;
+}
+
+html.dark-mode .user-dropdown .logout-link {
+    color: #d98b8b !important;
+}
+
+html.dark-mode .user-dropdown .logout-link .dropdown-link-icon {
+    color: #d98b8b !important;
+}

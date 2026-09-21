@@ -1,0 +1,3452 @@
+css
+/* =========================================================
+   BOOK WEDDING PAGE
+   EVENT SOLUTIONS BY S.H.E.
+   PACKAGE CARD LEFT
+   BOOKING FORM RIGHT
+========================================================= */
+
+:root {
+    --gold: #b99445;
+    --gold-dark: #9d7a32;
+    --gold-light: #d8bd7a;
+
+    --peach: #f3c7a8;
+    --peach-light: #f9e4d5;
+
+    --cream: #fcfaf7;
+    --cream-dark: #f5efe6;
+
+    --white: #ffffff;
+    --black: #181818;
+    --dark: #242424;
+
+    --text: #333333;
+    --muted: #777777;
+
+    --border: rgba(185, 148, 69, 0.18);
+
+    --shadow-sm: 0 8px 24px rgba(24, 24, 24, 0.06);
+
+    --shadow-md: 0 16px 40px rgba(24, 24, 24, 0.1);
+
+    --shadow-lg: 0 24px 55px rgba(24, 24, 24, 0.14);
+
+    /* FORM */
+    --input-bg: rgba(185, 148, 69, 0.18);
+    --input-border: rgba(185, 148, 69, 0.18);
+    --readonly-bg: rgba(185, 148, 69, 0.18);
+
+    /* STATUS */
+    --error-bg: #fff5f3;
+    --error-text: #8b3d31;
+
+    --success-bg: #f4faf3;
+    --success-icon-bg: #dcefd7;
+    --success-text: #3d6536;
+
+    /* POPUPS */
+    --popup-bg-start: #fffefa;
+    --popup-bg-end: #f8f0e5;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+
+    background: linear-gradient(180deg, #fcfaf7 0%, #f8f3ec 100%);
+
+    color: var(--text);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.booking-hero {
+    position: relative;
+
+    min-height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(135deg, rgba(24, 24, 24, 0.76), rgba(24, 24, 24, 0.43)),
+        url("../images/img8.jpeg") center / cover no-repeat;
+}
+
+.booking-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.booking-hero-decoration {
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    right: -170px;
+    top: -220px;
+
+    border: 1px solid rgba(185, 148, 69, 0.28);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.booking-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(850px, 90%);
+
+    text-align: center;
+
+    color: var(--white);
+}
+
+.booking-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--peach);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+.booking-hero h1 {
+    margin: 0;
+
+    font-size: clamp(44px, 7vw, 76px);
+
+    line-height: 1;
+    font-weight: 500;
+}
+
+.booking-hero h1 span {
+    display: inline-block;
+
+    margin-left: 7px;
+
+    font-family: "Monsieur La Doulaise", cursive;
+
+    color: var(--peach);
+
+    font-weight: 400;
+}
+
+.booking-hero p {
+    margin: 20px auto 0;
+
+    max-width: 620px;
+
+    color: rgba(255, 255, 255, 0.84);
+
+    font-size: 13px;
+    font-weight: 300;
+
+    line-height: 1.75;
+}
+
+/* =========================================================
+   BOOKING SECTION
+========================================================= */
+
+.booking-section {
+    width: 100%;
+    padding: 70px 20px 85px;
+}
+
+.booking-container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+
+    /*
+        LEFT  = PACKAGE CARD
+        RIGHT = FORM
+    */
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+/* =========================================================
+   LEFT SIDE - PACKAGE SUMMARY
+========================================================= */
+
+.booking-summary {
+    min-width: 0;
+    position: sticky;
+    top: 105px;
+}
+
+/* =========================================================
+   PACKAGE CARD
+   DESIGN:
+   TEXT LEFT
+   IMAGE RIGHT
+========================================================= */
+
+.summary-card {
+    position: relative;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        220px;
+
+    width: 100%;
+    min-height: 540px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fffefa 0%, #f7eee1 100%);
+    border: 1px solid rgba(185, 148, 69, 0.25);
+    border-radius: 5px;
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        background 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(185, 148, 69, 0.42);
+
+    box-shadow: var(--shadow-lg);
+}
+
+/* =========================================================
+   TOP DECORATION
+========================================================= */
+
+.summary-card::before {
+    content: "•  •  •  •";
+
+    position: absolute;
+
+    top: 12px;
+    left: 20px;
+
+    z-index: 20;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   PACKAGE CONTENT
+========================================================= */
+
+.summary-card-content {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 540px;
+
+    padding: 43px 25px 27px;
+
+    background: linear-gradient(135deg, rgba(255, 254, 250, 0.98), rgba(250, 244, 235, 0.98));
+
+    transition: background 0.3s ease;
+}
+
+/* Hide unused decoration */
+
+.package-top-decoration {
+    display: none;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.package-brand {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--gold-dark);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   PACKAGE TITLE
+========================================================= */
+
+.summary-card h2 {
+    position: relative;
+    z-index: 5;
+
+    margin: 0;
+
+    max-width: 300px;
+
+    color: var(--black);
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 36px;
+
+    line-height: 1.04;
+
+    font-weight: 400;
+
+    letter-spacing: -0.5px;
+
+    text-transform: uppercase;
+
+    overflow-wrap: anywhere;
+}
+
+.summary-card h2::after {
+    content: "";
+
+    display: block;
+
+    width: 43px;
+    height: 2px;
+
+    margin-top: 11px;
+
+    background: var(--gold);
+}
+
+/* =========================================================
+   EVENT TYPE
+========================================================= */
+
+.summary-event-type {
+    width: fit-content;
+
+    max-width: 100%;
+
+    margin: 11px 0 0;
+
+    padding: 6px 9px;
+
+    background: var(--peach-light);
+
+    color: var(--gold-dark);
+
+    border: 1px solid rgba(185, 148, 69, 0.2);
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    line-height: 1.25;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.package-divider {
+    width: 36px;
+    height: 2px;
+
+    margin: 12px 0 11px;
+
+    background: var(--gold);
+}
+
+/* =========================================================
+   INCLUSIONS
+========================================================= */
+
+.summary-inclusions {
+    position: relative;
+    z-index: 12;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    max-width: 300px;
+
+    overflow: hidden;
+}
+
+.summary-inclusions h3 {
+    flex: 0 0 auto;
+
+    margin: 0 0 8px;
+
+    color: var(--black);
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.summary-inclusions ul {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    gap: 0;
+
+    margin: 0;
+
+    padding: 0 7px 4px 0;
+
+    list-style: none;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: rgba(185, 148, 69, 0.4) rgba(185, 148, 69, 0.07);
+}
+
+.summary-inclusions ul::-webkit-scrollbar {
+    width: 4px;
+}
+
+.summary-inclusions ul::-webkit-scrollbar-track {
+    background: rgba(185, 148, 69, 0.07);
+
+    border-radius: 5px;
+}
+
+.summary-inclusions ul::-webkit-scrollbar-thumb {
+    background: rgba(185, 148, 69, 0.38);
+
+    border-radius: 5px;
+}
+
+/* =========================================================
+   INCLUSION ITEM
+========================================================= */
+
+.summary-inclusions li {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 7px;
+
+    flex: 0 0 auto;
+
+    padding: 6px 0;
+
+    border-bottom: 1px solid rgba(185, 148, 69, 0.12);
+
+    color: #444;
+
+    font-size: 8.5px;
+
+    line-height: 1.55;
+}
+
+.summary-inclusions li:last-child {
+    border-bottom: none;
+}
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
+.check-icon {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 13px;
+    height: 13px;
+
+    margin-top: 1px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+}
+
+.check-icon svg {
+    width: 7px;
+    height: 7px;
+
+    fill: none;
+
+    stroke: var(--gold-dark);
+
+    stroke-width: 2.2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* =========================================================
+   PACKAGE NOTE
+========================================================= */
+
+.summary-note {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    flex: 0 0 auto;
+
+    margin-top: 9px;
+
+    padding: 9px 10px;
+
+    background: rgba(243, 199, 168, 0.2);
+
+    border: 1px solid rgba(185, 148, 69, 0.13);
+
+    border-radius: 5px;
+}
+
+.note-icon {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.summary-note p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   BOTTOM DOT DECORATION
+========================================================= */
+
+.package-bottom-decoration {
+    position: absolute;
+
+    bottom: 10px;
+    left: 18px;
+
+    z-index: 25;
+
+    display: flex;
+
+    gap: 5px;
+
+    pointer-events: none;
+}
+
+.package-bottom-decoration span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.6;
+}
+
+/* =========================================================
+   PACKAGE IMAGE
+   ALWAYS RIGHT SIDE
+========================================================= */
+
+.summary-card-image {
+    position: relative;
+    order: 2;
+    width: 100%;
+    min-height: 540px;
+    overflow: hidden;
+    background: #e8e1d8;
+    z-index: 5;
+}
+
+.summary-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 540px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.summary-card:hover .summary-card-image img {
+    transform: scale(1.055);
+}
+
+/* =========================================================
+   IMAGE ERROR
+========================================================= */
+
+.summary-card-image.image-failed::after {
+    content: "Package image unavailable";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    color: var(--gold-dark);
+    font-size: 9px;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.package-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        90deg,
+        rgba(24, 24, 24, 0.2),
+        rgba(24, 24, 24, 0.02) 65%,
+        transparent
+    );
+
+    pointer-events: none !important;
+}
+
+/* =========================================================
+   IMAGE DECORATION
+========================================================= */
+
+.image-decoration {
+    position: absolute;
+    top: 14px;
+    right: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    z-index: 8;
+    pointer-events: none;
+}
+
+.image-decoration span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--peach);
+    opacity: 0.85;
+}
+
+/* =========================================================
+   HELP CARD
+========================================================= */
+
+.booking-help-card {
+    margin-top: 18px;
+    padding: 23px;
+    background: linear-gradient(135deg, #181818, #292929);
+    border: 1px solid rgba(185, 148, 69, 0.2);
+    border-radius: 5px;
+    box-shadow: var(--shadow-sm);
+    color: var(--white);
+}
+
+.booking-help-card > span {
+    color: var(--peach);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.booking-help-card h3 {
+    margin: 9px 0 7px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.booking-help-card p {
+    margin: 0 0 15px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 10px;
+    line-height: 1.7;
+    font-family: "Poppins", sans-serif;
+}
+
+.booking-help-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+}
+
+.booking-help-card a span {
+    transition: transform 0.25s ease;
+}
+
+.booking-help-card a:hover span {
+    transform: translateX(4px);
+}
+
+/* =========================================================
+   RIGHT SIDE - FORM
+========================================================= */
+
+.booking-form-wrapper {
+    min-width: 0;
+    padding: 31px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(185, 148, 69, 0.16);
+    border-radius: 5px;
+    box-shadow: var(--shadow-sm);
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.form-header {
+    position: relative;
+
+    margin-bottom: 28px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(185, 148, 69, 0.14);
+}
+
+.form-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -1px;
+
+    width: 55px;
+
+    height: 2px;
+
+    background: var(--gold);
+}
+
+.form-step {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.form-header h2 {
+    margin: 0;
+    color: var(--black);
+    font-size: 29px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.form-header p {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.booking-errors,
+.booking-success {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 24px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.booking-errors {
+    background: var(--error-bg);
+    border: 1px solid rgba(184, 73, 55, 0.18);
+}
+
+.booking-errors strong {
+    color: #8b3d31;
+    font-size: 10px;
+}
+
+.booking-errors ul {
+    margin: 5px 0 0;
+    padding-left: 16px;
+    color: #9a554a;
+    font-size: 9px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.booking-success {
+    background: var(--success-bg);
+    border: 1px solid rgba(86, 133, 72, 0.2);
+}
+
+.success-icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--success-icon-bg);
+    color: #4d7e42;
+    font-weight: 800;
+}
+
+.booking-success h3 {
+    margin: 0;
+    color: var(--success-text);
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.booking-success p {
+    margin: 4px 0 0;
+    color: #66805f;
+    font-size: 10px;
+    line-height: 1.6;
+    font-family: "Poppins", sans-serif;
+}
+
+.success-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 13px;
+}
+
+.success-primary,
+.success-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 34px;
+    padding: 0 13px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.success-primary {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.success-secondary {
+    background: #fff;
+    color: var(--black);
+    border: 1px solid rgba(24, 24, 24, 0.1);
+}
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.form-section {
+    margin-bottom: 29px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(185, 148, 69, 0.12);
+}
+
+.form-section:last-of-type {
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.form-section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 18px;
+}
+
+.section-number {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--peach-light);
+    color: var(--gold-dark);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.form-section-heading h3 {
+    margin: 0;
+    color: var(--black);
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+}
+
+.form-section-heading p {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px 14px;
+}
+
+.form-group {
+    min-width: 0;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 7px;
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+
+.form-group label > span:not(.optional) {
+    color: var(--gold-dark);
+}
+
+.form-group label .optional {
+    color: #aaa;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.input-wrapper {
+    position: relative;
+    min-width: 0;
+}
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    z-index: 2;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 15px;
+    pointer-events: none;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    outline: none;
+    background: var(--input-bg);
+    color: var(--black);
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+input,
+select {
+    height: 46px;
+}
+
+input {
+    padding: 0 13px 0 13px;
+}
+
+select {
+    padding: 0 12px 0 38px;
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 120px;
+    padding: 12px 13px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: var(--white);
+}
+
+/* =========================================================
+   READONLY
+========================================================= */
+
+input[readonly] {
+    color: #777;
+    background: var(--readonly-bg);
+    cursor: default;
+}
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+}
+
+input[type="date"],
+input[type="time"] {
+    color-scheme: light;
+}
+
+/* =========================================================
+   FIELD ERROR
+========================================================= */
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 5px;
+    color: #a14b3d;
+    font-size: 10px;
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+    border-color: #c77768;
+}
+
+.form-group.has-success input,
+.form-group.has-success select,
+.form-group.has-success textarea {
+    border-color: #8db284;
+}
+
+/* =========================================================
+   TEXTAREA FOOTER
+========================================================= */
+
+.textarea-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.textarea-footer small,
+#characterCount {
+    color: #aaa;
+    font-size: 8px;
+}
+
+#characterCount {
+    white-space: nowrap;
+}
+
+/* =========================================================
+   PROFILE WARNING
+========================================================= */
+
+.profile-warning {
+    margin-top: 7px;
+    padding: 8px 10px;
+    background: #fff8e9;
+    border: 1px solid rgba(185, 148, 69, 0.18);
+    border-radius: 5px;
+    color: #8c7037;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   AGREEMENT
+========================================================= */
+
+.booking-agreement {
+    margin-bottom: 20px;
+    padding: 13px;
+    background: #fffaf4;
+    border: 1px solid rgba(185, 148, 69, 0.15);
+    border-radius: 5px;
+}
+
+.checkbox-label {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-checkbox {
+    flex: 0 0 auto;
+    position: relative;
+    width: 17px;
+    height: 17px;
+    margin-top: 1px;
+    border: 1px solid #d5cbbd;
+    border-radius: 5px;
+    background: var(--white);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.checkbox-label input:checked + .custom-checkbox {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.checkbox-label input:checked + .custom-checkbox::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 4px;
+    left: 4px;
+    top: 4px;
+    border-left: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+    transform: rotate(-45deg);
+}
+
+.checkbox-label input:focus-visible + .custom-checkbox {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.agreement-text {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.form-submit {
+    text-align: right;
+}
+
+.submit-booking {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 210px;
+    height: 44px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.submit-booking:hover:not(:disabled) {
+    background: var(--peach);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(24, 24, 24, 0.12);
+}
+
+.submit-booking:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.button-arrow {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.button-loading {
+    display: none;
+}
+
+.submit-booking.is-loading .button-text,
+.submit-booking.is-loading .button-arrow {
+    display: none;
+}
+
+.submit-booking.is-loading .button-loading {
+    display: inline;
+}
+
+.form-submit > p {
+    margin: 8px 0 0;
+    color: #aaa;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+    .booking-container {
+        grid-template-columns:
+            minmax(0, 0.85fr)
+            minmax(0, 1.15fr);
+
+        gap: 22px;
+    }
+
+    .summary-card {
+        grid-template-columns:
+            minmax(0, 1fr)
+            190px;
+    }
+
+    .summary-card-content {
+        padding: 40px 21px 25px;
+    }
+
+    .summary-card h2 {
+        font-size: 32px;
+    }
+
+    .summary-inclusions {
+        max-width: 270px;
+    }
+
+    .summary-card-image,
+    .summary-card-image img {
+        min-height: 540px;
+    }
+
+    .booking-form-wrapper {
+        padding: 27px;
+    }
+}
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .booking-section {
+        padding: 60px 18px 75px;
+    }
+
+    .booking-container {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 20px;
+    }
+
+    /*
+        Keep:
+        LEFT  = PACKAGE
+        RIGHT = FORM
+    */
+
+    .booking-summary {
+        position: sticky;
+        top: 95px;
+    }
+
+    .summary-card {
+        grid-template-columns:
+            minmax(0, 1fr)
+            175px;
+
+        min-height: 520px;
+    }
+
+    .summary-card-content {
+        min-height: 520px;
+    }
+
+    .summary-card-image,
+    .summary-card-image img {
+        min-height: 520px;
+    }
+
+    .booking-form-wrapper {
+        padding: 24px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+    .booking-hero {
+        min-height: 330px;
+    }
+
+    .booking-hero h1 {
+        font-size: 45px;
+    }
+
+    .booking-hero h1 span {
+        display: block;
+        margin: 5px 0 0;
+    }
+
+    .booking-section {
+        padding: 50px 15px 65px;
+    }
+
+    /*
+        On mobile stack the package
+        and form vertically.
+    */
+
+    .booking-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .booking-summary {
+        position: static;
+        order: 1;
+    }
+
+    .booking-form-wrapper {
+        order: 2;
+    }
+
+    .summary-card {
+        grid-template-columns:
+            minmax(0, 1fr)
+            160px;
+        min-height: 500px;
+    }
+
+    .summary-card-content {
+        min-height: 500px;
+        padding: 39px 18px 24px;
+    }
+
+    .summary-card-image,
+    .summary-card-image img {
+        min-height: 500px;
+    }
+
+    .summary-card h2 {
+        max-width: 230px;
+        font-size: 31px;
+    }
+
+    .summary-inclusions {
+        max-width: 240px;
+    }
+
+    .summary-inclusions li {
+        font-size: 8px;
+    }
+
+    .booking-form-wrapper {
+        padding: 23px 19px;
+    }
+
+    .form-header h2 {
+        font-size: 26px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+    .booking-hero {
+        min-height: 310px;
+    }
+
+    .booking-hero h1 {
+        font-size: 42px;
+    }
+
+    .booking-hero p {
+        max-width: 330px;
+
+        font-size: 11px;
+    }
+
+    .booking-container {
+        gap: 18px;
+    }
+
+    /*
+        Smaller package card
+    */
+
+    .summary-card {
+        grid-template-columns:
+            minmax(0, 1fr)
+            125px;
+
+        min-height: 470px;
+        border-radius: 5px;
+    }
+
+    .summary-card-content {
+        min-height: 470px;
+
+        padding: 36px 14px 20px;
+    }
+
+    .summary-card-image,
+    .summary-card-image img {
+        min-height: 470px;
+    }
+
+    .package-brand {
+        font-size: 6.5px;
+        letter-spacing: 1.2px;
+    }
+
+    .summary-card h2 {
+        max-width: 190px;
+        font-size: 27px;
+    }
+
+    .summary-card h2::after {
+        width: 32px;
+        margin-top: 8px;
+    }
+
+    .summary-event-type {
+        margin-top: 8px;
+        padding: 4px 6px;
+        font-size: 6.2px;
+    }
+
+    .package-divider {
+        width: 28px;
+        margin: 9px 0 8px;
+    }
+
+    .summary-inclusions {
+        max-width: 190px;
+    }
+
+    .summary-inclusions h3 {
+        margin-bottom: 5px;
+        font-size: 8px;
+    }
+
+    .summary-inclusions li {
+        gap: 5px;
+        padding: 4.5px 0;
+        font-size: 6.7px;
+        line-height: 1.45;
+    }
+
+    .check-icon {
+        width: 10px;
+        height: 10px;
+        margin-top: 0;
+    }
+
+    .check-icon svg {
+        width: 6px;
+        height: 6px;
+    }
+
+    .summary-note {
+        gap: 6px;
+        margin-top: 7px;
+        padding: 7px;
+    }
+
+    .summary-note p {
+        font-size: 6.3px;
+    }
+
+    .note-icon {
+        width: 13px;
+        height: 13px;
+        font-size: 7px;
+    }
+
+    .image-decoration {
+        top: 10px;
+        right: 8px;
+        gap: 5px;
+    }
+
+    .image-decoration span {
+        width: 5px;
+        height: 5px;
+    }
+
+    /*
+        FORM
+    */
+
+    .booking-form-wrapper {
+        padding: 21px 15px;
+        border-radius: 5px;
+    }
+
+    .form-header {
+        margin-bottom: 23px;
+
+        padding-bottom: 17px;
+    }
+
+    .form-header h2 {
+        font-size: 24px;
+    }
+
+    .form-header p {
+        font-size: 10px;
+    }
+
+    .form-section {
+        margin-bottom: 25px;
+
+        padding-bottom: 23px;
+    }
+
+    .form-section-heading {
+        gap: 9px;
+        margin-bottom: 15px;
+    }
+
+    .section-number {
+        width: 27px;
+        height: 27px;
+    }
+
+    .form-section-heading h3 {
+        font-size: 13px;
+    }
+
+    .form-section-heading p {
+        font-size: 8px;
+    }
+
+    .form-group label {
+        font-size: 8.5px;
+    }
+
+    input,
+    select {
+        height: 44px;
+
+        font-size: 10px;
+    }
+
+    textarea {
+        min-height: 110px;
+
+        font-size: 10px;
+    }
+
+    .input-icon {
+        left: 12px;
+
+        font-size: 11px;
+    }
+
+    input {
+        padding-left: 36px;
+    }
+
+    select {
+        padding-left: 36px;
+    }
+
+    .field-error {
+        font-size: 7.5px;
+    }
+
+    .agreement-text {
+        font-size: 8px;
+    }
+
+    .submit-booking {
+        width: 100%;
+
+        min-width: 0;
+
+        height: 44px;
+    }
+
+    .form-submit {
+        text-align: stretch;
+    }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+    .booking-section {
+        padding: 42px 10px 55px;
+    }
+
+    .summary-card {
+        grid-template-columns:
+            minmax(0, 1fr)
+            105px;
+
+        min-height: 490px;
+    }
+
+    .summary-card-content {
+        min-height: 490px;
+
+        padding: 39px 11px 23px 13px;
+    }
+
+    .summary-card-image,
+    .summary-card-image img {
+        min-height: 490px;
+    }
+
+    .summary-card h2 {
+        max-width: 155px;
+
+        font-size: 26px;
+    }
+
+    .summary-inclusions {
+        max-width: 150px;
+    }
+
+    .summary-inclusions li {
+        font-size: 6.5px;
+    }
+
+    .summary-note p {
+        font-size: 6px;
+    }
+
+    .booking-form-wrapper {
+        padding: 19px 13px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* =========================================================
+   SUBMIT BOOKING LOADING POPUP
+========================================================= */
+
+.booking-loading-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(24, 24, 24, 0.68);
+
+    backdrop-filter: blur(7px);
+
+    -webkit-backdrop-filter: blur(7px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.booking-loading-overlay.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: all;
+}
+
+/* Popup box */
+
+.booking-loading-popup {
+    width: min(390px, 100%);
+
+    padding: 38px 30px 34px;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #fffefa 0%, #f8f0e5 100%);
+
+    border: 1px solid rgba(185, 148, 69, 0.28);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25),
+        0 5px 20px rgba(185, 148, 69, 0.12);
+
+    transform: translateY(15px) scale(0.96);
+
+    transition: transform 0.3s ease;
+}
+
+.booking-loading-overlay.show .booking-loading-popup {
+    transform: translateY(0) scale(1);
+}
+
+/* Decorative dots */
+
+.booking-loading-popup::before {
+    content: "•  •  •  •";
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.75;
+}
+
+/* Loading spinner */
+
+.booking-loading-spinner {
+    position: relative;
+
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 22px;
+}
+
+.booking-loading-spinner::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border: 4px solid rgba(185, 148, 69, 0.16);
+
+    border-top-color: var(--gold);
+
+    border-right-color: var(--gold-light);
+
+    border-radius: 50%;
+
+    animation: bookingSpinner 0.9s linear infinite;
+}
+
+.booking-loading-spinner::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--gold);
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+@keyframes bookingSpinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Title */
+
+.booking-loading-popup h3 {
+    margin: 0 0 8px;
+
+    color: var(--black);
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 26px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+/* Description */
+
+.booking-loading-popup p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+/* Progress line */
+
+.booking-loading-progress {
+    position: relative;
+
+    width: 100%;
+    height: 3px;
+
+    margin-top: 24px;
+
+    overflow: hidden;
+
+    background: rgba(185, 148, 69, 0.12);
+
+    border-radius: 5px;
+}
+
+.booking-loading-progress span {
+    position: absolute;
+
+    top: 0;
+    left: -40%;
+
+    width: 40%;
+    height: 100%;
+
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), transparent);
+
+    border-radius: 5px;
+
+    animation: bookingProgress 1.3s ease-in-out infinite;
+}
+
+@keyframes bookingProgress {
+    0% {
+        left: -40%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Small status text */
+
+.booking-loading-status {
+    margin-top: 12px !important;
+
+    color: var(--gold-dark) !important;
+
+    font-size: 8px !important;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .booking-loading-popup {
+        width: min(340px, 100%);
+
+        padding: 32px 23px 28px;
+    }
+
+    .booking-loading-spinner {
+        width: 52px;
+        height: 52px;
+    }
+
+    .booking-loading-popup h3 {
+        font-size: 23px;
+    }
+
+    .booking-loading-popup p {
+        font-size: 9px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .booking-loading-overlay,
+    .booking-loading-popup {
+        transition: none;
+    }
+
+    .booking-loading-spinner::before,
+    .booking-loading-progress span {
+        animation: none;
+    }
+}
+
+/* =========================================================
+   FLATPICKR WEDDING DATEPICKER
+========================================================= */
+
+.flatpickr-calendar {
+    font-family: "Poppins", sans-serif;
+
+    border: 1px solid #e6dfd8;
+
+    border-radius: 5px;
+
+    box-shadow: 0 20px 50px rgba(24, 24, 24, 0.16);
+
+    overflow: hidden;
+}
+
+/* =========================================================
+   FLATPICKR HEADER
+========================================================= */
+
+.flatpickr-months {
+    padding: 8px 6px 0;
+
+    background: #fcfaf7;
+}
+
+.flatpickr-month {
+    color: #242424;
+
+    fill: #242424;
+}
+
+.flatpickr-current-month {
+    color: #242424;
+
+    font-weight: 600;
+}
+
+.flatpickr-current-month .numInputWrapper {
+    color: #242424;
+}
+
+.flatpickr-current-month input.cur-year {
+    color: #242424;
+
+    font-weight: 600;
+}
+
+.flatpickr-prev-month,
+.flatpickr-next-month {
+    color: #9d7a32;
+
+    fill: #9d7a32;
+
+    transition:
+        color 0.2s ease,
+        fill 0.2s ease;
+}
+
+.flatpickr-prev-month:hover,
+.flatpickr-next-month:hover {
+    color: #b99445;
+
+    fill: #b99445;
+}
+
+/* =========================================================
+   WEEKDAYS
+========================================================= */
+
+.flatpickr-weekdays {
+    background: #fcfaf7;
+}
+
+span.flatpickr-weekday {
+    color: #9d7a32;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+/* =========================================================
+   CALENDAR DAYS
+========================================================= */
+
+.flatpickr-day {
+    position: relative;
+
+    border-radius: 5px;
+
+    color: #333333;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.flatpickr-day:hover {
+    background: #f9e4d5;
+
+    border-color: #f9e4d5;
+
+    color: #242424;
+}
+
+/* Today */
+
+.flatpickr-day.today {
+    border-color: #b99445;
+
+    color: #9d7a32;
+
+    font-weight: 700;
+}
+
+.flatpickr-day.today:hover {
+    background: #f9e4d5;
+
+    border-color: #b99445;
+}
+
+/* Selected date */
+
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+    background: #b99445;
+
+    border-color: #b99445;
+
+    color: #ffffff;
+}
+
+/* Previous / next month days */
+
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+    color: #c7c0b7;
+}
+
+/* =========================================================
+   CONFIRMED / BOOKED WEDDING DATES
+========================================================= */
+
+/*
+   These dates are intentionally NOT disabled.
+   JavaScript catches the click and opens
+   the "Date Already Booked" popup.
+*/
+
+.flatpickr-day.confirmed-booking-date {
+    position: relative;
+
+    background: #f9e4d5 !important;
+
+    border-color: #f3c7a8 !important;
+
+    color: #9d7a32 !important;
+
+    font-weight: 700;
+
+    cursor: pointer !important;
+}
+
+.flatpickr-day.confirmed-booking-date:hover {
+    background: #f3c7a8 !important;
+
+    border-color: #b99445 !important;
+
+    color: #242424 !important;
+}
+
+/* =========================================================
+   BOOKED DATE MARKER
+========================================================= */
+
+.booking-date-mark {
+    position: absolute;
+
+    left: 50%;
+    bottom: 3px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #b99445;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   FLATPICKR DISABLED DATES
+========================================================= */
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+    color: #d0cbc5;
+
+    background: transparent;
+
+    border-color: transparent;
+
+    cursor: default;
+}
+
+/*
+   Keep booked-date styling visible even when
+   Flatpickr applies its disabled class.
+*/
+
+.flatpickr-day.confirmed-booking-date.flatpickr-disabled {
+    color: #9d7a32 !important;
+
+    background: #f9e4d5 !important;
+
+    border-color: #f3c7a8 !important;
+
+    cursor: pointer !important;
+}
+
+/* =========================================================
+   BOOKED DATE POPUP
+========================================================= */
+
+.wedding-booked-date-popup-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(24, 24, 24, 0.52);
+
+    backdrop-filter: blur(4px);
+
+    -webkit-backdrop-filter: blur(4px);
+
+    animation: weddingBookedPopupFadeIn 0.25s ease;
+}
+
+@keyframes weddingBookedPopupFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================================================
+   BOOKED DATE POPUP CARD
+========================================================= */
+
+.wedding-booked-date-popup {
+    width: min(430px, 100%);
+
+    padding: 34px 30px 30px;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #fffefa 0%, #f8f0e5 100%);
+
+    border: 1px solid rgba(185, 148, 69, 0.28);
+
+    border-radius: 5px;
+
+    box-shadow: 0 25px 70px rgba(36, 36, 36, 0.22);
+
+    animation: weddingBookedPopupScale 0.25s ease;
+}
+
+@keyframes weddingBookedPopupScale {
+    from {
+        opacity: 0;
+
+        transform: translateY(12px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================================
+   BOOKED DATE POPUP ICON
+========================================================= */
+
+.wedding-booked-date-popup-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f9e4d5;
+
+    color: #9d7a32;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    border: 1px solid rgba(185, 148, 69, 0.18);
+}
+
+/* =========================================================
+   BOOKED DATE POPUP TITLE
+========================================================= */
+
+.wedding-booked-date-popup h3 {
+    margin: 0 0 10px;
+
+    color: #242424;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    line-height: 1.3;
+}
+
+/* =========================================================
+   BOOKED DATE POPUP MESSAGE
+========================================================= */
+
+.wedding-booked-date-popup p {
+    margin: 0 0 22px;
+
+    color: #6d665f;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   BOOKED DATE POPUP BUTTON
+========================================================= */
+
+.wedding-booked-date-popup button {
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: #b99445;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.wedding-booked-date-popup button:hover {
+    background: #9d7a32;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 7px 18px rgba(24, 24, 24, 0.12);
+}
+
+.wedding-booked-date-popup button:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   DATE INPUT WITH FLATPICKR
+========================================================= */
+
+#eventDate {
+    cursor: pointer;
+}
+
+#eventDate.flatpickr-input {
+    background-color: #fcfaf7;
+}
+
+#eventDate.flatpickr-input:focus {
+    background-color: #ffffff;
+}
+
+/*
+   Flatpickr creates an alternate visible input
+   when altInput: true is enabled.
+*/
+
+input.flatpickr-alt-input {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px 0 38px;
+
+    border: 1px solid #e2ddd5;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: #fcfaf7;
+
+    color: #181818;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+input.flatpickr-alt-input:hover {
+    border-color: rgba(185, 148, 69, 0.45);
+}
+
+input.flatpickr-alt-input:focus {
+    border-color: var(--gold);
+
+    background: var(--white);
+
+    box-shadow: 0 0 0 4px rgba(185, 148, 69, 0.08);
+}
+
+/*
+   Make sure the Flatpickr alternate input
+   keeps the same spacing as the original
+   event date field.
+*/
+
+.input-wrapper input.flatpickr-alt-input {
+    padding-left: 38px;
+}
+
+/* =========================================================
+   MOBILE FLATPICKR
+========================================================= */
+
+@media (max-width: 600px) {
+    .flatpickr-calendar {
+        width: 100%;
+
+        max-width: 340px;
+
+        border-radius: 5px;
+    }
+
+    .flatpickr-day {
+        max-width: 38px;
+
+        height: 38px;
+
+        line-height: 38px;
+    }
+
+    span.flatpickr-weekday {
+        font-size: 9px;
+    }
+
+    input.flatpickr-alt-input {
+        height: 44px;
+
+        font-size: 10px;
+    }
+
+    .wedding-booked-date-popup-overlay {
+        padding: 18px;
+    }
+
+    .wedding-booked-date-popup {
+        width: min(340px, 100%);
+
+        padding: 30px 23px 27px;
+
+        border-radius: 5px;
+    }
+
+    .wedding-booked-date-popup-icon {
+        width: 52px;
+
+        height: 52px;
+
+        margin-bottom: 16px;
+
+        font-size: 22px;
+    }
+
+    .wedding-booked-date-popup h3 {
+        font-size: 19px;
+    }
+
+    .wedding-booked-date-popup p {
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+    .wedding-booked-date-popup button {
+        min-height: 44px;
+
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.wedding-booked-date-popup button:focus-visible {
+    outline: 2px solid var(--gold);
+
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   DARK MODE
+   CONTROLLED BY:
+   html.dark-mode
+========================================================= */
+
+html.dark-mode {
+    color-scheme: dark;
+
+    --gold: #d8bd7a;
+    --gold-dark: #c9a963;
+    --gold-light: #ead39b;
+
+    --peach: #d9a985;
+    --peach-light: #3a2c25;
+
+    --cream: #171717;
+    --cream-dark: #222222;
+
+    --white: #ffffff;
+    --black: #f7f4ef;
+    --dark: #f7f4ef;
+
+    --text: #e8e4de;
+    --muted: #a8a198;
+
+    --border: rgba(216, 189, 122, 0.18);
+
+    --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.28);
+
+    --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.38);
+
+    --shadow-lg: 0 24px 55px rgba(0, 0, 0, 0.5);
+
+    --input-bg: #202020;
+    --input-border: #3b3834;
+    --readonly-bg: #292723;
+
+    --error-bg: #321f1c;
+    --error-text: #e5a096;
+
+    --success-bg: #1f2b1d;
+    --success-icon-bg: #30462b;
+    --success-text: #b9d8ad;
+
+    --popup-bg-start: #252321;
+    --popup-bg-end: #1b1a18;
+}
+
+/* =========================================================
+   DARK MODE - GLOBAL
+========================================================= */
+
+html.dark-mode body {
+    background: linear-gradient(180deg, #151515 0%, #1c1b19 100%);
+
+    color: var(--text);
+}
+
+/* =========================================================
+   DARK MODE - HERO
+========================================================= */
+
+html.dark-mode .booking-hero {
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0.62)),
+        url("../images/img8.jpeg") center / cover no-repeat;
+}
+
+html.dark-mode .booking-hero::before {
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.42) 100%);
+}
+
+html.dark-mode .booking-hero-decoration {
+    border-color: rgba(216, 189, 122, 0.28);
+}
+
+/* =========================================================
+   DARK MODE - BOOKING SECTION
+========================================================= */
+
+html.dark-mode .booking-section {
+    background: transparent;
+}
+
+/* =========================================================
+   DARK MODE - PACKAGE CARD
+========================================================= */
+
+html.dark-mode .summary-card {
+    background: linear-gradient(135deg, #252321 0%, #1d1c1a 100%);
+
+    border-color: rgba(216, 189, 122, 0.25);
+
+    box-shadow: var(--shadow-sm);
+}
+
+html.dark-mode .summary-card:hover {
+    border-color: rgba(216, 189, 122, 0.45);
+
+    box-shadow: var(--shadow-lg);
+}
+
+html.dark-mode .summary-card-content {
+    background: linear-gradient(135deg, rgba(39, 37, 34, 0.98), rgba(29, 28, 26, 0.98));
+}
+
+html.dark-mode .summary-card::before {
+    color: var(--gold);
+}
+
+html.dark-mode .package-brand {
+    color: var(--gold-light);
+}
+
+html.dark-mode .summary-card h2 {
+    color: var(--white);
+}
+
+html.dark-mode .summary-event-type {
+    background: #392d26;
+
+    color: var(--gold-light);
+
+    border-color: rgba(216, 189, 122, 0.2);
+}
+
+html.dark-mode .summary-inclusions h3 {
+    color: var(--white);
+}
+
+html.dark-mode .summary-inclusions li {
+    color: #d6d1ca;
+
+    border-bottom-color: rgba(216, 189, 122, 0.12);
+}
+
+html.dark-mode .summary-inclusions ul {
+    scrollbar-color: rgba(216, 189, 122, 0.45) rgba(216, 189, 122, 0.07);
+}
+
+html.dark-mode .summary-inclusions ul::-webkit-scrollbar-track {
+    background: rgba(216, 189, 122, 0.07);
+}
+
+html.dark-mode .summary-inclusions ul::-webkit-scrollbar-thumb {
+    background: rgba(216, 189, 122, 0.38);
+}
+
+html.dark-mode .summary-note {
+    background: rgba(217, 169, 133, 0.1);
+
+    border-color: rgba(216, 189, 122, 0.15);
+}
+
+html.dark-mode .summary-note p {
+    color: #aaa39a;
+}
+
+html.dark-mode .note-icon {
+    color: #181818;
+}
+
+html.dark-mode .summary-card-image {
+    background: #292724;
+}
+
+html.dark-mode .package-image-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.08) 65%, transparent);
+}
+
+/* =========================================================
+   DARK MODE - HELP CARD
+========================================================= */
+
+html.dark-mode .booking-help-card {
+    background: linear-gradient(135deg, #101010, #1d1d1d);
+
+    border-color: rgba(216, 189, 122, 0.22);
+
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+html.dark-mode .booking-help-card > span {
+    color: var(--peach);
+}
+
+html.dark-mode .booking-help-card p {
+    color: rgba(255, 255, 255, 0.58);
+}
+
+html.dark-mode .booking-help-card a {
+    color: var(--gold-light);
+}
+
+/* =========================================================
+   DARK MODE - FORM WRAPPER
+========================================================= */
+
+html.dark-mode .booking-form-wrapper {
+    background: rgba(31, 30, 28, 0.98);
+    border-color: rgba(216, 189, 122, 0.18);
+    box-shadow: var(--shadow-sm);
+}
+
+html.dark-mode .form-header {
+    border-bottom-color: rgba(216, 189, 122, 0.14);
+}
+
+html.dark-mode .form-header h2 {
+    color: var(--black);
+}
+
+html.dark-mode .form-header p {
+    color: var(--muted);
+}
+
+html.dark-mode .form-step {
+    color: var(--gold-light);
+}
+
+/* =========================================================
+   DARK MODE - ALERTS
+========================================================= */
+
+html.dark-mode .booking-errors {
+    background: #321f1c;
+
+    border-color: rgba(229, 160, 150, 0.2);
+}
+
+html.dark-mode .booking-errors strong {
+    color: #efb0a6;
+}
+
+html.dark-mode .booking-errors ul {
+    color: #d99a8f;
+}
+
+html.dark-mode .booking-success {
+    background: #1e2a1c;
+
+    border-color: rgba(157, 199, 142, 0.2);
+}
+
+html.dark-mode .success-icon {
+    background: #30472b;
+
+    color: #b8d9ac;
+}
+
+html.dark-mode .booking-success h3 {
+    color: #b9d8ad;
+}
+
+html.dark-mode .booking-success p {
+    color: #9db294;
+}
+
+html.dark-mode .success-secondary {
+    background: #292724;
+
+    color: #f4f0e9;
+
+    border-color: rgba(216, 189, 122, 0.18);
+}
+
+/* =========================================================
+   DARK MODE - FORM SECTIONS
+========================================================= */
+
+html.dark-mode .form-section {
+    border-bottom-color: rgba(216, 189, 122, 0.12);
+}
+
+html.dark-mode .section-number {
+    background: #392d26;
+
+    color: var(--gold-light);
+}
+
+html.dark-mode .form-section-heading h3 {
+    color: var(--black);
+}
+
+html.dark-mode .form-section-heading p {
+    color: var(--muted);
+}
+
+/* =========================================================
+   DARK MODE - LABELS
+========================================================= */
+
+html.dark-mode .form-group label {
+    color: #eeeae3;
+}
+
+html.dark-mode .form-group label > span:not(.optional) {
+    color: var(--gold-light);
+}
+
+html.dark-mode .form-group label .optional {
+    color: #8f8a83;
+}
+
+/* =========================================================
+   DARK MODE - INPUTS
+========================================================= */
+
+html.dark-mode input,
+html.dark-mode select,
+html.dark-mode textarea {
+    background: #20201e;
+    border-color: #3c3935;
+    color: #eeeae3;
+}
+
+html.dark-mode input:hover,
+html.dark-mode select:hover,
+html.dark-mode textarea:hover {
+    border-color: rgba(216, 189, 122, 0.35);
+}
+
+html.dark-mode input:focus,
+html.dark-mode select:focus,
+html.dark-mode textarea:focus {
+    background: #252421;
+}
+
+html.dark-mode input[readonly] {
+    color: #aaa49c;
+
+    background: #292724;
+}
+
+html.dark-mode input::placeholder,
+html.dark-mode textarea::placeholder {
+    color: #77736e;
+}
+
+html.dark-mode input[type="date"],
+html.dark-mode input[type="time"] {
+    color-scheme: dark;
+}
+
+/* =========================================================
+   DARK MODE - FIELD STATUS
+========================================================= */
+
+html.dark-mode .field-error {
+    color: #e2a097;
+}
+
+html.dark-mode .form-group.has-error input,
+html.dark-mode .form-group.has-error select,
+html.dark-mode .form-group.has-error textarea {
+    border-color: #a95f54;
+}
+
+html.dark-mode .form-group.has-success input,
+html.dark-mode .form-group.has-success select,
+html.dark-mode .form-group.has-success textarea {
+    border-color: #668b5d;
+}
+
+/* =========================================================
+   DARK MODE - TEXTAREA
+========================================================= */
+
+html.dark-mode .textarea-footer small,
+html.dark-mode #characterCount {
+    color: #77736e;
+}
+
+/* =========================================================
+   DARK MODE - PROFILE WARNING
+========================================================= */
+
+html.dark-mode .profile-warning {
+    background: #332b1d;
+
+    border-color: rgba(216, 189, 122, 0.2);
+
+    color: #d8bd7a;
+}
+
+/* =========================================================
+   DARK MODE - AGREEMENT
+========================================================= */
+
+html.dark-mode .booking-agreement {
+    background: #26231f;
+
+    border-color: rgba(216, 189, 122, 0.16);
+}
+
+html.dark-mode .custom-checkbox {
+    background: #20201e;
+
+    border-color: #57524a;
+}
+
+html.dark-mode .agreement-text {
+    color: #aaa49c;
+}
+
+html.dark-mode .checkbox-label input:checked + .custom-checkbox {
+    background: var(--gold);
+
+    border-color: var(--gold);
+}
+
+html.dark-mode .checkbox-label input:checked + .custom-checkbox::after {
+    border-left-color: #181818;
+
+    border-bottom-color: #181818;
+}
+
+/* =========================================================
+   DARK MODE - SUBMIT
+========================================================= */
+
+html.dark-mode .submit-booking {
+    color: #181818;
+}
+
+html.dark-mode .submit-booking:hover:not(:disabled) {
+    background: var(--peach);
+
+    color: #181818;
+}
+
+html.dark-mode .submit-booking:hover:not(:disabled) {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+html.dark-mode .form-submit > p {
+    color: #77736e;
+}
+
+/* =========================================================
+   DARK MODE - LOADING POPUP
+========================================================= */
+
+html.dark-mode .booking-loading-popup {
+    background: linear-gradient(135deg, #252321 0%, #1b1a18 100%);
+
+    border-color: rgba(216, 189, 122, 0.28);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        0 5px 20px rgba(216, 189, 122, 0.08);
+}
+
+html.dark-mode .booking-loading-spinner::before {
+    border-color: rgba(216, 189, 122, 0.14);
+
+    border-top-color: var(--gold);
+
+    border-right-color: var(--gold-light);
+}
+
+html.dark-mode .booking-loading-popup h3 {
+    color: #f5f1e9;
+}
+
+html.dark-mode .booking-loading-popup p {
+    color: #aaa49c;
+}
+
+html.dark-mode .booking-loading-progress {
+    background: rgba(216, 189, 122, 0.1);
+}
+
+/* =========================================================
+   DARK MODE - FLATPICKR
+========================================================= */
+
+html.dark-mode .flatpickr-calendar {
+    background: #22211f;
+
+    border-color: #3b3834;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+
+    color-scheme: dark;
+}
+
+html.dark-mode .flatpickr-months,
+html.dark-mode .flatpickr-weekdays {
+    background: #22211f;
+}
+
+html.dark-mode .flatpickr-month {
+    color: #eeeae3;
+
+    fill: #eeeae3;
+}
+
+html.dark-mode .flatpickr-current-month {
+    color: #eeeae3;
+}
+
+html.dark-mode .flatpickr-current-month .numInputWrapper {
+    color: #eeeae3;
+}
+
+html.dark-mode .flatpickr-current-month input.cur-year {
+    color: #eeeae3;
+}
+
+html.dark-mode .flatpickr-prev-month,
+html.dark-mode .flatpickr-next-month {
+    color: var(--gold-light);
+
+    fill: var(--gold-light);
+}
+
+html.dark-mode .flatpickr-prev-month:hover,
+html.dark-mode .flatpickr-next-month:hover {
+    color: var(--gold);
+
+    fill: var(--gold);
+}
+
+html.dark-mode span.flatpickr-weekday {
+    color: var(--gold-light);
+}
+
+html.dark-mode .flatpickr-day {
+    color: #ddd8d0;
+}
+
+html.dark-mode .flatpickr-day:hover {
+    background: #392d26;
+
+    border-color: #392d26;
+
+    color: #f3eee7;
+}
+
+html.dark-mode .flatpickr-day.today {
+    border-color: var(--gold);
+
+    color: var(--gold-light);
+}
+
+html.dark-mode .flatpickr-day.today:hover {
+    background: #392d26;
+
+    border-color: var(--gold);
+}
+
+html.dark-mode .flatpickr-day.selected,
+html.dark-mode .flatpickr-day.selected:hover {
+    background: var(--gold);
+
+    border-color: var(--gold);
+
+    color: #181818;
+}
+
+html.dark-mode .flatpickr-day.prevMonthDay,
+html.dark-mode .flatpickr-day.nextMonthDay {
+    color: #625e58;
+}
+
+html.dark-mode .flatpickr-day.flatpickr-disabled,
+html.dark-mode .flatpickr-day.flatpickr-disabled:hover {
+    color: #55514b;
+
+    background: transparent;
+
+    border-color: transparent;
+}
+
+/* =========================================================
+   DARK MODE - CONFIRMED BOOKING DATES
+========================================================= */
+
+html.dark-mode .flatpickr-day.confirmed-booking-date {
+    background: #3b2d25 !important;
+
+    border-color: #745a3c !important;
+
+    color: #e4c985 !important;
+}
+
+html.dark-mode .flatpickr-day.confirmed-booking-date:hover {
+    background: #624936 !important;
+
+    border-color: var(--gold) !important;
+
+    color: #fff3d2 !important;
+}
+
+html.dark-mode .flatpickr-day.confirmed-booking-date.flatpickr-disabled {
+    color: #e4c985 !important;
+
+    background: #3b2d25 !important;
+
+    border-color: #745a3c !important;
+}
+
+/* =========================================================
+   DARK MODE - BOOKED DATE POPUP
+========================================================= */
+
+html.dark-mode .wedding-booked-date-popup-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+html.dark-mode .wedding-booked-date-popup {
+    background: linear-gradient(135deg, #252321 0%, #1b1a18 100%);
+
+    border-color: rgba(216, 189, 122, 0.28);
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+}
+
+html.dark-mode .wedding-booked-date-popup-icon {
+    background: #392d26;
+
+    color: var(--gold-light);
+
+    border-color: rgba(216, 189, 122, 0.18);
+}
+
+html.dark-mode .wedding-booked-date-popup h3 {
+    color: #f3eee7;
+}
+
+html.dark-mode .wedding-booked-date-popup p {
+    color: #aaa49c;
+}
+
+html.dark-mode .wedding-booked-date-popup button {
+    background: var(--gold);
+
+    color: #181818;
+}
+
+html.dark-mode .wedding-booked-date-popup button:hover {
+    background: var(--gold-dark);
+
+    color: #181818;
+
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================================
+   DARK MODE - EVENT DATE
+========================================================= */
+
+html.dark-mode #eventDate.flatpickr-input {
+    background-color: #20201e;
+}
+
+html.dark-mode #eventDate.flatpickr-input:focus {
+    background-color: #252421;
+}
+
+html.dark-mode input.flatpickr-alt-input {
+    background: #20201e;
+
+    border-color: #3c3935;
+
+    color: #eeeae3;
+}
+
+html.dark-mode input.flatpickr-alt-input:hover {
+    border-color: rgba(216, 189, 122, 0.45);
+}
+
+html.dark-mode input.flatpickr-alt-input:focus {
+    border-color: var(--gold);
+
+    background: #252421;
+
+    color: #f3eee7;
+
+    box-shadow: 0 0 0 4px rgba(216, 189, 122, 0.1);
+}
+
+/* =========================================================
+   DARK MODE - IMAGE ERROR
+========================================================= */
+
+html.dark-mode .summary-card-image.image-failed::after {
+    color: var(--gold-light);
+}
+
+/* =========================================================
+   DARK MODE - MOBILE FLATPICKR
+========================================================= */
+
+@media (max-width: 600px) {
+    html.dark-mode .flatpickr-calendar {
+        background: #22211f;
+
+        border-color: #3b3834;
+    }
+}
+
+/* =========================================================
+   DARK MODE - SMOOTH TRANSITIONS
+========================================================= */
+
+html.dark-mode body,
+html.dark-mode .summary-card,
+html.dark-mode .summary-card-content,
+html.dark-mode .booking-form-wrapper,
+html.dark-mode input,
+html.dark-mode select,
+html.dark-mode textarea,
+html.dark-mode .booking-agreement,
+html.dark-mode .booking-loading-popup,
+html.dark-mode .wedding-booked-date-popup,
+html.dark-mode .flatpickr-calendar {
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   FINAL REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .wedding-booked-date-popup-overlay,
+    .wedding-booked-date-popup {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   THIN & SUBTLE FORM BORDERS
+========================================================= */
+
+/* Main booking form */
+.booking-form-wrapper {
+    border: 1px solid rgba(185, 148, 69, 0.18) !important;
+    border-radius: 5px;
+    box-shadow: 0 8px 25px rgba(24, 24, 24, 0.05);
+}
+
+/* Form fields */
+.booking-form-wrapper input,
+.booking-form-wrapper select,
+.booking-form-wrapper textarea {
+    border: 1px solid rgba(185, 148, 69, 0.22) !important;
+}
+
+/* Slightly visible on hover */
+.booking-form-wrapper input:hover,
+.booking-form-wrapper select:hover,
+.booking-form-wrapper textarea:hover {
+    border-color: rgba(185, 148, 69, 0.35) !important;
+}
+
+/* Focus */
+.booking-form-wrapper input:focus,
+.booking-form-wrapper select:focus,
+.booking-form-wrapper textarea:focus {
+    border-color: rgba(185, 148, 69, 0.55) !important;
+    box-shadow: 0 0 0 3px rgba(185, 148, 69, 0.06) !important;
+}
+
+/* Readonly fields */
+.booking-form-wrapper input[readonly] {
+    border-color: rgba(185, 148, 69, 0.22) !important;
+}
+
+/* Agreement box */
+.booking-form-wrapper .booking-agreement {
+    border: 1px solid rgba(185, 148, 69, 0.14) !important;
+}
+
+/* Section dividers */
+.booking-form-wrapper .form-section {
+    border-bottom-color: rgba(185, 148, 69, 0.12) !important;
+}
+
+/* Header divider */
+.booking-form-wrapper .form-header {
+    border-bottom-color: rgba(185, 148, 69, 0.12) !important;
+}

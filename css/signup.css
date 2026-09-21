@@ -1,0 +1,1692 @@
+/* =========================================
+   SIGNUP PAGE
+   EVENT SOLUTIONS BY S.H.E
+========================================= */
+
+/* =========================================
+   GLOBAL BOX SIZING
+========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root {
+    --gold: #b99445;
+    --gold-dark: #9d7a32;
+    --gold-light: #d7bd82;
+    --peach: #f3c7a8;
+    --peach-light: #f9e4d5;
+    --cream: #fcfaf7;
+    --white: #ffffff;
+    --black: #181818;
+    --dark: #242424;
+    --gray-900: #333333;
+    --gray-700: #666666;
+    --gray-500: #888888;
+    --gray-300: #d9d5cf;
+    --gray-200: #ebe7e1;
+    --error: #b54b4b;
+    --error-bg: #fff6f6;
+    --success: #527a5b;
+    --success-bg: #f3faf4;
+    --shadow: 0 25px 70px rgba(24, 24, 24, 0.13);
+    --transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.signup-page {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(243, 199, 168, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(185, 148, 69, 0.10),
+            transparent 35%
+        ),
+        var(--cream);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.signup-container {
+    width: min(900px, 100%);
+    min-height: 555px;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 0.92fr);
+    background: var(--white);
+    border: 1px solid rgba(185, 148, 69, 0.14);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    min-width: 0;
+}
+
+
+/* =========================================
+   LEFT CAROUSEL
+========================================= */
+
+.signup-carousel {
+    position: relative;
+    min-height: 555px;
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+    background: var(--dark);
+}
+
+
+/* =========================================
+   CAROUSEL SLIDES
+========================================= */
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 1;
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+
+/* =========================================
+   CAROUSEL IMAGE
+========================================= */
+
+.carousel-slide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.04);
+    transition:
+        transform 6s ease,
+        opacity 0.8s ease;
+}
+
+.carousel-slide.active img {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.10);
+}
+
+
+/* =========================================
+   CAROUSEL OVERLAY
+========================================= */
+
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.80) 0%,
+            rgba(0, 0, 0, 0.48) 35%,
+            rgba(0, 0, 0, 0.12) 75%,
+            rgba(0, 0, 0, 0.02) 100%
+        );
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CAROUSEL CONTENT
+========================================= */
+
+.carousel-content {
+    position: absolute;
+    left: 38px;
+    right: 38px;
+    bottom: 60px;
+    z-index: 3;
+    color: var(--white);
+}
+
+.carousel-content > span {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: var(--peach);
+}
+
+.carousel-content h1 {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    line-height: 1.15;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.carousel-content h1 strong {
+    display: block;
+    margin-top: 2px;
+    font-family: "Monsieur La Doulaise", cursive;
+    font-size: 37px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--peach);
+}
+
+.carousel-content p {
+    max-width: 300px;
+    margin: 12px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+
+/* =========================================
+   CAROUSEL DOTS
+========================================= */
+
+.carousel-dots {
+    position: absolute;
+    left: 38px;
+    bottom: 23px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.carousel-dot {
+    width: 20px;
+    height: 3px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.carousel-dot.active {
+    width: 34px;
+    background: var(--peach);
+}
+
+
+/* =========================================
+   RIGHT CARD
+========================================= */
+
+.signup-card {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    padding: 35px 38px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+    overflow: hidden;
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.signup-card-header {
+    margin-bottom: 21px;
+    min-width: 0;
+}
+
+.signup-card-header > span {
+    display: block;
+    margin-bottom: 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+.signup-card-header h2 {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--black);
+    overflow-wrap: break-word;
+}
+
+.signup-card-header p {
+    margin: 7px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    line-height: 1.6;
+    color: var(--gray-500);
+}
+
+
+/* =========================================
+   FORM MESSAGE
+========================================= */
+
+.form-message {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 7px;
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.form-message p {
+    margin: 0 0 4px;
+}
+
+.form-message p:last-child {
+    margin-bottom: 0;
+}
+
+.form-message.error {
+    color: var(--error);
+    background: var(--error-bg);
+    border: 1px solid rgba(181, 75, 75, 0.16);
+}
+
+.form-message.success {
+    color: var(--success);
+    background: var(--success-bg);
+    border: 1px solid rgba(82, 122, 91, 0.16);
+}
+
+.form-message a {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-message a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.signup-form {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.form-group {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 41px;
+    padding: 0 12px;
+    border: 1px solid var(--gray-300);
+    border-radius: 7px;
+    outline: none;
+    background: var(--white);
+    font-family: "Poppins", sans-serif;
+    font-size: 10.5px;
+    color: var(--black);
+    box-sizing: border-box;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.form-group input::placeholder {
+    color: #aaa6a0;
+}
+
+.form-group input:hover {
+    border-color: #c9c3ba;
+}
+
+.form-group input:focus {
+    border-color: var(--gold);
+    box-shadow:
+        0 0 0 3px rgba(185, 148, 69, 0.10);
+    background: #fffefd;
+}
+
+
+/* =========================================
+   PASSWORD WRAPPER
+========================================= */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.password-wrapper input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 41px;
+    padding-left: 12px;
+    padding-right: 46px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   PASSWORD TOGGLE
+========================================= */
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    width: 32px;
+    height: 32px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--gray-500);
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 2;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+.password-toggle:hover {
+    color: var(--gold-dark);
+    background: rgba(185, 148, 69, 0.08);
+}
+
+.password-toggle:focus-visible {
+    outline: 2px solid rgba(185, 148, 69, 0.35);
+    outline-offset: 1px;
+}
+
+.password-toggle svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.password-toggle .eye-icon {
+    display: block;
+}
+
+.password-toggle .eye-off-icon {
+    display: none;
+}
+
+.password-toggle.showing .eye-icon {
+    display: none;
+}
+
+.password-toggle.showing .eye-off-icon {
+    display: block;
+}
+
+
+/* =========================================
+   FIELD ERROR
+========================================= */
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 8px;
+    line-height: 1.4;
+    color: var(--error);
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   ERROR INPUT
+========================================= */
+
+.form-group.has-error input {
+    border-color: var(--error);
+    background: var(--error-bg);
+}
+
+.form-group.has-error input:focus {
+    box-shadow:
+        0 0 0 3px rgba(181, 75, 75, 0.08);
+}
+
+
+/* =========================================
+   SUCCESS INPUT
+========================================= */
+
+.form-group.has-success input {
+    border-color: var(--success);
+    background: var(--success-bg);
+}
+
+
+/* =========================================
+   PASSWORD STRENGTH
+========================================= */
+
+.password-strength {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+.strength-track {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    width: 100%;
+    height: 4px;
+}
+
+.strength-track span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: #e8e4df;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   WEAK
+========================================= */
+
+.password-strength.weak
+.strength-track span:nth-child(1) {
+    background: #c86b5d;
+}
+
+
+/* =========================================
+   MEDIUM
+========================================= */
+
+.password-strength.medium
+.strength-track span:nth-child(1),
+
+.password-strength.medium
+.strength-track span:nth-child(2) {
+    background: #c69a51;
+}
+
+
+/* =========================================
+   STRONG
+========================================= */
+
+.password-strength.strong
+.strength-track span {
+    background: #668b6d;
+}
+
+
+/* =========================================
+   STRENGTH INFORMATION
+========================================= */
+
+.strength-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 8px;
+    color: var(--gray-500);
+}
+
+.strength-info strong {
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.password-strength.weak
+.strength-info strong {
+    color: var(--error);
+}
+
+.password-strength.medium
+.strength-info strong {
+    color: #a47729;
+}
+
+.password-strength.strong
+.strength-info strong {
+    color: var(--success);
+}
+
+
+/* =========================================
+   PASSWORD HINT
+========================================= */
+
+.password-hint {
+    display: block;
+    margin-top: 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 7.8px;
+    line-height: 1.45;
+    color: #99948e;
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.signup-submit {
+    width: 100%;
+    max-width: 100%;
+    height: 42px;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--black);
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition:
+        background 0.3s ease,
+        transform 0.25s ease,
+        box-shadow 0.3s ease;
+}
+
+.signup-submit svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s ease;
+}
+
+.signup-submit:hover {
+    background: var(--gold-dark);
+    transform: translateY(-1px);
+    box-shadow:
+        0 8px 20px rgba(157, 122, 50, 0.20);
+}
+
+.signup-submit:hover svg {
+    transform: translateX(3px);
+}
+
+.signup-submit:active {
+    transform: translateY(0);
+}
+
+.signup-submit:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.signup-login {
+    margin-top: 13px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    color: var(--gray-500);
+}
+
+.signup-login a {
+    margin-left: 4px;
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.signup-login a:hover {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   EMAIL VERIFICATION POPUP
+========================================================= */
+
+.verification-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+    pointer-events: none;
+}
+
+.verification-modal.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.verification-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(24, 24, 24, 0.68);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   MODAL CARD
+========================================================= */
+
+.verification-modal-card {
+    position: relative;
+    z-index: 2;
+    width: min(450px, 100%);
+    padding: 38px 32px 32px;
+    background:
+        linear-gradient(
+            135deg,
+            #fffefa 0%,
+            #f9e4d5 100%
+        );
+    border: 1px solid rgba(
+        185,
+        148,
+        69,
+        0.30
+    );
+    border-radius: 18px;
+    box-shadow:
+        0 30px 80px rgba(
+            24,
+            24,
+            24,
+            0.25
+        );
+    transform:
+        translateY(20px)
+        scale(0.97);
+    transition:
+        transform 0.3s ease;
+}
+
+.verification-modal.active
+.verification-modal-card {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.verification-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: #777777;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.verification-close:hover {
+    color: var(--gold);
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   VERIFICATION ICON
+========================================================= */
+
+.verification-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--peach);
+    border: 1px solid rgba(
+        185,
+        148,
+        69,
+        0.35
+    );
+}
+
+.verification-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: var(--gold-dark);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   VERIFICATION CONTENT
+========================================================= */
+
+.verification-content {
+    text-align: center;
+}
+
+.verification-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.verification-content h2 {
+    margin: 0 0 10px;
+    color: var(--dark);
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.verification-content p {
+    margin: 0 0 6px;
+    color: #777777;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.verification-email {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    color: var(--gold-dark);
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   VERIFICATION FORM
+========================================================= */
+
+.verification-form {
+    margin-top: 25px;
+}
+
+.verification-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gray-900);
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* =========================================================
+   VERIFICATION CODE INPUT
+========================================================= */
+
+#verificationCode {
+    width: 100%;
+    height: 58px;
+    padding: 0 15px;
+    border: 1px solid #e6dfd8;
+    border-radius: 10px;
+    outline: none;
+    background: var(--white);
+    color: var(--dark);
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 8px;
+    text-align: center;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#verificationCode:focus {
+    border-color: var(--gold);
+    box-shadow:
+        0 0 0 3px rgba(
+            185,
+            148,
+            69,
+            0.12
+        );
+}
+
+#verificationCode.verified {
+    border-color: #8aa77a;
+    background: var(--success-bg);
+}
+
+
+/* =========================================================
+   VERIFICATION MESSAGES
+========================================================= */
+
+.verification-error {
+    display: block;
+    min-height: 18px;
+    margin-top: 8px;
+    color: #b33a3a;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    text-align: center;
+}
+
+.verification-success {
+    min-height: 20px;
+    margin-top: 8px;
+    color: #658553;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   VERIFY BUTTON
+========================================================= */
+
+.verification-button {
+    width: 100%;
+    height: 48px;
+    margin-top: 12px;
+    border: 0;
+    border-radius: 9px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-dark)
+        );
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.verification-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 20px rgba(
+            157,
+            122,
+            50,
+            0.25
+        );
+}
+
+.verification-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.verification-button.verified {
+    background: #789568;
+    cursor: default;
+}
+
+
+/* =========================================================
+   RESEND
+========================================================= */
+
+.verification-resend {
+    display: block;
+    margin: 16px auto 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--gold-dark);
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.verification-resend:hover {
+    text-decoration: underline;
+}
+
+.verification-resend:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+.verification-countdown {
+    min-height: 18px;
+    margin-top: 8px;
+    color: #999999;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   PREVENT PAGE SCROLL WHILE MODAL IS OPEN
+========================================================= */
+
+body.verification-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VERIFY EMAIL STATUS
+========================================================= */
+
+.email-verification-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 8px;
+    color: var(--gray-500);
+}
+
+.email-verification-status svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.email-verification-status.verified {
+    color: var(--success);
+}
+
+
+/* =========================================================
+   VERIFIED EMAIL INPUT
+========================================================= */
+
+.form-group.email-verified input {
+    border-color: var(--success);
+    background: var(--success-bg);
+}
+
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+.signup-submit.loading,
+.verification-button.loading {
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+.signup-submit.loading svg,
+.verification-button.loading svg {
+    animation: verificationSpin 0.8s linear infinite;
+}
+
+@keyframes verificationSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.dark-mode .signup-page {
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(243, 199, 168, 0.07),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(185, 148, 69, 0.08),
+            transparent 35%
+        ),
+        #151515;
+}
+
+html.dark-mode .signup-container {
+    background: #202020;
+    border-color: rgba(216, 189, 122, 0.18);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.38);
+}
+
+html.dark-mode .signup-carousel {
+    background: #181818;
+}
+
+html.dark-mode .signup-card {
+    background: #202020;
+}
+
+html.dark-mode .signup-card-header h2 {
+    color: var(--white);
+}
+
+html.dark-mode .signup-card-header p {
+    color: #a9a9a9;
+}
+
+html.dark-mode .form-group label {
+    color: #dddddd;
+}
+
+html.dark-mode .form-group input {
+    background: #181818;
+    border-color: #414141;
+    color: var(--white);
+}
+
+html.dark-mode .form-group input::placeholder {
+    color: #858585;
+}
+
+html.dark-mode .form-group input:hover {
+    border-color: #555555;
+}
+
+html.dark-mode .form-group input:focus {
+    border-color: var(--gold-light);
+    background: #1c1c1c;
+    box-shadow:
+        0 0 0 3px rgba(216, 189, 122, 0.10);
+}
+
+html.dark-mode .password-toggle {
+    color: #999999;
+}
+
+html.dark-mode .password-toggle:hover {
+    color: var(--gold-light);
+    background: rgba(216, 189, 122, 0.08);
+}
+
+html.dark-mode .field-error {
+    color: #df7777;
+}
+
+html.dark-mode .form-group.has-error input {
+    background: #281d1d;
+    border-color: #b54b4b;
+}
+
+html.dark-mode .form-group.has-success input {
+    background: #1d2920;
+    border-color: #527a5b;
+}
+
+html.dark-mode .password-hint {
+    color: #858585;
+}
+
+html.dark-mode .strength-track span {
+    background: #383838;
+}
+
+html.dark-mode .strength-info {
+    color: #909090;
+}
+
+html.dark-mode .signup-login {
+    color: #999999;
+}
+
+html.dark-mode .signup-login a {
+    color: var(--gold-light);
+}
+
+html.dark-mode .signup-login a:hover {
+    color: var(--white);
+}
+
+html.dark-mode .form-message.error {
+    color: #e18484;
+    background: #291c1c;
+    border-color: rgba(181, 75, 75, 0.30);
+}
+
+html.dark-mode .form-message.success {
+    color: #8fba98;
+    background: #1d2920;
+    border-color: rgba(82, 122, 91, 0.30);
+}
+
+html.dark-mode .form-message a {
+    color: var(--gold-light);
+}
+
+html.dark-mode .verification-modal-card {
+    background:
+        linear-gradient(
+            135deg,
+            #242424 0%,
+            #302b27 100%
+        );
+    border-color: rgba(
+        216,
+        189,
+        122,
+        0.25
+    );
+}
+
+html.dark-mode .verification-content h2 {
+    color: var(--white);
+}
+
+html.dark-mode .verification-content p {
+    color: #b8b8b8;
+}
+
+html.dark-mode .verification-form label {
+    color: #dddddd;
+}
+
+html.dark-mode #verificationCode {
+    background: #181818;
+    border-color: #444444;
+    color: var(--white);
+}
+
+html.dark-mode #verificationCode:focus {
+    border-color: var(--gold-light);
+}
+
+html.dark-mode .verification-close {
+    color: #aaaaaa;
+}
+
+html.dark-mode .verification-close:hover {
+    color: var(--gold-light);
+}
+
+html.dark-mode .verification-countdown {
+    color: #888888;
+}
+
+html.dark-mode .verification-email {
+    color: var(--gold-light);
+}
+
+html.dark-mode .verification-resend {
+    color: var(--gold-light);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .verification-modal {
+        padding: 15px;
+    }
+
+    .verification-modal-card {
+        width: 100%;
+        padding: 34px 22px 25px;
+        border-radius: 16px;
+    }
+
+    .verification-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .verification-content h2 {
+        font-size: 22px;
+    }
+
+    .verification-content p {
+        font-size: 12px;
+    }
+
+    .verification-email {
+        font-size: 13px;
+    }
+
+    #verificationCode {
+        height: 54px;
+        font-size: 22px;
+        letter-spacing: 6px;
+    }
+
+    .verification-button {
+        height: 46px;
+    }
+}
+
+
+/* =========================================================
+   950px
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .signup-page {
+        padding: 30px 20px;
+    }
+
+    .signup-container {
+        min-height: 600px;
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 0.92fr);
+    }
+
+    .signup-carousel {
+        min-height: 600px;
+    }
+
+    .signup-card {
+        padding: 35px 32px;
+        min-width: 0;
+    }
+}
+
+
+/* =========================================================
+   760px
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .signup-page {
+        min-height: auto;
+        padding: 20px 15px 30px;
+    }
+
+    .signup-container {
+        width: min(520px, 100%);
+        display: block;
+        min-height: auto;
+        border-radius: 16px;
+    }
+
+    .signup-carousel {
+        height: 330px;
+        min-height: 330px;
+    }
+
+    .carousel-content {
+        left: 28px;
+        right: 28px;
+        bottom: 52px;
+    }
+
+    .carousel-content h1 {
+        font-size: 22px;
+    }
+
+    .carousel-content h1 strong {
+        font-size: 33px;
+    }
+
+    .carousel-dots {
+        left: 28px;
+        bottom: 20px;
+    }
+
+    .signup-card {
+        width: 100%;
+        min-width: 0;
+        padding: 35px 28px 30px;
+        overflow: hidden;
+    }
+}
+
+
+/* =========================================================
+   480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .signup-page {
+        padding: 15px 10px 25px;
+    }
+
+    .signup-container {
+        border-radius: 14px;
+    }
+
+    .signup-carousel {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    .carousel-content {
+        left: 22px;
+        right: 22px;
+        bottom: 45px;
+    }
+
+    .carousel-content > span {
+        font-size: 7.5px;
+        letter-spacing: 1.8px;
+    }
+
+    .carousel-content h1 {
+        font-size: 19px;
+    }
+
+    .carousel-content h1 strong {
+        font-size: 29px;
+    }
+
+    .carousel-content p {
+        max-width: 260px;
+        font-size: 9px;
+    }
+
+    .carousel-dots {
+        left: 22px;
+        bottom: 17px;
+    }
+
+    .signup-card {
+        padding: 30px 20px 25px;
+    }
+
+    .signup-card-header h2 {
+        font-size: 24px;
+    }
+
+    .form-group input {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .password-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .signup-carousel {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .signup-card {
+        padding: 25px 16px;
+        overflow: hidden;
+    }
+
+    .signup-card-header {
+        margin-bottom: 17px;
+    }
+
+    .signup-card-header h2 {
+        font-size: 22px;
+    }
+
+    .signup-card-header p {
+        font-size: 9px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-group input {
+        width: 100%;
+        height: 39px;
+        padding-left: 10px;
+        padding-right: 43px;
+    }
+
+    .password-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .password-wrapper input {
+        height: 39px;
+    }
+
+    .password-toggle {
+        right: 5px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .signup-submit {
+        width: 100%;
+        height: 40px;
+    }
+
+    .verification-modal-card {
+        padding: 30px 17px 22px;
+    }
+
+    .verification-content h2 {
+        font-size: 20px;
+    }
+
+    #verificationCode {
+        height: 50px;
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .verification-modal,
+    .verification-modal-card,
+    .verification-close,
+    .verification-button,
+    .verification-resend,
+    .signup-submit {
+        transition: none;
+    }
+
+    .carousel-slide,
+    .carousel-slide img {
+        transition: none;
+    }
+
+    .signup-submit.loading svg,
+    .verification-button.loading svg {
+        animation: none;
+    }
+}
